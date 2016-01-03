@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>AppFog - Ruby on Rails 3.2 Tutorial - Caffeine Industries -</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/appfog-ruby-on-rails-tutorial.html">
+
+        <meta name="author" content="Michael" />
+        <meta name="description" content="AppFog is an incredible service in the land of PaaS or Platform as a Service. They are a Cloud Foundry-powered polyglot platform. You can sign up for beta access now and start pushing apps strait away. Their web based management interface is really nice, and I am a sucker ..." />
+
+        <meta property="og:site_name" content="Caffeine Industries -" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="AppFog - Ruby on Rails 3.2 Tutorial"/>
+        <meta property="og:url" content="/appfog-ruby-on-rails-tutorial.html"/>
+        <meta property="og:description" content="AppFog is an incredible service in the land of PaaS or Platform as a Service. They are a Cloud Foundry-powered polyglot platform. You can sign up for beta access now and start pushing apps strait away. Their web based management interface is really nice, and I am a sucker ..."/>
+        <meta property="article:published_time" content="2012-06-27" />
+            <meta property="article:section" content="AppFog, Blog, code, PaaS, Portfolio, Ruby on Rails, Tutorial, Uncategorized" />
+            <meta property="article:author" content="Michael" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Caffeine Industries -            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/ansible-docker.html">Ansible, docker</a>
+                        </li>
+                        <li >
+                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/computer.html">Computer</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura.html">Cordura</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/leather.html">Leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/programming-python.html">Programming, python</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+                        <li >
+                            <a href="/category/uncategorized.html">Uncategorized</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/appfog-ruby-on-rails-tutorial.html"
+                       rel="bookmark"
+                       title="Permalink to AppFog - Ruby on Rails 3.2 Tutorial">
+                        AppFog - Ruby on Rails 3.2 Tutorial
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-06-27T23:08:00-07:00"> Wed 27 June 2012</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><a href="http://www.appfog.com/">AppFog</a> is an incredible service in the land of
+PaaS or Platform as a Service. They are a <a href="http://www.cloudfoundry.com/">Cloud
+Foundry</a>-powered polyglot platform. You
+can <a href="https://console.appfog.com/signup">sign up</a> for beta access now and
+start pushing apps strait away. Their web based management interface is
+really nice, and I am a sucker for nicely designed "things."  In this
+post I'd like to show you all how I got a Ruby on Rails app up and
+running.</p>
+<h2>Create</h2>
+<p>A developer has two ways to create a new RoR app.</p>
+<p>1. Use the AppFog console to bootstrap a shell RoR app. [<a href="https://github.com/appfog/af-ruby-rails">source
+code</a>]</p>
+<p>This will net a basic shell RoR app with Ruby version 1.9.3-p125 and
+Rails version 3.2.5</p>
+<p>2. Use the <strong>af</strong> gem to push your locally developed app to the cloud.</p>
+<h2>Push</h2>
+<p>How do you push an app to AppFog?</p>
+<p>Hopefully you are using rvm, rbenv or have some sort of Ruby/Gem
+management system set-up. Rvm and rbenv are out of the scope of this
+tutorial. I use rvm to create project-based gemsets with a directory
+level .rvmrc file. You can read more about rvm <a href="https://rvm.io//">here</a>.</p>
+<p>[gist id=3009318]</p>
+<p>When you are ready to push issue this command:</p>
+<p>[gist id=3009377]</p>
+<p>If you don’t specify an app name, AppFog will use the directory name. I
+found that my Ruby version wasn't automatically detected without the
+runtime flag. I found this by looking through the af gem source code on
+Github. (I love OSS!) The runtimes supported by AppFog can be found
+using "af runtimes".</p>
+<p>You will then be taken though a series of yes/no questions where the
+details come into play. Accepting the default answer for all of these
+questions with the exception of database technology is the simplest way
+to get up and running. You can choose between Mongo and MySQL for the
+database technology to use, so even that isn’t very complicated.</p>
+<p>Let me be clear, I have not veered far from the quickest path to get my
+app set-up. Subsequent tutorials will have more on this front.</p>
+<h2>Running / Errors</h2>
+<p>At this point you are either running or you have error(s). If you have
+an error, use “af logs &lt;appname&gt;” to diagnose what went wrong. You
+can also head to the <a href="http://support.appfog.com/forums">support forums</a>
+or the <a href="https://groups.google.com/forum/?fromgroups#!forum/appfog-users">Google
+group</a>
+to ask a question or look through previous questions/discussions.</p>
+<p>In either app creation case, you are going to use "af update
+&lt;appname&gt;" once you have something you'd like show the world or
+need to make a change. This command is strait forward; push the changes
+to the cloud.</p>
+<h2>Sum it up</h2>
+<ol>
+<li>create app either on AppFog or locally</li>
+<li>install af gem</li>
+<li>af push or af update</li>
+<li>profit</li>
+</ol>
+<h3>Notes:</h3>
+<p>When I looked at the available commands using "af  --help", it was not
+immediately clear what each command was used for. A good option to learn
+more is to read though the <a href="https://github.com/appfog/af">source</a>.  OR
+you can wait for my next tutorial where I'll dive in with both feet on
+every available command.</p>
+<hr />
+<h2>Database</h2>
+<p>Using MySQL? You <strong><em>need</em></strong> the <strong><em>mysql2 gem</em></strong> in your gemfile. Also,
+if you intend to develop your app against MySQL locally, you will want
+your database.yml file to look like or similar to the gist below.</p>
+<p>[gist id=3006959]</p>
+<p>I am not sure why the database.yml needs to be set-up like this and
+quite frankly it could be my error (system or set-up). The error
+I received was database adapter not found and I have narrowed it down to
+the application creation process. Once the app is up and running, I have
+been able to use either configuration.</p>
+<h3>Notes:</h3>
+<p>Developing with MySQL locally will help to eliminate a potential source
+of frustration not related to AppFog. A simple query that works with
+sqlite3 may completely fail with PG or MySQL due to type casting, as
+just one example. Databases like PostgreSQL and MySQL have more features
+than sqlite3 but are more strict with type. So, you can avoid a lot of
+potential problems by simply developing against the database you intend
+to use in production.</p>
+<hr />
+<h2>Package</h2>
+<p>You need to pre-package the app to the greatest extent possible.</p>
+<p>[gist id=3009404]</p>
+<p>Keep in mind that “bundler package” will add size, in some cases
+significant size, to your app. This command caches a local version of
+each gem to your vendor/cache dir and some gems are really large.</p>
+<p>Potential problems with gems, bundler and AppFog; Lets say you need to
+modify a published gem. Lets also posit that you fork and modify this
+gem to fit your particular app (change color scheme, etc.). You can use
+bundler's <a href="http://gembundler.com/git.html">git feature</a> to host this
+modified gem on Github and it will behave as if it was hosted on
+rubygems.org. This is great when working locally or you have access to
+bundler and/or rake.</p>
+<p>I've found that you may need to publish the modified gem to rubygems.org
+for it to work properly in production. In fact I have not been able to
+use un-published gems with AppFog. If your modification is a useful
+feature the community may benefit from, consider submitting a pull
+request through proper channels before going down this road.</p>
+<h3>Sum it up</h3>
+<p>In a nut shell... stick with published gems and you'll be A-OK.</p>
+<hr />
+<h2>Precompile</h2>
+<p>Speaking of packaging and pre-deployment. If you are using rails 3 and
+the asset pipeline you need to run this command before you push or
+update.</p>
+<p>[gist id=3007160]</p>
+<hr />
+<h2>Final Thoughts</h2>
+<p>Whew! I hope this helps you navigate the AppFog PaaS. Stay tuned for
+more and if you have questions don’t hesitate to ask… in the <a href="http://support.appfog.com/forums">support
+forums</a> or the <a href="https://groups.google.com/forum/?fromgroups#!forum/appfog-users">Google
+group</a>!
+I am neither an AppFog or CloudFoundry expert nor an employee, I simply
+believe in the Kool-Aid they are pushing.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Michael Martinez
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

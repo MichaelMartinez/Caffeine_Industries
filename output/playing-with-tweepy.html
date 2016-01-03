@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Playing with Tweepy - Caffeine Industries -</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/playing-with-tweepy.html">
+
+        <meta name="author" content="Michael" />
+        <meta name="description" content="Tweepy in iPython Notebook. I&#39;ve wanted to have a play with the Twitter API for a few months. There is a lot of complexity in this API, so I looked for a library that abstracted as much as possible. Tweepy was the first to grab my attention. Another library ..." />
+
+        <meta property="og:site_name" content="Caffeine Industries -" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Playing with Tweepy"/>
+        <meta property="og:url" content="/playing-with-tweepy.html"/>
+        <meta property="og:description" content="Tweepy in iPython Notebook. I&#39;ve wanted to have a play with the Twitter API for a few months. There is a lot of complexity in this API, so I looked for a library that abstracted as much as possible. Tweepy was the first to grab my attention. Another library ..."/>
+        <meta property="article:published_time" content="2013-04-23" />
+            <meta property="article:section" content="Uncategorized" />
+            <meta property="article:author" content="Michael" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Caffeine Industries -            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/ansible-docker.html">Ansible, docker</a>
+                        </li>
+                        <li >
+                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/computer.html">Computer</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura.html">Cordura</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/leather.html">Leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/programming-python.html">Programming, python</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/uncategorized.html">Uncategorized</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/playing-with-tweepy.html"
+                       rel="bookmark"
+                       title="Permalink to Playing with Tweepy">
+                        Playing with Tweepy
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-04-23T11:32:00-07:00"> Tue 23 April 2013</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Tweepy in iPython Notebook. I've wanted to have a play with the Twitter
+API<br />
+for a few months. There is a lot of complexity in this API, so I looked
+for<br />
+a library that abstracted as much as possible. Tweepy was the first to
+grab<br />
+my attention.</p>
+<p>Another library that I plan on trying is <a href="http://mike.verdone.ca/twitter/">Python Twitter
+Tools</a>.<br />
+In hindsight, I probably should have gone with PTT to start as Tweepy
+returns<br />
+inconsistent data when accessing various API endpoints. Not to say
+Tweepy is bad,<br />
+because it worked well for these basic examples.</p>
+<p>This is to set-up tweepy and oauth to play with the Twitter API</p>
+<ul>
+<li>google group is
+<a href="https://groups.google.com/forum/?fromgroups=#!forum/tweepy">here</a>  </li>
+<li>docs <a href="http://packages.python.org/tweepy/html/index.html">here</a>  </li>
+<li>github repo <a href="https://github.com/tweepy/tweepy">here</a></li>
+</ul>
+<p>``` {.lang:python .decode:true}
+ import tweepy</p>
+<div class="highlight"><pre># The consumer keys can be found on your application&#39;s Details
+# page located at https://dev.twitter.com/apps (under &quot;OAuth settings&quot;)
+consumer_key=&quot;&lt;key here&gt;&quot;
+consumer_secret=&quot;&lt;secret here&gt;&quot;
+
+# The access tokens can be found on your applications&#39;s Details
+# page located at https://dev.twitter.com/apps (located
+# under &quot;Your access token&quot;)
+access_token=&quot;&lt;access token here&gt;&quot;
+access_token_secret=&quot;&lt;access ssecret here&gt;&quot;
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+myapi = tweepy.API(auth)
+
+# If the authentication was successful, you should
+# see the name of the account print out
+print myapi.me().name
+
+Michael Martinez
+</pre></div>
+
+
+<div class="highlight"><pre>If the request was successful, you will see your name print out in the
+response
+
+``` {.lang:python .decode:true}
+myapi.update_status(&#39;Rocking #iPythonNotebook and tweepy&#39;)
+
+ Out[2]:
+
+     &lt;tweepy.models.Status at 0x107ca3550&gt;
+</pre></div>
+
+
+<p>[line]</p>
+<h3>The user object</h3>
+<p>Showing a method to access some variables returned by twitter</p>
+<p>``` {.lang:python .decode:true}
+ print myapi.me().screen_name</p>
+<div class="highlight"><pre> MonkMartinez
+</pre></div>
+
+
+<div class="highlight"><pre>``` {.lang:python .decode:true}
+print myapi.me().description
+
+     Father. Firefighter. Mobile Crafter. Web Crafter. Garage-Business-Dude.
+</pre></div>
+
+
+<p>``` {.lang:python .decode:true}
+    me = myapi.me()</p>
+<div class="highlight"><pre>``` {.lang:python .decode:true}
+print me.followers_count
+
+     116
+</pre></div>
+
+
+<p>``` {.lang:python .decode:true}
+    me.status.text</p>
+<div class="highlight"><pre> u&#39;Rocking #iPythonNotebook and tweepy&#39;
+</pre></div>
+
+
+<div class="highlight"><pre>``` {.lang:python .decode:true}
+    me.statuses_count
+
+     1570
+</pre></div>
+
+
+<p>[line]</p>
+<h3>Rate limits</h3>
+<p>For items that return a dict, you can simply iterate through the list</p>
+<p>``` {.lang:python .decode:true}
+type(myapi.rate_limit_status())</p>
+<div class="highlight"><pre>#lets work through a returned dict
+
+rl = myapi.rate_limit_status()
+
+for k, v in rl.iteritems():
+    print &#39;%s : %s&#39; %(k, v)
+
+ photos : {u&#39;daily_limit&#39;: 100, u&#39;reset_time&#39;: u&#39;Sun Apr 21 17:21:43 +0000
+ 2013&#39;, u&#39;remaining_hits&#39;: 100, u&#39;reset_time_in_seconds&#39;: 1366564903}
+ remaining_hits : 346
+ reset_time_in_seconds : 1366482078
+ hourly_limit : 350
+ reset_time : Sat Apr 20 18:21:18 +0000 2013
+</pre></div>
+
+
+<div class="highlight"><pre>Another way to access variables within the api...
+
+``` {.lang:python .decode:true}
+    myapi.rate_limit_status()[&#39;remaining_hits&#39;]
+
+     350
+</pre></div>
+
+
+<p>``` {.lang:python .decode:true}
+import datetime
+    # get the reset time from twitter call
+    twitime = myapi.rate_limit_status()['reset_time_in_seconds']</p>
+<div class="highlight"><pre>#convert the time
+timere = datetime.datetime.fromtimestamp(int(twitime)).strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)
+print(&#39;Twitter will reset at:&#39;, timere)
+
+ (&#39;Twitter will reset at:&#39;, &#39;2013-04-20 11:21:18&#39;)
+</pre></div>
+
+
+<div class="highlight"><pre><span class="err">```</span> <span class="p">{.</span><span class="nn">lang</span><span class="p">:</span><span class="s-Atom">python</span> <span class="p">.</span><span class="nn">decode</span><span class="p">:</span><span class="s-Atom">true</span><span class="p">}</span>
+<span class="s-Atom">for</span> <span class="s-Atom">i</span> <span class="s-Atom">in</span> <span class="s-Atom">myapi</span><span class="p">.</span><span class="nf">user_timeline</span><span class="p">()</span><span class="s-Atom">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s-Atom">i</span><span class="p">.</span><span class="s-Atom">text</span><span class="p">)</span>
+
+     <span class="nv">Rocking</span> <span class="s-Atom">#iPythonNotebook</span> <span class="s-Atom">and</span> <span class="s-Atom">tweepy</span>
+     <span class="nv">Have</span> <span class="s-Atom">you</span> <span class="s-Atom">heard</span> <span class="s-Atom">‘</span><span class="nv">Sisi</span> <span class="o">-</span> <span class="nv">Stay</span> <span class="o">-</span> <span class="nv">Funk</span> <span class="nv">Ferret</span> <span class="nv">Edit</span><span class="s-Atom">’</span> <span class="s-Atom">by</span> <span class="nv">FunkFerret</span> <span class="s-Atom">on</span>
+     <span class="s-Atom">#</span><span class="nv">SoundCloud</span><span class="s-Atom">?</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="s-Atom">t</span><span class="p">.</span><span class="s-Atom">co</span><span class="o">/</span><span class="s-Atom">lrdhjdOmDa</span>
+     <span class="nv">Have</span> <span class="s-Atom">you</span> <span class="s-Atom">heard</span> <span class="s-Atom">‘</span><span class="nv">Rufus</span> <span class="nv">Thomas</span> <span class="o">-</span> <span class="nv">Itch</span> <span class="s-Atom">&amp;amp</span><span class="p">;</span> <span class="nv">Scratch</span> <span class="o">-</span> <span class="nv">Funk</span> <span class="nv">Ferret</span> <span class="nv">Edit</span><span class="s-Atom">’</span> <span class="s-Atom">by</span>
+     <span class="nv">FunkFerret</span> <span class="s-Atom">on</span> <span class="s-Atom">#</span><span class="nv">SoundCloud</span><span class="s-Atom">?</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="s-Atom">t</span><span class="p">.</span><span class="s-Atom">co</span><span class="o">/</span><span class="nv">JW2sKvlvvV</span>
+     <span class="nv">Can</span> <span class="s-Atom">you</span> <span class="s-Atom">get</span> <span class="s-Atom">paid</span> <span class="s-Atom">to</span> <span class="s-Atom">evaluate</span> <span class="nv">OSS</span> <span class="s-Atom">python</span> <span class="s-Atom">packages?</span>
+     <span class="nv">Rocking</span> <span class="s-Atom">#iPythonNotebook</span> <span class="s-Atom">and</span> <span class="s-Atom">tweepy</span>
+     <span class="s-Atom">@</span><span class="nv">UnlearningEcon</span> <span class="nv">Outcomes</span> <span class="s-Atom">are</span> <span class="nv">NEVER</span> <span class="s-Atom">certain</span><span class="p">.</span> <span class="nv">More</span> <span class="s-Atom">thinking</span> <span class="s-Atom">and</span> <span class="s-Atom">less</span> <span class="s-Atom">emotion</span>
+     <span class="s-Atom">would</span> <span class="s-Atom">make</span> <span class="s-Atom">the</span> <span class="s-Atom">world</span> <span class="s-Atom">a</span> <span class="s-Atom">better</span> <span class="s-Atom">place</span><span class="p">.</span>
+     <span class="s-Atom">@kennethlove</span> <span class="nv">Right</span> <span class="s-Atom">on</span><span class="p">,</span> <span class="s-Atom">can&#39;t wait!!!</span>
+<span class="s-Atom">     @kennethlove Really AWESOME #GSWD tut(s)... Muchas Gracias! More coming soon</span>
+<span class="s-Atom">     I hope?</span>
+<span class="s-Atom">     I am working on data analysis with #pandas and #iPython for a GIS project</span>
+<span class="s-Atom">     that may help #firefighters be more efficient.</span>
+<span class="s-Atom">     Back on the horse after a one month non-programming hiatus. Feels good...</span>
+<span class="s-Atom">     and my fingers still remember #emacs. #python #iPython</span>
+<span class="s-Atom">     The damage has already been done. The #bankrun will proceed as if the tax</span>
+<span class="s-Atom">     levy had passed. #Cyprus</span>
+<span class="s-Atom">     @charlesfrith short on math eh???</span>
+<span class="s-Atom">     Enough politics, back to programming and awesomeness in general.</span>
+<span class="s-Atom">     #hispanics are not dumb people that simply recognize latino names and think,</span>
+<span class="s-Atom">     &quot;bueno, yo vota para el.&quot;</span>
+<span class="s-Atom">     Not only that, the #republican party thinks that trotting people with</span>
+<span class="s-Atom">     hispanic last names will to help &quot;win&quot; the hispanic vote. #notworking</span>
+<span class="s-Atom">     The #republican party is so out of touch with my generation I really don&#39;t</span>
+     <span class="s-Atom">know</span> <span class="s-Atom">where</span> <span class="s-Atom">to</span> <span class="s-Atom">begin</span><span class="p">.</span>
+     <span class="s-Atom">@cjno</span> <span class="s-Atom">pic</span> <span class="s-Atom">or</span> <span class="s-Atom">it</span> <span class="s-Atom">didn</span><span class="err">&#39;</span><span class="s-Atom">t</span> <span class="nf">happen</span> <span class="o">:-</span><span class="p">)</span>
+</pre></div>
+
+
+<p>``` {.lang:python .decode:true}
+for i in myapi.search("#watertown"):
+        print'name:', i.from_user,'\n', ':: twit:', i.text, '\n', 'geo:', i.geo</p>
+<div class="highlight"><pre> name: Sirajulrox98
+ :: twit: RT @Jessewelle: ish is getting real in Boston. Be safe people. Stay
+ in your house #Watertown.
+ geo: None
+ name: ConradddJay
+ :: twit: RT @YourAnonNews: Bomber&#39;s uncle: It&#39;s about being losers. Not
+ Chechnya. Not Islam. They deserve to die. http://t.co/SH1yhnBUFQ #Watertown
+ #BostonBombing
+ geo: None
+ name: Jesicakhua
+ :: twit: This goes to show that law enforcement in the US is better that
+ most other countries&#39; military. #watertown #boston
+ geo: None
+ name: SaraGCeli
+ :: twit: RT @mackissler: Little boy goes up to police officers and says
+ &quot;thank you!&quot; Near the #Watertown home where the suspect was caught.
+ http://t.co/xoGlNqx2Lt
+ geo: None
+ name: Gina_Gillespie
+ :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
+ http://t.co/hLSqKYKZUz #Watertown
+ geo: None
+ name: bumpinuglies55
+ :: twit: RT @MentalityMag: #Watertown Police Chief claims Tamerlan Tsarnaev
+ was cuffed and alive on the ground when Dzhokhar ran him over with stolen SUV,
+ killing him.
+ geo: None
+ name: watertowntab
+ :: twit: RT @ThatGuyBoston We are #watertown. We are boston. We are the
+ United States of America. Proud to be a family of Boston Firefighters
+ geo: None
+ name: DMillsTheGod
+ :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
+ http://t.co/hLSqKYKZUz #Watertown
+ geo: None
+ name: watertowntab
+ :: twit: RT @GarrettQuinn resident Taryn Sullivan, 28, says she was nervous
+ but &quot;put my faith in the #Watertown, State Police&quot; http://t.co/39Lf9HB32t
+ geo: None
+ name: infolibri
+ :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
+ http://t.co/hLSqKYKZUz #Watertown
+ geo: None
+ name: fabian70813
+ :: twit: RT @YourAnonNews: Cop to NBC reporter:&quot;if you knew what was going
+ on, you wouldn&#39;t be standing here right now.&quot;#watertown #manhunt #Boston via
+@CiaPressOffice
+ geo: None
+ name: PatrakaarPopat
+ :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
+ http://t.co/hLSqKYKZUz #Watertown
+ geo: None
+ name: HaaziqUvais
+ :: twit: RT @lisawilliams: Police searched my house while I was away. Attic
+ door open items on floor. No complaints: doing their job. #watertown
+ http://t.co/A4lw0ZBxoJ
+ geo: None
+ name: Slainte2505
+ :: twit: RT @OpocAnOn: #Dzhokhar #Tsarnaev in this wider picture running
+ from second bombing in #bostonbombing #manhunt #Watertown http://t.co/LXWlVR9RkQ
+ geo: None
+</pre></div>
+
+
+<div class="highlight"><pre>``` {.lang:python .decode:true}
+ for i in myapi.lists_subscriptions():
+        print i.name
+
+     pythonistas
+     python
+     Rails
+     rails guys
+     Rails
+     tech pundits
+     peoplewhomakestuff
+     Microsoft
+     MSExpSLTeam
+     Rad Designers
+     The Pixel Horde
+     Designer
+     Cool Infographics People
+     visual-effects-peeps
+     Design/Animation
+     design
+     design
+     Design, UI, Arts &amp; co
+     Graphics Software
+     UX - IxD
+</pre></div>
+
+
+<p>[line]</p>
+<h3>A little maths?</h3>
+<p>``` {.lang:python .decode:true}
+import numpy as np
+    import matplotlib.pyplot as plt</p>
+<div class="highlight"><pre>tweet_length = []
+for status in tweepy.Cursor(myapi.user_timeline).items(50):
+     tweet_length.append(len(status.text))
+
+# Convert tweet_length to numpy array
+b = np.array(tweet_length)
+
+#now calc mean
+vf = np.mean(b)
+
+#now plot it
+figure(1)
+plt.plot(b, &#39;gd&#39;)
+
+#Horizontal line
+axhline(y=92, linewidth=1, color=&#39;r&#39;)
+
+xlabel(&#39;Number of Tweets&#39;)
+ylabel(&#39;Number of Characters&#39;)
+title(&#39;Mean length of last 50 tweets: %f characters&#39; %vf)
+
+grid(True)
+</pre></div>
+
+
+<p>```</p>
+<p>![plot](/static/images/tweepy-ipynb.png)</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Michael Martinez
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

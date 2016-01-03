@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Basic Alembic Migrations with Flask - Caffeine Industries -</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/basic-alembic-migrations-with-flask.html">
+
+        <meta name="author" content="Michael" />
+        <meta name="description" content="This post will cover the minimal set-up to get basic (auto-generating) Alembic migrations working within a Flask application. The pre-requisites are; Flask, SQLAlchemy, Flask-SQLAlchemy and Alembic in case that wasn&#39;t obvious. My current project is being built with Flask utilizing SQLalchemy as an abstraction to my data persistence layer ..." />
+
+        <meta property="og:site_name" content="Caffeine Industries -" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Basic Alembic Migrations with Flask"/>
+        <meta property="og:url" content="/basic-alembic-migrations-with-flask.html"/>
+        <meta property="og:description" content="This post will cover the minimal set-up to get basic (auto-generating) Alembic migrations working within a Flask application. The pre-requisites are; Flask, SQLAlchemy, Flask-SQLAlchemy and Alembic in case that wasn&#39;t obvious. My current project is being built with Flask utilizing SQLalchemy as an abstraction to my data persistence layer ..."/>
+        <meta property="article:published_time" content="2013-05-10" />
+            <meta property="article:section" content="Uncategorized" />
+            <meta property="article:author" content="Michael" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Caffeine Industries -            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/ansible-docker.html">Ansible, docker</a>
+                        </li>
+                        <li >
+                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/computer.html">Computer</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura.html">Cordura</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/leather.html">Leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/programming-python.html">Programming, python</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/uncategorized.html">Uncategorized</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/basic-alembic-migrations-with-flask.html"
+                       rel="bookmark"
+                       title="Permalink to Basic Alembic Migrations with Flask">
+                        Basic Alembic Migrations with Flask
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-10T12:06:00-07:00"> Fri 10 May 2013</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This post will cover the minimal set-up to get basic (auto-generating)
+Alembic migrations working within a Flask application. The
+pre-requisites are;<br />
+Flask, SQLAlchemy, Flask-SQLAlchemy and Alembic in case that wasn't
+obvious.</p>
+<p>My current project is being built with <a href="http://flask.pocoo.org/">Flask</a>
+utilizing <a href="http://www.sqlalchemy.org/">SQLalchemy</a> as an abstraction to<br />
+my data persistence layer AKA ORM. I am also using the
+<a href="http://pythonhosted.org/Flask-SQLAlchemy/">Flask-SQLALchemy</a><br />
+extension to make life even easier. In the fantastic <a href="http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">Flask Mega
+Tutorial</a>,<br />
+Miguel Grinburg uses
+<a href="http://code.google.com/p/sqlalchemy-migrate">sqlalchemy-migrate</a> to
+manage the migrations of his database.<br />
+I found the code to be a bit heavy-handed and fragile, not to mention
+that sqlalchemy-migrate is incompatible with versions<br />
+of SQLAlchemy greater than 0.8, nor has it seen an update in sometime.
+The constant churn of packages and frameworks is a<br />
+~~risk~~feature of Open Source Software. One has to be comfortable with
+this situation and I am!</p>
+<p>That said, to the database migration rescue comes
+<a href="http://alembic.readthedocs.org/en/latest/">Alembic</a>. This package is<br />
+written by <a href="http://techspot.zzzeek.org/">Mike Mayer</a> who happens to be
+the father of SQLAlchemy itself. I can't<br />
+think of another person who would be more qualified to write such a
+tool than he. We are a truly lucky lot in this case!</p>
+<p>On with it now!</p>
+<h3>Get started</h3>
+<p>This first thing you need to do is create the migration environment. I
+suggest creating a virtualenv for your project before<br />
+you start.</p>
+<p>Once you have activated your virutalenv:</p>
+<p>``` {.lang:sh .decode:true}
+$ cd yourproject
+    $ pip install alembic
+    $ alembic init alembic</p>
+<div class="highlight"><pre><span class="n">This</span> <span class="n">command</span> <span class="n">creates</span> <span class="n">an</span> <span class="n">Alembic</span> <span class="n">directory</span> <span class="ow">and</span> <span class="n">alembic</span><span class="o">.</span><span class="n">ini</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">your</span>
+<span class="n">project</span> <span class="n">directory</span><span class="o">.</span> <span class="n">Running</span> \<span class="sb">`alembic init alembic\`</span>  
+<span class="n">creates</span> <span class="n">a</span> <span class="n">generic</span> <span class="n">configuration</span><span class="o">.</span> <span class="n">Run</span> <span class="n">it</span> <span class="k">as</span> <span class="n">described</span> <span class="n">above</span> <span class="n">unless</span> <span class="n">you</span>
+<span class="n">have</span> <span class="n">a</span> <span class="n">multi</span><span class="o">-</span><span class="n">database</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">pylons</span> <span class="n">project</span><span class="o">.</span> <span class="n">The</span> <span class="n">docs</span>  
+<span class="k">for</span> <span class="n">this</span> <span class="n">are</span>
+<span class="p">[</span><span class="n">here</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">alembic</span><span class="o">.</span><span class="n">readthedocs</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">tutorial</span><span class="o">.</span><span class="n">html</span><span class="c">#creating-an-environment).</span>
+
+<span class="c">### alembic.ini</span>
+
+<span class="n">Just</span> <span class="n">like</span> <span class="n">SQLAlchemy</span><span class="p">,</span> <span class="n">I</span> <span class="n">believe</span> <span class="n">Alembic</span> <span class="ow">is</span> <span class="n">customizable</span> <span class="n">to</span> <span class="n">its</span> <span class="n">very</span>
+<span class="n">core</span><span class="p">,</span> <span class="n">but</span> <span class="n">I</span> <span class="n">am</span> <span class="n">no</span> <span class="n">expert</span><span class="o">.</span> <span class="n">For</span> <span class="n">my</span> <span class="n">simple</span> <span class="n">mission</span> <span class="n">to</span> <span class="n">get</span> <span class="n">Alembic</span> <span class="n">running</span><span class="p">,</span>  
+<span class="n">I</span> <span class="n">chose</span> <span class="n">to</span> <span class="n">leave</span> <span class="n">this</span> <span class="nb">file</span> <span class="k">as</span> <span class="ow">is</span><span class="o">.</span> <span class="n">I</span> <span class="n">will</span> <span class="n">revisit</span> <span class="n">this</span> <span class="n">aspect</span> <span class="k">if</span>
+<span class="n">conditions</span> <span class="n">warrant</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">future</span> <span class="n">post</span><span class="o">.</span>
+
+<span class="c">### env.py</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">where</span> <span class="n">I</span> <span class="n">made</span> <span class="n">some</span> <span class="n">modifications</span> <span class="n">to</span> <span class="n">the</span> <span class="n">generated</span> <span class="nb">file</span> <span class="n">to</span> <span class="n">get</span> <span class="n">it</span>
+<span class="n">working</span> <span class="k">with</span> <span class="n">Flask</span><span class="o">.</span>
+
+<span class="sb">``</span><span class="err">`</span> <span class="p">{</span><span class="o">.</span><span class="n">lang</span><span class="p">:</span><span class="n">python</span> <span class="o">.</span><span class="n">decode</span><span class="p">:</span><span class="n">true</span><span class="p">}</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">with_statement</span>
+    <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="kn">from</span> <span class="nn">alembic</span> <span class="kn">import</span> <span class="n">context</span>
+    <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">engine_from_config</span><span class="p">,</span> <span class="n">pool</span>
+    <span class="kn">from</span> <span class="nn">logging.config</span> <span class="kn">import</span> <span class="n">fileConfig</span>
+
+    <span class="kn">from</span> <span class="o">&lt;</span><span class="n">application</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">app</span>
+    <span class="kn">from</span> <span class="o">&lt;</span><span class="n">application</span><span class="o">&gt;.</span><span class="n">models</span> <span class="kn">import</span> <span class="nn">db</span>
+
+    <span class="c"># This is the &#39;Generic&#39; alembic modified with some settings</span>
+    <span class="c"># specific to this app</span>
+
+    <span class="c"># this is the Alembic Config object, which provides</span>
+    <span class="c"># access to the values within the .ini file in use.</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">config</span>
+
+    <span class="c"># Overwrite the sqlalchemy.url in the alembic.ini file.</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">set_main_option</span><span class="p">(</span><span class="s">&#39;sqlalchemy.url&#39;</span><span class="p">,</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">])</span>
+
+    <span class="c"># Interpret the config file for Python logging.</span>
+    <span class="c"># This line sets up loggers basically.</span>
+    <span class="n">fileConfig</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">config_file_name</span><span class="p">)</span>
+
+    <span class="c"># add your model&#39;s MetaData object here</span>
+    <span class="c"># for &#39;autogenerate&#39; support</span>
+    <span class="c"># from myapp import mymodel</span>
+    <span class="c"># target_metadata = mymodel.Base.metadata</span>
+    <span class="n">target_metadata</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">metadata</span>
+</pre></div>
+
+
+<p>* Import os and sys to modify the path. I am not sure if this is a bug
+in Alembic, but I could not get<br />
+Alembic to find my modules without appending the current working
+directory to my path.<br />
+* Import your app and db. Note: this is application specific as Flask
+will let you set these up in a few different places.<br />
+* Override the sqlalchemy.url in Alembic.ini file with a pointer to
+your applications database config<br />
+* Use db.metadata to provide automatic migration generation support.</p>
+<h3>Autogenerate Migrations</h3>
+<p>``` {.lang:sh .decode:true}
+$ alembic revision --autogenerate -m "<insert message here>"</p>
+<div class="highlight"><pre>You can inspect and modify the migration created by looking in the
+\`application/alembic/versions/\` directory
+
+Docs for this are
+[here](https://alembic.readthedocs.org/en/latest/tutorial.html#auto-generating-migrations)
+
+### Run Migrations
+
+``` {.lang:sh .decode:true}
+$ alembic upgrade head
+</pre></div>
+
+
+<p>Docs for this are
+<a href="https://alembic.readthedocs.org/en/latest/tutorial.html#running-our-first-migration">here</a>.</p>
+<p>... and we are good to go! Basic Alembic migrations should be running
+with most Flask apps.<br />
+Flask is great framework for building python web apps. I plan on using
+it<br />
+extensively for the next few projects floating around in my head. There
+will be a lot more on that front<br />
+in due time. I will be sure to post more on my adventures with Flask,
+SQLAlchemy, Alembic and others as time permits...</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Michael Martinez
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

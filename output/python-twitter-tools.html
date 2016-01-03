@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Python Twitter Tools - Caffeine Industries -</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/python-twitter-tools.html">
+
+        <meta name="author" content="Michael" />
+        <meta name="description" content="In the first episode of playing with twitter, I demo&#39;ed Tweepy. In this episode, I will use the twitter library from Mike Verdone. install the library: `pip install twitter` In the README and other sources of documentation, the config for the user/app credentials are accessed via `os.path ..." />
+
+        <meta property="og:site_name" content="Caffeine Industries -" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Python Twitter Tools"/>
+        <meta property="og:url" content="/python-twitter-tools.html"/>
+        <meta property="og:description" content="In the first episode of playing with twitter, I demo&#39;ed Tweepy. In this episode, I will use the twitter library from Mike Verdone. install the library: `pip install twitter` In the README and other sources of documentation, the config for the user/app credentials are accessed via `os.path ..."/>
+        <meta property="article:published_time" content="2013-04-27" />
+            <meta property="article:section" content="Uncategorized" />
+            <meta property="article:author" content="Michael" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Caffeine Industries -            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/ansible-docker.html">Ansible, docker</a>
+                        </li>
+                        <li >
+                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/computer.html">Computer</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura.html">Cordura</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/leather.html">Leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/programming-python.html">Programming, python</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/uncategorized.html">Uncategorized</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/python-twitter-tools.html"
+                       rel="bookmark"
+                       title="Permalink to Python Twitter Tools">
+                        Python Twitter Tools
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-04-27T11:47:00-07:00"> Sat 27 April 2013</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>In the first episode of playing with twitter, I demo'ed<br />
+Tweepy. In this episode, I will use the<br />
+<a href="https://github.com/sixohsix/twitter">twitter library</a> from <a href="http://mike.verdone.ca/twitter/">Mike<br />
+Verdone</a>.</p>
+<ul>
+<li>install the library: `pip install twitter`</li>
+</ul>
+<p>In the README and other sources of documentation, the config for the
+user/app<br />
+credentials are accessed via `os.path` utilizing a
+`read_file_token` method.<br />
+This method of credential retrieval has perplexed me in the past
+because I was<br />
+unable to find a sort of "canonical" way of repeating this in other
+projects. So<br />
+before started evaluating the code base, I set out to see if I could
+find a more<br />
+'pythonic' way of storing and retrieving credentials. Lo and behold, we
+have a<br />
+ConfigParser module built right into the standard library. Further,
+Doug Hellmann<br />
+has graciously covered the ConfigParser module in great detail<br />
+<a href="http://pymotw.com/2/ConfigParser/">here</a>.</p>
+<p>To get started with this config option:</p>
+<ul>
+<li>create a twitter.ini file in the same directory as this file (its a
+simple text file)  </li>
+<li>type [twitter] to delineate a section (read about sections in the
+ConfigParser tut)  </li>
+<li>`parser.get` in this case looks in the twitter section and
+retrieves the value of the argument as a string.</li>
+</ul>
+<p>sample twitter.ini file</p>
+<p>:::bash<br />
+[twitter]<br />
+CONSUMER_KEY = iowef03434ijsasdfkdmjlfasdasdf2039sdkon<br />
+CONSUMER_SECRET = akldsjfsal3fadijfaosdfssasdk34<br />
+oauth_token = kasdljnbfglkajdsnfq3asdf4908<br />
+oauth_secret = dalkfewoieasdfjaosdkmcadfaslkjdfsdfalasdf</p>
+<p>note: these values are bogus</p>
+<p>``` {.lang:python .decode:true}
+from twitter import *
+    from ConfigParser import SafeConfigParser</p>
+<div class="highlight"><pre>parser = SafeConfigParser()
+parser.read(&#39;twitter.ini&#39;)
+
+consumer_key = parser.get(&#39;twitter&#39;, &#39;CONSUMER_KEY&#39;)
+consumer_secret = parser.get(&#39;twitter&#39;, &#39;CONSUMER_SECRET&#39;)
+oauth_access_token = parser.get(&#39;twitter&#39;, &#39;oauth_token&#39;)
+oauth_access_secret = parser.get(&#39;twitter&#39;, &#39;oauth_secret&#39;)
+
+twitter = Twitter(auth=OAuth(
+    oauth_access_token, oauth_access_secret, consumer_key, consumer_secret))
+
+# Update your status
+twitter.statuses.update(
+    status=&quot;Control the things that are in your control&quot;)
+
+{u&#39;contributors&#39;: None,
+ u&#39;coordinates&#39;: None,
+ u&#39;created_at&#39;: u&#39;Tue Apr 23 05:15:56 +0000 2013&#39;,
+ u&#39;entities&#39;: {u&#39;hashtags&#39;: [], u&#39;urls&#39;: [], u&#39;user_mentions&#39;: []},
+ u&#39;favorited&#39;: False,
+ u&#39;geo&#39;: None,
+ u&#39;id&#39;: 326565076066766848,
+ u&#39;id_str&#39;: u&#39;326565076066766848&#39;,
+ u&#39;in_reply_to_screen_name&#39;: None,
+ u&#39;in_reply_to_status_id&#39;: None,
+ u&#39;in_reply_to_status_id_str&#39;: None,
+ u&#39;in_reply_to_user_id&#39;: None,
+ u&#39;in_reply_to_user_id_str&#39;: None,
+ u&#39;place&#39;: None,
+ u&#39;retweet_count&#39;: 0,
+ u&#39;retweeted&#39;: False,
+ u&#39;source&#39;: u&#39;ipython-local&#39;,
+ u&#39;text&#39;: u&#39;Control the things that are in your control&#39;,
+ u&#39;truncated&#39;: False,
+ u&#39;user&#39;: {u&#39;contributors_enabled&#39;: False,
+  u&#39;created_at&#39;: u&#39;Sun Oct 31 17:44:06 +0000 2010&#39;,
+  u&#39;default_profile&#39;: False,
+  u&#39;default_profile_image&#39;: False,
+  u&#39;description&#39;: u&#39;Father. Firefighter. Mobile Crafter. Web Crafter. Garage-Business-Dude. &#39;,
+  u&#39;entities&#39;: {u&#39;description&#39;: {u&#39;urls&#39;: []},
+   u&#39;url&#39;: {u&#39;urls&#39;: [{u&#39;display_url&#39;: u&#39;michaelmartinez.in&#39;,
+      u&#39;expanded_url&#39;: u&#39;http://michaelmartinez.in&#39;,
+      u&#39;indices&#39;: [0, 22],
+      u&#39;url&#39;: u&#39;http://t.co/MTXlg5n87M&#39;}]}},
+  u&#39;favourites_count&#39;: 1,
+  u&#39;follow_request_sent&#39;: False,
+  u&#39;followers_count&#39;: 118,
+  u&#39;following&#39;: False,
+  u&#39;friends_count&#39;: 441,
+  u&#39;geo_enabled&#39;: False,
+  u&#39;id&#39;: 210539658,
+  u&#39;id_str&#39;: u&#39;210539658&#39;,
+  u&#39;is_translator&#39;: False,
+  u&#39;lang&#39;: u&#39;en&#39;,
+  u&#39;listed_count&#39;: 3,
+  u&#39;location&#39;: u&#39;Arizona&#39;,
+  u&#39;name&#39;: u&#39;Michael Martinez&#39;,
+  u&#39;notifications&#39;: False,
+  u&#39;profile_background_color&#39;: u&#39;706B5C&#39;,
+  u&#39;profile_background_image_url&#39;: u&#39;http://a0.twimg.com/profile_background_images/543977615/tankdude1-Twit.jpg&#39;,
+  u&#39;profile_background_image_url_https&#39;: u&#39;https://si0.twimg.com/profile_background_images/543977615/tankdude1-Twit.jpg&#39;,
+  u&#39;profile_background_tile&#39;: False,
+  u&#39;profile_image_url&#39;: u&#39;http://a0.twimg.com/profile_images/1496212678/myMascot_normal.png&#39;,
+  u&#39;profile_image_url_https&#39;: u&#39;https://si0.twimg.com/profile_images/1496212678/myMascot_normal.png&#39;,
+  u&#39;profile_link_color&#39;: u&#39;009999&#39;,
+  u&#39;profile_sidebar_border_color&#39;: u&#39;EEEEEE&#39;,
+  u&#39;profile_sidebar_fill_color&#39;: u&#39;EFEFEF&#39;,
+  u&#39;profile_text_color&#39;: u&#39;333333&#39;,
+  u&#39;profile_use_background_image&#39;: True,
+  u&#39;protected&#39;: False,
+  u&#39;screen_name&#39;: u&#39;MonkMartinez&#39;,
+  u&#39;statuses_count&#39;: 1582,
+  u&#39;time_zone&#39;: u&#39;Arizona&#39;,
+  u&#39;url&#39;: u&#39;http://t.co/MTXlg5n87M&#39;,
+  u&#39;utc_offset&#39;: -25200,
+  u&#39;verified&#39;: False}}
+</pre></div>
+
+
+<div class="highlight"><pre>The nice thing about PTT is that you can inspect the returned fields of
+the  
+Twitter API requested as you work. This may save time in that you don&#39;t
+need to  
+look at the API docs as much. It may also aid in the access of data, as
+nested  
+dict&#39;s and tuples are not easy to iterate if you don&#39;t know how many
+layers of  
+nesting to uncover. For example:
+
+``` {.lang:python .decode:true}
+ home_timeline = twitter.statuses.home_timeline() # returns sweet, parseable decoded json
+    home_timeline[0] # the most recent tweet in my timeline
+
+    {u&#39;contributors&#39;: None,
+     u&#39;coordinates&#39;: None,
+     u&#39;created_at&#39;: u&#39;Tue Apr 23 05:16:38 +0000 2013&#39;,
+     u&#39;entities&#39;: {u&#39;hashtags&#39;: [],
+      u&#39;symbols&#39;: [],
+      u&#39;urls&#39;: [{u&#39;display_url&#39;: u&#39;oreilly.com/openbook/&#39;,
+        u&#39;expanded_url&#39;: u&#39;http://oreilly.com/openbook/&#39;,
+        u&#39;indices&#39;: [20, 42],
+        u&#39;url&#39;: u&#39;http://t.co/vtk5YWe44y&#39;}],
+      u&#39;user_mentions&#39;: []},
+     u&#39;favorite_count&#39;: 0,
+     u&#39;favorited&#39;: False,
+     u&#39;geo&#39;: None,
+     u&#39;id&#39;: 326565255465558017,
+     u&#39;id_str&#39;: u&#39;326565255465558017&#39;,
+     u&#39;in_reply_to_screen_name&#39;: None,
+     u&#39;in_reply_to_status_id&#39;: None,
+     u&#39;in_reply_to_status_id_str&#39;: None,
+     u&#39;in_reply_to_user_id&#39;: None,
+     u&#39;in_reply_to_user_id_str&#39;: None,
+     u&#39;lang&#39;: u&#39;en&#39;,
+     u&#39;place&#39;: None,
+     u&#39;possibly_sensitive&#39;: False,
+     u&#39;retweet_count&#39;: 0,
+     u&#39;retweeted&#39;: False,
+     u&#39;source&#39;: u&#39;&lt;a href=&quot;http://www.tweetdeck.com&quot; rel=&quot;nofollow&quot;&gt;TweetDeck&lt;/a&gt;&#39;,
+     u&#39;text&#39;: u&quot;Free O&#39;Reilly books http://t.co/vtk5YWe44y&quot;,
+     u&#39;truncated&#39;: False,
+     u&#39;user&#39;: {u&#39;contributors_enabled&#39;: False,
+      u&#39;created_at&#39;: u&#39;Tue Mar 13 20:12:40 +0000 2007&#39;,
+      u&#39;default_profile&#39;: False,
+      u&#39;default_profile_image&#39;: False,
+      u&#39;description&#39;: u&#39;Now putting podcasts in the cloud at http://t.co/kuIpq9dj. Previously Google, Osmosoft. #HTML5 #Rails #UX #DevExp michael@mahemoff.com&#39;,
+      u&#39;entities&#39;: {u&#39;description&#39;: {u&#39;urls&#39;: [{u&#39;display_url&#39;: u&#39;player.fm&#39;,
+          u&#39;expanded_url&#39;: u&#39;http://player.fm&#39;,
+          u&#39;indices&#39;: [37, 57],
+          u&#39;url&#39;: u&#39;http://t.co/kuIpq9dj&#39;}]},
+       u&#39;url&#39;: {u&#39;urls&#39;: [{u&#39;expanded_url&#39;: None,
+          u&#39;indices&#39;: [0, 19],
+          u&#39;url&#39;: u&#39;http://mahemoff.com&#39;}]}},
+      u&#39;favourites_count&#39;: 1747,
+      u&#39;follow_request_sent&#39;: None,
+      u&#39;followers_count&#39;: 5715,
+      u&#39;following&#39;: True,
+      u&#39;friends_count&#39;: 1138,
+      u&#39;geo_enabled&#39;: False,
+      u&#39;id&#39;: 1112431,
+      u&#39;id_str&#39;: u&#39;1112431&#39;,
+      u&#39;is_translator&#39;: False,
+      u&#39;lang&#39;: u&#39;en&#39;,
+      u&#39;listed_count&#39;: 486,
+      u&#39;location&#39;: u&#39;London + Melbourne&#39;,
+      u&#39;name&#39;: u&#39;Michael Mahemoff&#39;,
+      u&#39;notifications&#39;: None,
+      u&#39;profile_background_color&#39;: u&#39;022330&#39;,
+      u&#39;profile_background_image_url&#39;: u&#39;http://a0.twimg.com/profile_background_images/97774687/twilk_background_4bddb8dda6006.jpg&#39;,
+      u&#39;profile_background_image_url_https&#39;: u&#39;https://si0.twimg.com/profile_background_images/97774687/twilk_background_4bddb8dda6006.jpg&#39;,
+      u&#39;profile_background_tile&#39;: False,
+      u&#39;profile_image_url&#39;: u&#39;http://a0.twimg.com/profile_images/1150432577/speakhdr_normal.jpg&#39;,
+      u&#39;profile_image_url_https&#39;: u&#39;https://si0.twimg.com/profile_images/1150432577/speakhdr_normal.jpg&#39;,
+      u&#39;profile_link_color&#39;: u&#39;717273&#39;,
+      u&#39;profile_sidebar_border_color&#39;: u&#39;000000&#39;,
+      u&#39;profile_sidebar_fill_color&#39;: u&#39;99CC33&#39;,
+      u&#39;profile_text_color&#39;: u&#39;3E4415&#39;,
+      u&#39;profile_use_background_image&#39;: True,
+      u&#39;protected&#39;: False,
+      u&#39;screen_name&#39;: u&#39;mahemoff&#39;,
+      u&#39;statuses_count&#39;: 12996,
+      u&#39;time_zone&#39;: u&#39;London&#39;,
+      u&#39;url&#39;: u&#39;http://mahemoff.com&#39;,
+      u&#39;utc_offset&#39;: 0,
+      u&#39;verified&#39;: False}}
+</pre></div>
+
+
+<p>``` {.lang:python .decode:true}
+ home_timeline[0]['text']</p>
+<div class="highlight"><pre>u&quot;Free O&#39;Reilly books http://t.co/vtk5YWe44y&quot;
+</pre></div>
+
+
+<div class="highlight"><pre>urls is a nested dict inside a dict of from the tweet above. Lets see
+how we  
+would access that data if we needed it...
+
+``` {.lang:python .decode:true}
+    def double_nest():
+        for i in home_timeline[0][&#39;entities&#39;][&#39;urls&#39;]:
+            print i
+            return i
+    double_nest()
+
+    {u&#39;url&#39;: u&#39;http://t.co/vtk5YWe44y&#39;indices&#39;: [20, 42], u&#39;expanded_url&#39;:
+    u&#39;http://oreilly.com/openbook/&#39;, u&#39;display_url&#39;: u&#39;oreilly.com/openbook/&#39;} 
+    {u&#39;display_url&#39;: u&#39;oreilly.com/openbook/&#39;,
+     u&#39;expanded_url&#39;: u&#39;http://oreilly.com/openbook/&#39;,
+     u&#39;indices&#39;: [20, 42],
+     u&#39;url&#39;: u&#39;http://t.co/vtk5YWe44y&#39;}
+</pre></div>
+
+
+<p>So now that we have the basics down, lets poke around some of the more<br />
+interesting API endpoints. I'm going to investigate trends and this
+requires a<br />
+<a href="http://developer.yahoo.com/geo/geoplanet/guide/concepts.html">WOEID</a>
+and because I am a bit lazy, this WOEID look up should suffice: <a href="http://woeid.rosselliot.co.nz/">WOEID
+Look<br />
+up.</a></p>
+<p>``` {.lang:python .decode:true}
+trends_available = twitter.trends.available() # returns a long list of places where trends currently "exist" 
+    trends_available</p>
+<div class="highlight"><pre>[{u&#39;country&#39;: u&#39;&#39;,
+  u&#39;countryCode&#39;: None,
+  u&#39;name&#39;: u&#39;Worldwide&#39;,
+  u&#39;parentid&#39;: 0,
+  u&#39;placeType&#39;: {u&#39;code&#39;: 19, u&#39;name&#39;: u&#39;Supername&#39;},
+  u&#39;url&#39;: u&#39;http://where.yahooapis.com/v1/place/1&#39;,
+  u&#39;woeid&#39;: 1},
+ {u&#39;country&#39;: u&#39;Brazil&#39;,
+  u&#39;countryCode&#39;: u&#39;BR&#39;,
+  u&#39;name&#39;: u&#39;Manaus&#39;,
+  u&#39;parentid&#39;: 23424768,
+  u&#39;placeType&#39;: {u&#39;code&#39;: 7, u&#39;name&#39;: u&#39;Town&#39;},
+  u&#39;url&#39;: u&#39;http://where.yahooapis.com/v1/place/455833&#39;,
+  u&#39;woeid&#39;: 455833},
+  u&#39;placeType&#39;: {u&#39;code&#39;: 7, u&#39;name&#39;: u&#39;Town&#39;},
+  u&#39;url&#39;: u&#39;http://where.yahooapis.com/v1/place/455867&#39;,
+  u&#39;woeid&#39;: 455867},
+ {u&#39;country&#39;: u&#39;Argentina&#39;,
+  u&#39;countryCode&#39;: u&#39;AR&#39;,
+  u&#39;name&#39;: u&#39;C\xf3rdoba&#39;,
+  u&#39;parentid&#39;: 23424747,
+  u&#39;placeType&#39;: {u&#39;code&#39;: 7, u&#39;name&#39;: u&#39;Town&#39;},
+  u&#39;url&#39;: u&#39;http://where.yahooapis.com/v1/place/466861&#39;,
+  u&#39;woeid&#39;: 466861},
+ {u&#39;country&#39;: u&#39;Argentina&#39;,
+  u&#39;countryCode&#39;: u&#39;AR&#39;,
+  u&#39;name&#39;: u&#39;Rosario&#39;,
+  u&#39;parentid&#39;: 23424747,
+  u&#39;placeType&#39;: {u&#39;code&#39;: 7, u&#39;name&#39;: u&#39;Town&#39;},
+  u&#39;url&#39;: u&#39;http://where.yahooapis.com/v1/place/466862&#39;,
+  u&#39;woeid&#39;: 466862},
+ ... cut to save space
+</pre></div>
+
+
+<div class="highlight"><pre>Tucson, Arizona USA = 2508428. Note for passing parameters into
+requests, the  
+magic underscore is nessesary as seen in \`\_id=&quot;2508428\`
+
+``` {.lang:python .decode:true}
+    trends_tucson = twitter.trends.place(_id=&quot;2508428&quot;)
+    for i in trends_tucson:
+        for b in i[&#39;trends&#39;]:
+            print b[&#39;name&#39;]
+
+
+
+    #5PainfulThings
+    #IntialsOfSomeoneYouCareAbout
+    #MediaQuestionsForDzhokhar
+    #encorepaso
+    #ThereGoesMyPants
+    Tony Allen
+    Eric Bledsoe
+    Matt Barnes
+    Brandon Belt
+    Lamar Odom
+</pre></div>
+
+
+<p>Nothing really happening in Tucson as these closely match the global
+trends...<br />
+but San Diego is mentioned, what about San Diego? WOEID = 2487889</p>
+<p>``` {.lang:python .decode:true}
+trends_SD = twitter.trends.place(_id="2487889")
+    for i in trends_SD:
+        for b in i['trends']:
+            print b['name']</p>
+<div class="highlight"><pre>#middleschoolmemories
+#IntialsOfSomeoneYouCareAbout
+#LHHATL
+#ItsTooEarlyTo
+#earthday
+Tony Allen
+Z Bo
+Jason&#39;s Lyric
+Matt Barnes
+Rudy Gay
+</pre></div>
+
+
+<div class="highlight"><pre>Cool, some of these look interesting but I&#39;ll leave the investigation to
+you ...  
+Boston had some major incidents this past week. Are Bostonians still
+talking  
+about it? Boston WOEID = 2367105
+
+``` {.lang:python .decode:true}
+trends_Bos = twitter.trends.place(_id=&quot;2367105&quot;)
+    for i in trends_Bos:
+        for b in i[&#39;trends&#39;]:
+            print b[&#39;name&#39;]
+
+
+    #IntialsOfSomeoneYouCareAbout
+    #ItsTooEarlyTo
+    #LHHATL
+    #RAW
+    Happy Earth Day
+    Stevie J
+    #dragrace
+    Jason&#39;s Lyric
+    Tony Allen
+    Eric Bledsoe
+</pre></div>
+
+
+<p>Hmmm... TV shows and big topics... One would assume (you know about
+assumptions) that perhaps we could find<br />
+something about the recent events in Boston trending.</p>
+<p>Lets see what a geo search for Tucson yields. There are a million of
+cool and novel ways to use this data,<br />
+this little demo simply shows you how to access the data.</p>
+<p>``` {.lang:python .decode:true}
+geo_tweets = twitter.geo.search(query="tucson")
+    geo_tweets['result']</p>
+<div class="highlight"><pre>{u&#39;places&#39;: [{u&#39;attributes&#39;: {},
+   u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-111.059406, 32.033883],
+      [-110.708206, 32.033883],
+      [-110.708206, 32.32095],
+      [-111.059406, 32.32095]]],
+    u&#39;type&#39;: u&#39;Polygon&#39;},
+   u&#39;contained_within&#39;: [{u&#39;attributes&#39;: {},
+     u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-114.816591, 31.332177],
+        [-109.045223, 31.332177],
+        [-109.045223, 37.00426],
+        [-114.816591, 37.00426]]],
+      u&#39;type&#39;: u&#39;Polygon&#39;},
+     u&#39;country&#39;: u&#39;United States&#39;,
+     u&#39;country_code&#39;: u&#39;US&#39;,
+     u&#39;full_name&#39;: u&#39;Arizona, US&#39;,
+     u&#39;id&#39;: u&#39;a612c69b44b2e5da&#39;,
+     u&#39;name&#39;: u&#39;Arizona&#39;,
+     u&#39;place_type&#39;: u&#39;admin&#39;,
+     u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/a612c69b44b2e5da.json&#39;}],
+   u&#39;country&#39;: u&#39;United States&#39;,
+   u&#39;country_code&#39;: u&#39;US&#39;,
+   u&#39;full_name&#39;: u&#39;Tucson, AZ&#39;,
+   u&#39;id&#39;: u&#39;e6a7d49161470b37&#39;,
+   u&#39;name&#39;: u&#39;Tucson&#39;,
+   u&#39;place_type&#39;: u&#39;city&#39;,
+   u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/e6a7d49161470b37.json&#39;},
+  {u&#39;attributes&#39;: {},
+   u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-110.977543, 32.185824],
+      [-110.960795, 32.185824],
+      [-110.960795, 32.203223],
+      [-110.977543, 32.203223]]],
+    u&#39;type&#39;: u&#39;Polygon&#39;},
+   u&#39;contained_within&#39;: [{u&#39;attributes&#39;: {},
+     u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-114.816591, 31.332177],
+        [-109.045223, 31.332177],
+        [-109.045223, 37.00426],
+        [-114.816591, 37.00426]]],
+      u&#39;type&#39;: u&#39;Polygon&#39;},
+     u&#39;country&#39;: u&#39;United States&#39;,
+     u&#39;country_code&#39;: u&#39;US&#39;,
+     u&#39;full_name&#39;: u&#39;Arizona, US&#39;,
+     u&#39;id&#39;: u&#39;a612c69b44b2e5da&#39;,
+     u&#39;name&#39;: u&#39;Arizona&#39;,
+     u&#39;place_type&#39;: u&#39;admin&#39;,
+     u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/a612c69b44b2e5da.json&#39;}],
+   u&#39;country&#39;: u&#39;United States&#39;,
+   u&#39;country_code&#39;: u&#39;US&#39;,
+   u&#39;full_name&#39;: u&#39;South Tucson, AZ&#39;,
+   u&#39;id&#39;: u&#39;9ba0ab30258b7362&#39;,
+   u&#39;name&#39;: u&#39;South Tucson&#39;,
+   u&#39;place_type&#39;: u&#39;city&#39;,
+   u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/9ba0ab30258b7362.json&#39;},
+  {u&#39;attributes&#39;: {},
+   u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-111.218168, 32.154521],
+      [-111.044793, 32.154521],
+      [-111.044793, 32.248227],
+      [-111.218168, 32.248227]]],
+    u&#39;type&#39;: u&#39;Polygon&#39;},
+   u&#39;contained_within&#39;: [{u&#39;attributes&#39;: {},
+     u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-114.816591, 31.332177],
+        [-109.045223, 31.332177],
+        [-109.045223, 37.00426],
+        [-114.816591, 37.00426]]],
+      u&#39;type&#39;: u&#39;Polygon&#39;},
+     u&#39;country&#39;: u&#39;United States&#39;,
+     u&#39;country_code&#39;: u&#39;US&#39;,
+     u&#39;full_name&#39;: u&#39;Arizona, US&#39;,
+     u&#39;id&#39;: u&#39;a612c69b44b2e5da&#39;,
+     u&#39;name&#39;: u&#39;Arizona&#39;,
+     u&#39;place_type&#39;: u&#39;admin&#39;,
+     u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/a612c69b44b2e5da.json&#39;}],
+   u&#39;country&#39;: u&#39;United States&#39;,
+   u&#39;country_code&#39;: u&#39;US&#39;,
+   u&#39;full_name&#39;: u&#39;Tucson Estates, AZ&#39;,
+   u&#39;id&#39;: u&#39;2df92895f5362a8a&#39;,
+   u&#39;name&#39;: u&#39;Tucson Estates&#39;,
+   u&#39;place_type&#39;: u&#39;city&#39;,
+   u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/2df92895f5362a8a.json&#39;},
+  {u&#39;attributes&#39;: {},
+   u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-110.789464, 31.932823],
+      [-110.755804, 31.932823],
+      [-110.755804, 31.963138],
+      [-110.789464, 31.963138]]],
+    u&#39;type&#39;: u&#39;Polygon&#39;},
+   u&#39;contained_within&#39;: [{u&#39;attributes&#39;: {},
+     u&#39;bounding_box&#39;: {u&#39;coordinates&#39;: [[[-114.816591, 31.332177],
+        [-109.045223, 31.332177],
+        [-109.045223, 37.00426],
+        [-114.816591, 37.00426]]],
+      u&#39;type&#39;: u&#39;Polygon&#39;},
+     u&#39;country&#39;: u&#39;United States&#39;,
+     u&#39;country_code&#39;: u&#39;US&#39;,
+     u&#39;full_name&#39;: u&#39;Arizona, US&#39;,
+     u&#39;id&#39;: u&#39;a612c69b44b2e5da&#39;,
+     u&#39;name&#39;: u&#39;Arizona&#39;,
+     u&#39;place_type&#39;: u&#39;admin&#39;,
+     u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/a612c69b44b2e5da.json&#39;}],
+   u&#39;country&#39;: u&#39;United States&#39;,
+   u&#39;country_code&#39;: u&#39;US&#39;,
+   u&#39;full_name&#39;: u&#39;Corona de Tucson, AZ&#39;,
+   u&#39;id&#39;: u&#39;4d35b22f6680264a&#39;,
+   u&#39;name&#39;: u&#39;Corona de Tucson&#39;,
+   u&#39;place_type&#39;: u&#39;city&#39;,
+   u&#39;url&#39;: u&#39;https://api.twitter.com/1.1/geo/id/4d35b22f6680264a.json&#39;}]}
+</pre></div>
+
+
+<div class="highlight"><pre>Cool, Now we&#39;ll perform a query for tweets containing \`python job\` and
+iterate  
+the results:
+
+``` {.lang:python .decode:true}
+fun_search = twitter.search.tweets(q=&quot;python job&quot;,result_type=&#39;recent&#39;, count=20)
+    #fun_search # uncomment to see the returned data for fields that look interesting...
+
+    for b in fun_search[&#39;statuses&#39;]:
+        for c in b[&#39;entities&#39;][&#39;urls&#39;]:
+            print b[&#39;text&#39;], b[&#39;created_at&#39;], c[&#39;url&#39;]
+
+
+    Lead Software Engineer (Server side, Python) * http://t.co/qObCXSv46P
+    * Empresa: F-Secure * Lugar: Helsinki #empleo #trabajo #finlandia Tue Apr 23
+    05:22:07 +0000 2013 http://t.co/qObCXSv46P
+    #Python Install and configure reddit clone script on amazon web services by
+    gorrrra: Configure existing r... http://t.co/VgYuI3te4T #Job Tue Apr 23 05:14:09
+    +0000 2013 http://t.co/VgYuI3te4T
+    New Job Alert: Senior Software Engineers (Ruby on Rails, Python and/or Java)
+    at Rafte... http://t.co/Ef7ZsAGdAe #python #jobs Tue Apr 23 05:07:38 +0000 2013
+    http://t.co/Ef7ZsAGdAe
+    Site Reliability Engineer http://t.co/J784yxGA3w #java #python #jobs #hiring
+    #careers Tue Apr 23 05:00:47 +0000 2013 http://t.co/J784yxGA3w
+    #uitgeverij #Belgie Python Developer gevraagd voor interne functie te
+    Antwerpen: Comput... http://t.co/NstoYH6KIh http://t.co/6R25reAyu2 Tue Apr 23
+    04:47:51 +0000 2013 http://t.co/NstoYH6KIh
+    #uitgeverij #Belgie Python Developer gevraagd voor interne functie te
+    Antwerpen: Comput... http://t.co/NstoYH6KIh http://t.co/6R25reAyu2 Tue Apr 23
+    04:47:51 +0000 2013 http://t.co/6R25reAyu2
+    [Full-time] Seeking Passionate Python developers at Soshio
+    http://t.co/YVWCEEBBhA Tue Apr 23 04:36:33 +0000 2013 http://t.co/YVWCEEBBhA
+    RT @zs_frontline: ［Web求人情報］
+     Python，Ruby，Perl，PHP，Javaなどを用いたWebアプリの開発やフロントエンド、デザイン案件まで多数あります！...
+    http://t.co/t8WBRghjFF Tue Apr 23 04:03:26 +0000 2013 http://t.co/t8WBRghjFF
+    ［Web求人情報］
+     Python，Ruby，Perl，PHP，Javaなどを用いたWebアプリの開発やフロントエンド、デザイン案件まで多数あります！...
+    http://t.co/t8WBRghjFF Tue Apr 23 04:00:06 +0000 2013 http://t.co/t8WBRghjFF
+    #job http://t.co/ew5ADWt8oE
+     - Senior Python / MongoDB Developer, Array Tue Apr 23 03:55:12 +0000 2013
+    http://t.co/ew5ADWt8oE
+    #job http://t.co/4WMtLjTtJ0
+     - Разработчик Python, Array Tue Apr 23 03:54:08 +0000 2013
+    http://t.co/4WMtLjTtJ0
+    Python Flask Data Collection http://t.co/cLcyyLaqri Tue Apr 23 03:53:40
+    +0000 2013 http://t.co/cLcyyLaqri
+    RT @findmjob: Site Reliability Engineer http://t.co/J784yxGA3w #php #git
+    #java #rest #unix #ruby #mysql #redis #python #hadoop... http://t.… Tue Apr 23
+    03:46:13 +0000 2013 http://t.co/J784yxGA3w
+    Site Reliability Engineer http://t.co/J784yxGA3w #php #git #java #rest #unix
+    #ruby #mysql #redis #python #hadoop... http://t.co/6xrPUo9zRr Tue Apr 23
+    03:42:08 +0000 2013 http://t.co/J784yxGA3w
+    Site Reliability Engineer http://t.co/J784yxGA3w #php #git #java #rest #unix
+    #ruby #mysql #redis #python #hadoop... http://t.co/6xrPUo9zRr Tue Apr 23
+    03:42:08 +0000 2013 http://t.co/6xrPUo9zRr
+    Programador Python: Porto Alegre - RS -  Anúncio nº: 919784 Programador(a)
+    PythonAnúncio p... http://t.co/fYoyZ35xLT #vagas #programador Tue Apr 23
+    03:29:42 +0000 2013 http://t.co/fYoyZ35xLT
+    New Job Alert: Software Engineer - Python at Jawbone (San Francisco, CA):
+    technical design speci... http://t.co/02proruK5j #python #jobs Tue Apr 23
+    03:09:55 +0000 2013 http://t.co/02proruK5j
+    #job #python Write up 3 algorithm base on an interface and abstraction in
+    OCaml by kennguy13: Sorry... http://t.co/PGb3klkXbV #freelance Tue Apr 23
+    03:06:00 +0000 2013 http://t.co/PGb3klkXbV
+    #C Write up 3 algorithm base on an interface and abstraction in OCaml by
+    kennguy13: Sorry the project has... http://t.co/eV5enpwGcD #JOB Tue Apr 23
+    03:02:37 +0000 2013 http://t.co/eV5enpwGcD
+    #C Write up 3 algorithm base on an interface and abstraction in OCaml by
+    kennguy13: Sorry the pro... http://t.co/V5cPAOv7PX #Programming Tue Apr 23
+    03:02:36 +0000 2013 http://t.co/V5cPAOv7PX
+    #Python Write up 3 algorithm base on an interface and abstraction in OCaml
+    by kennguy13: Sorry the projec... http://t.co/57Kw3abxVV #Job Tue Apr 23
+    02:18:35 +0000 2013 http://t.co/57Kw3abxVV
+</pre></div>
+
+
+<p>If the traditional method of accessing Twitter bores you or you want
+finer<br />
+control over your use of the Twitter services, I think Python Twitter
+Tools is a<br />
+viable option. It reliably hits and maps to the Twitter API and comes
+packed<br />
+with an IRCBOT and commandline utilities. PTT is actively maintained as
+of this<br />
+writing and looks well constructed in my opinion.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Michael Martinez
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

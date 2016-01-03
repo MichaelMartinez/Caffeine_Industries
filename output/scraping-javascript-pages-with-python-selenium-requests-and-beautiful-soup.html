@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Scraping JavaScript pages with Python: Selenium, Requests, and Beautiful Soup - Caffeine Industries -</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/scraping-javascript-pages-with-python-selenium-requests-and-beautiful-soup.html">
+
+        <meta name="author" content="Michael" />
+        <meta name="description" content="Note: Imgur has an API. Please use the API if you intend to gather images from Imgur. This post is a short demonstration of scraping JavaScript webpages that are not possible to scrape with Beautiful Soup or Requests by themselves. While imgur has an API, the thought occurred that perhaps ..." />
+
+        <meta property="og:site_name" content="Caffeine Industries -" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Scraping JavaScript pages with Python: Selenium, Requests, and Beautiful Soup"/>
+        <meta property="og:url" content="/scraping-javascript-pages-with-python-selenium-requests-and-beautiful-soup.html"/>
+        <meta property="og:description" content="Note: Imgur has an API. Please use the API if you intend to gather images from Imgur. This post is a short demonstration of scraping JavaScript webpages that are not possible to scrape with Beautiful Soup or Requests by themselves. While imgur has an API, the thought occurred that perhaps ..."/>
+        <meta property="article:published_time" content="2015-12-03" />
+            <meta property="article:section" content="BeautifulSoup, Javascript, Python, Requests, Scraping, Selenium" />
+            <meta property="article:author" content="Michael" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Caffeine Industries -            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/ansible-docker.html">Ansible, docker</a>
+                        </li>
+                        <li >
+                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/computer.html">Computer</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura.html">Cordura</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/leather.html">Leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/programming-python.html">Programming, python</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+                        <li >
+                            <a href="/category/uncategorized.html">Uncategorized</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/scraping-javascript-pages-with-python-selenium-requests-and-beautiful-soup.html"
+                       rel="bookmark"
+                       title="Permalink to Scraping JavaScript pages with Python: Selenium, Requests, and Beautiful Soup">
+                        Scraping JavaScript pages with Python: Selenium, Requests, and Beautiful Soup
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-12-03T23:08:00-07:00"> Thu 03 December 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><strong>Note: Imgur has an API. Please use the API if you intend to gather
+images from Imgur.</strong></p>
+<p>This post is a short demonstration of scraping JavaScript webpages that
+are not possible to scrape with <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful
+Soup</a> or
+<a href="http://docs.python-requests.org/en/latest/">Requests</a> by themselves.
+ While imgur has an API, the thought occurred that perhaps there are
+many, many sites that do not have an API that need a good scraping. If
+that is the case, how do you scrape them?
+<a href="http://selenium-python.readthedocs.org/installation.html">Selenium</a>.
+Lets dive in and I will show you:</p>
+<p>First things first, import the modules that will be used. You will need
+to install these I prefer to use the
+<a href="https://www.continuum.io/downloads">Anaconda</a> Python distribution. The
+managing of Python environments is not in the scope of this demo, so I
+will leave the management of that to you. Suffice to say that you can
+install requests and beautiful soup with conda. Selenium can be created
+as a package then uploaded to Anaconda Cloud with Binstar and... well,
+you can simply install Selenium with pip.</p>
+<p>``` {.lang:python .decode:true}
+import os
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from requests import get</p>
+<div class="highlight"><pre>\[line\]  
+Next, define where you want to store the images. This will store the
+image in the present working directory or the directory where the script
+lives.
+
+``` {.lang:python .decode:true}
+# Make a directory in the pwd, if one already exists. Cool.
+os.makedirs(&#39;imgur&#39;, exist_ok=True) # Make directory to store the images
+</pre></div>
+
+
+<p>[line]<br />
+Now we can instantiate the Selenium webdriver, and pass a url to fetch.
+I used firefox because it seems like it is very well supported. I didn't
+even try with Chrome which is my browser of choice.</p>
+<p>``` {.lang:python .decode:true}</p>
+<h1>Imgur is not possible to scrape without Selenium. Because Javascript.</h1>
+<p>browser = webdriver.Firefox() # Instantiate a webdriver object
+browser.get('http://imgur.com') # Go to Imgur</p>
+<div class="highlight"><pre>\[<span class="n">line</span>\]  
+<span class="n">This</span> <span class="k">is</span> <span class="k">where</span> <span class="n">your</span> <span class="n">investigation</span> <span class="n">begins</span>. <span class="n">First</span>, <span class="n">define</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">list</span> <span class="nb">to</span>
+<span class="n">hold</span> <span class="n">the</span> <span class="n">links</span> <span class="k">of</span> <span class="n">the</span> <span class="n">pages</span>. <span class="n">Turns</span> <span class="n">out</span> <span class="n">that</span> <span class="n">imgur</span> <span class="n">renders</span> <span class="n">the</span> <span class="n">home</span> <span class="n">page</span>
+<span class="n">with</span> <span class="n">thumbnails</span> <span class="k">of</span> <span class="n">images</span>. <span class="n">The</span> <span class="n">links</span> <span class="nb">to</span> <span class="n">the</span> <span class="n">pages</span> <span class="k">where</span> <span class="n">the</span> <span class="n">main</span> <span class="n">image</span>
+<span class="n">src</span> <span class="n">resides</span> <span class="k">is</span> <span class="n">within</span> <span class="n">the</span> <span class="k">class</span> <span class="n">image-list-link</span>. <span class="n">Every</span> <span class="n">website</span> <span class="k">is</span>
+<span class="n">different</span> <span class="o">and</span> <span class="n">rendered</span> <span class="n">JavaScript</span> <span class="n">pages</span> <span class="nb">can</span> <span class="k">use</span> <span class="n">wildly</span> <span class="n">different</span> <span class="n">naming</span>
+<span class="n">conventions</span>. <span class="n">Thus</span> <span class="n">the</span> <span class="n">need</span> <span class="nb">to</span> <span class="n">dig</span> <span class="n">with</span> <span class="n">your</span> <span class="n">browser</span> <span class="o">before</span> <span class="n">you</span> <span class="n">start</span>
+<span class="n">coding</span>.  <span class="n">To</span> <span class="n">investigate</span> <span class="n">with</span> <span class="n">a</span> <span class="n">OSX</span>, <span class="n">tune</span> <span class="n">your</span> <span class="n">browser</span> (<span class="n">chrome</span>) <span class="nb">to</span> <span class="n">the</span>
+<span class="n">url</span> <span class="n">you</span> <span class="n">wish</span> <span class="nb">to</span> <span class="n">scrape</span> <span class="o">and</span> <span class="n">press:</span> <span class="n">option</span> | <span class="n">command</span> | <span class="n">j</span>  <span class="n">Then</span> <span class="n">start</span>
+<span class="n">inspecting</span> <span class="n">elements</span>.
+
+``` {.<span class="n">lang:python</span> .<span class="n">decode:true</span>}
+<span class="c-Singleline"># Makes list of links to get full image</span>
+<span class="n">links</span> = []
+<span class="c-Singleline"># This is the container of images on the main page</span>
+<span class="n">cards</span> = <span class="n">browser</span>.<span class="n">find_elements_by_class_name</span>(<span class="s">&#39;image-list-link&#39;</span>)
+<span class="k">for</span> <span class="n">img_src</span> <span class="n">in</span> <span class="n">cards:</span>
+    <span class="c-Singleline"># Now assemble list to pass to requests and beautifulsoup</span>
+    <span class="n">links</span>.<span class="n">append</span>(<span class="n">img_src</span>.<span class="n">get_attribute</span>(<span class="s">&#39;href&#39;</span>))
+</pre></div>
+
+
+<p>[line]<br />
+The rest of the story. This bit of code loops through the links list
+created in the previous snippet. We call requests.get() to url stored in
+links list. Then we pass the html from requests to beautiful soup where
+we can dominate it with reckless abandon. We ask soup to select the
+post-image class img tag. Then we check if it is empty. If the list is
+not empty, we assign the actual src of the imageLink to imageUrl. This
+variable is prefixed with http: and sent back to requests for retrieval.
+ If the url is mangled or mistyped we handle the exception and move to
+the next one. If not, we write the file to directory and using requests
+iter_chunks method in 100,000 byte increments. Close the image file and
+start the next round or finish the script.</p>
+<p>``` {.lang:python .decode:true}</p>
+<h1>loop through the links list (I'm slicing to 5)</h1>
+<p>for page in links[:5]:
+    res = requests.get(page)
+    res.raise_for_status()
+    soup = BeautifulSoup(res.text, 'html.parser')
+    imageLink = soup.select('.post-image img')
+    if imageLink == []:
+        print('Nothing here...')
+    else:
+        try:
+            # assign imageUrl hold the actual file name of the image
+            imageUrl = imageLink[0].get('src')
+            #Download the image
+            print('Downloading image %s...' %(imageUrl))
+            res = requests.get('http:'+imageUrl)
+            res.raise_for_status()
+        except requests.exceptions.MissingSchema:
+            continue
+        imageFile = open(os.path.join('imgur', os.path.basename(imageUrl)), 'wb')
+        for chunk in res.iter_content(100000):
+            imageFile.write(chunk)
+        imageFile.close()
+```</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Michael Martinez
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

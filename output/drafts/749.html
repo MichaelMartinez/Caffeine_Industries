@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Anaconda... - Caffeine Industries -</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/drafts/749.html">
+
+        <meta name="author" content="Michael" />
+        <meta name="description" content="This was taken from http://davebehnke.com/using-python-anaconda-distribution.html which is no longer active. I used the way back machine to find it and reproduce it. Introduction As a followup to my article about pyenv, I decided it was worth also taking a look at Anaconda/Miniconda an alternate install ..." />
+
+        <meta property="og:site_name" content="Caffeine Industries -" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Anaconda..."/>
+        <meta property="og:url" content="/drafts/749.html"/>
+        <meta property="og:description" content="This was taken from http://davebehnke.com/using-python-anaconda-distribution.html which is no longer active. I used the way back machine to find it and reproduce it. Introduction As a followup to my article about pyenv, I decided it was worth also taking a look at Anaconda/Miniconda an alternate install ..."/>
+        <meta property="article:published_time" content="2015-11-25" />
+            <meta property="article:section" content="Uncategorized" />
+            <meta property="article:author" content="Michael" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Caffeine Industries -            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
+                        </li>
+                        <li >
+                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/ansible-docker.html">Ansible, docker</a>
+                        </li>
+                        <li >
+                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
+                        </li>
+                        <li >
+                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
+                        </li>
+                        <li >
+                            <a href="/category/computer.html">Computer</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura.html">Cordura</a>
+                        </li>
+                        <li >
+                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
+                        </li>
+                        <li >
+                            <a href="/category/leather.html">Leather</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/programming-python.html">Programming, python</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/uncategorized.html">Uncategorized</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/drafts/749.html"
+                       rel="bookmark"
+                       title="Permalink to Anaconda...">
+                        Anaconda...
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-11-25T15:56:00-07:00"> Wed 25 November 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This was taken from
+http://davebehnke.com/using-python-anaconda-distribution.html which is
+no longer active. I used the way back machine to find it and reproduce
+it.</p>
+<p>Introduction<br />
+As a followup to my article about pyenv, I decided it was worth also
+taking a look at Anaconda/Miniconda an alternate install for Python 2/3.
+It is available for Windows, OSX, and Linux. I will walk you through
+obtaining and installing using miniconda3 (a minimal install). I will
+also introduce you to the conda tool for creating and using environments
+and installing packages.</p>
+<p>From the Continuum website it is described as, "Completely free
+enterprise-ready Python distribution for large-scale data processing,
+predictive analytics, and scientific computing"</p>
+<p>While it's roots are designing a tool for science, math, engineering,
+and data analysis, thanks to the miniconda installer you can customize
+your install starting with a minimal root environment.</p>
+<p>The key selling point, for myself anyways, is that you can install
+Python in your home directory (or users directory on OSX and Windows)
+and not touch your system installed Python which may be needed by your
+OS for various things. You can also install on older production systems
+that may be using Enterprise Linux and a very ancient version of Python.</p>
+<p>Before you continue, please take a look at
+https://store.continuum.io/cshop/anaconda/ for a more formal look at
+Anaconda. We're going to get down to the nuts and bolts next!</p>
+<p>Which one to use ?<br />
+We have two ways to install.</p>
+<p>Anaconda: http://continuum.io/downloads</p>
+<p>Miniconda: http://conda.pydata.org/miniconda.html</p>
+<p>This is mostly a matter of choice, if you like having a complete Python
+environment, and don't mind a larger download, things you might not use,
+or new to Python, pick the Anaconda installer. It includes 181+ common
+packages preinstalled.</p>
+<p>If you want a bootstrap or minimal install, choose miniconda. Miniconda
+basically just installs the standard library and interpreter.</p>
+<p>Next you will need to determine if you want to use Python 2 or 3 by
+default. I personally choose Python 3 because I'm trying to discipline
+myself to use Python 3 whenever possible. This article will demonstrate
+an install with Python 3. Don't worry though you can have both 2 and 3
+installed at the same time as we will show later on with creating
+environments. For now, pick your starting point, download ONE of the
+installers (Anaconda based on 2 or 3, or Miniconda based on 2 or 3)</p>
+<p>Installing<br />
+The installation instructions are here:
+http://docs.continuum.io/anaconda/install.html</p>
+<p>Windows and OSX Installs are easy using the GUI based installers, so I
+will focus on the Linux install in my example.</p>
+<p>Locate your download copy of the installer, open up a terminal and run
+the install script.</p>
+<p>bash \~/Downloads/Miniconda3-3.0.5-Linux-x86_64.sh<br />
+You should be greeted with the welcome message, asked to read and
+approve the license agreement, asked where to install, and prepend your
+path in your .bashrc</p>
+<p>Welcome to Miniconda3 3.0.5 (by Continuum Analytics, Inc.)</p>
+<p>Do you approve the license terms? [yes|no]<br />
+[no] &gt;&gt;&gt; yes</p>
+<p>Miniconda3 will now be installed into this location:<br />
+/home/dbehnke/miniconda3</p>
+<ul>
+<li>Press ENTER to confirm the location  </li>
+<li>Press CTRL-C to abort the installation  </li>
+<li>Or specify an different location below</li>
+</ul>
+<p>[/home/dbehnke/miniconda3] &gt;&gt;&gt;</p>
+<p>Python 3.3.4 :: Continuum Analytics, Inc.<br />
+creating default environment...<br />
+installation finished.<br />
+Do you wish the installer to prepend the Miniconda3 install location<br />
+to PATH in your /home/dbehnke/.bashrc ? [yes|no]<br />
+[no] &gt;&gt;&gt; yes<br />
+Restart your Terminal</p>
+<p>Updating conda<br />
+Now that you have installed miniconda, you should open up a terminal
+(OSX, Linux) or Command prompt (Windows). The remainder of this article
+will show a bash prompt, but the commands are the same in Windows.</p>
+<p>conda is a tool for managing environments and packages. If you are
+familiar with virtualenv, environments are similar. With Anaconda we
+usually don't use virtualenv or pip (they can be installed if you really
+want to) for installing packages and creating enviornments. Instead
+conda takes care of most of the work. We will start by updating conda
+since it's the center of importance for using Anaconda.</p>
+<p>The following command will determine if conda is installed and available
+in your PATH:</p>
+<p>\$ conda -V<br />
+conda 3.0.5<br />
+Now lets update conda</p>
+<p>\$ conda update conda</p>
+<p>Package plan for installation in environment /home/dbehnke/miniconda3:</p>
+<p>The following packages will be downloaded:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>conda-3.0.6</td>
+<td>py33_0 106 KB</td>
+</tr>
+</tbody>
+</table>
+<p>The following packages will be UN-linked:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>conda-3.0.5</td>
+<td>py33_0</td>
+</tr>
+</tbody>
+</table>
+<p>The following packages will be linked:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>conda-3.0.6</td>
+<td>py33_0 hard-link</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed ([y]/n)? y<br />
+Environments<br />
+By default you install in the root environment. Environments allow you
+to sandbox or seperate your installed packages. You can even have
+different python versions in each environment. They live in the envs
+directory in your installation directory. Conda will also try to create
+hard-links whenever possible to save disk space.</p>
+<p>List installed environments (e.g. here I have 2 environments created
+already from a previous install. The * indicates my current environment
+is root)</p>
+<p>\$ conda info -e<br />
+# conda environments:<br />
+#<br />
+oracle /home/dbehnke/miniconda3/envs/oracle<br />
+root * /home/dbehnke/miniconda3<br />
+Creating<br />
+Here is the breakdown of creating a new environment.</p>
+<p>For the full documentation, access the help.</p>
+<p>conda create -h<br />
+We will look at a subset of the available options (taken from the -h
+command)</p>
+<p>Description</p>
+<p>Create a new conda environment from a list of specified packages. To use
+the created environment, use 'source activate envname' look in that
+directory first. This command requires either the -n NAME or -p PREFIX
+option.</p>
+<p>conda create -n NAME [package_spec [package_spec] ]</p>
+<p>positional arguments::</p>
+<p>package_spec package versions to install into conda environment</p>
+<p>optional arguments:</p>
+<p>-n NAME, --name NAME name of environment<br />
+-p PATH, --prefix PATH full path to environment prefix<br />
+I personally like to only use the -n so that it lives with my
+installation in my home directory. However, if you installed as root or
+somewhere your user account doesn't have access to you may want to use
+-p \$HOME/somedirectory instead of -n. This article will only use -n for
+examples.</p>
+<p>e.g. Create an environment with Default python (in this case Python 3).
+Here I create an environment named "oracle" in the env directory of my
+installation with just the minimal python.</p>
+<p>\$ conda create -n oracle python</p>
+<p>Package plan for installation in environment
+/home/dbehnke/miniconda3/envs/oracle:</p>
+<p>The following packages will be linked:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openssl-1.0.1c</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>python-3.3.4</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>readline-6.2</td>
+<td>2 hard-link</td>
+</tr>
+<tr>
+<td>sqlite-3.7.13</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>system-5.8</td>
+<td>1 hard-link</td>
+</tr>
+<tr>
+<td>tk-8.5.13</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>zlib-1.2.7</td>
+<td>0 hard-link</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed ([y]/n)? y</p>
+<p>Linking packages ...<br />
+[ COMPLETE ]
+|######################################################################|
+100%<br />
+#<br />
+# To activate this environment, use:<br />
+# \$ source activate oracle<br />
+#<br />
+# To deactivate this environment, use:<br />
+# \$ source deactivate<br />
+#<br />
+Activating<br />
+\$ source activate oracle<br />
+prepending /home/dbehnke/miniconda3/envs/oracle/bin to PATH<br />
+Verifying environment is active</p>
+<p>Notice the (oracle) in front of the bash prompt. This is an indicator
+that the "oracle" environment is activated.</p>
+<p>(oracle) \$ conda info -e</p>
+<p># conda environments:<br />
+#<br />
+oracle * /home/dbehnke/miniconda3/envs/oracle<br />
+root /home/dbehnke/miniconda3</p>
+<p>(oracle) \$ which python</p>
+<p>/home/dbehnke/miniconda3/envs/oracle/bin/python</p>
+<p>(oracle) \$ python</p>
+<p>Python 3.3.4 |Continuum Analytics, Inc.| (default, Feb 10 2014,
+17:53:28)<br />
+[GCC 4.1.2 20080704 (Red Hat 4.1.2-54)] on linux<br />
+Type "help", "copyright", "credits" or "license" for more information.<br />
+&gt;&gt;&gt;<br />
+Deactivating<br />
+(oracle) \$ source deactivate</p>
+<p>discarding /home/dbehnke/miniconda3/envs/oracle/bin from PATH<br />
+You'll notice the (oracle) will be removed as well from the prompt.</p>
+<p>Deleting<br />
+You can use the conda remove -n nameofenvironment --all or delete the
+directory the environment is in.</p>
+<p>conda remove -n oracle --all<br />
+or, simply</p>
+<p>rm -r -f /home/dbehnke/miniconda3/envs/oracle<br />
+Using a Different Version of Python<br />
+To list available versions of Python to install you can use "conda
+search". Here is an example.</p>
+<p>conda search "\^python\$"</p>
+<p>python 2.6.8 1 defaults<br />
+2.6.8 2 defaults<br />
+2.6.9 1 defaults<br />
+2.7.3 7 defaults<br />
+2.7.4 1 defaults<br />
+2.7.5 3 defaults<br />
+2.7.6 0 defaults<br />
+. 2.7.6 1 defaults<br />
+3.3.0 4 defaults<br />
+3.3.1 0 defaults<br />
+3.3.2 0 defaults<br />
+. 3.3.3 1 defaults<br />
+* 3.3.4 0 defaults<br />
+The installed root version deterimines the default version of python
+(indicated by the * in the conda search example above) used when
+creating environments. To specify a different version of python, use the
+environment variable PYTHON=x. (where x is version found in conda
+search)</p>
+<p>e.g. installing Python 2 in an environment called oracle. Here I simply
+use 2 instead of specifying the complete version number which will take
+the latest version of python 2.</p>
+<p>\$ conda create -n oracle python=2</p>
+<p>Package plan for installation in environment
+/home/dbehnke/miniconda3/envs/oracle:</p>
+<p>The following packages will be downloaded:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>python-2.7.6</td>
+<td>1 11.2 MB</td>
+</tr>
+</tbody>
+</table>
+<p>The following packages will be linked:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openssl-1.0.1c</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>python-2.7.6</td>
+<td>1 hard-link</td>
+</tr>
+<tr>
+<td>readline-6.2</td>
+<td>2 hard-link</td>
+</tr>
+<tr>
+<td>sqlite-3.7.13</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>system-5.8</td>
+<td>1 hard-link</td>
+</tr>
+<tr>
+<td>tk-8.5.13</td>
+<td>0 hard-link</td>
+</tr>
+<tr>
+<td>zlib-1.2.7</td>
+<td>0 hard-link</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed ([y]/n)?<br />
+Cloning an Environment<br />
+If you want to make a snapshot of an already existing environment, you
+can use the --clone keyword</p>
+<p>conda create -n nameofnew --clone nameofsource<br />
+Installing Packages<br />
+conda install -n nameofenvironment [package] [package[=x.x.x]]
+[package]<br />
+The -n is names your environment, if you omit the -n then the install
+will be installed in the root environment. It can't be stressed enough,
+it is very important to use the -n flag when installing packages in a
+environment other than the root. Get yourself in the habit of using the
+-n parameter even if you are using root. From experience, failing to do
+so you may install the module in root when you meant to install it in
+another environment.</p>
+<p>[package] is either simply the package name, for example flask, or
+sqlalchemy. This will install the latest version of the package and any
+dependencies it may need.</p>
+<p>[package=x]</p>
+<p>This will the version matching x. You can also use x.y, x.y.x, etc. To
+match the version of the package. For example, as we saw above when we
+installed Python 2, if we wanted to install the latest version of python
+2, we would use python=2. For python 2.6.9, we would use python=2.6.9.
+The same goes for other packages, flask 0.10, you would use flask=0.10</p>
+<p>It's important to note, omitting the python=x will default to the
+miniconda version, i.e. miniconda3 installs python 3 and miniconda2
+installs python 2 by default.</p>
+<p>Example #1. Installing an Anaconda environment similar to the full
+installer</p>
+<p>\$ conda install -n oracle anaconda</p>
+<p>Package plan for installation in environment
+/home/dbehnke/miniconda3/envs/oracle:</p>
+<p>The following packages will be downloaded:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anaconda-1.9.1</td>
+<td>np18py33_0 3 KB</td>
+</tr>
+<tr>
+<td>argcomplete-0.6.7</td>
+<td>py33_0 26 KB</td>
+</tr>
+<tr>
+<td>astropy-0.3.0</td>
+<td>np18py33_0 5.9 MB</td>
+</tr>
+<tr>
+<td>beautiful-soup-4.3.1</td>
+<td>py33_0 114 KB</td>
+</tr>
+<tr>
+<td>bitarray-0.8.1</td>
+<td>py33_0 89 KB</td>
+</tr>
+</tbody>
+</table>
+<p>...<br />
+Example #2. Installing a couple of packages</p>
+<p>e.g. installing flask and sqlalchemy</p>
+<p>\$ conda install -n oracle flask sqlalchemy</p>
+<p>Package plan for installation in environment
+/home/dbehnke/miniconda3/envs/oracle:</p>
+<p>The following packages will be downloaded:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flask-0.10.1</td>
+<td>py27_1 129 KB</td>
+</tr>
+<tr>
+<td>itsdangerous-0.23</td>
+<td>py27_0 16 KB</td>
+</tr>
+<tr>
+<td>jinja2-2.7.2</td>
+<td>py27_0 308 KB</td>
+</tr>
+<tr>
+<td>markupsafe-0.18</td>
+<td>py27_0 26 KB</td>
+</tr>
+<tr>
+<td>sqlalchemy-0.9.3</td>
+<td>py27_0 1.1 MB</td>
+</tr>
+<tr>
+<td>werkzeug-0.9.4</td>
+<td>py27_0 385 KB</td>
+</tr>
+<tr>
+<td>------------------------------------------------------------</td>
+<td></td>
+</tr>
+<tr>
+<td>Total: 2.0 MB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The following packages will be linked:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flask-0.10.1</td>
+<td>py27_1 hard-link</td>
+</tr>
+<tr>
+<td>itsdangerous-0.23</td>
+<td>py27_0 hard-link</td>
+</tr>
+<tr>
+<td>jinja2-2.7.2</td>
+<td>py27_0 hard-link</td>
+</tr>
+<tr>
+<td>markupsafe-0.18</td>
+<td>py27_0 hard-link</td>
+</tr>
+<tr>
+<td>sqlalchemy-0.9.3</td>
+<td>py27_0 hard-link</td>
+</tr>
+<tr>
+<td>werkzeug-0.9.4</td>
+<td>py27_0 hard-link</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed ([y]/n)?<br />
+Removing Packages<br />
+This is accomplished by using the "conda remove" command and is similar
+to the "conda install" command. You can also save time if you have many
+packages to remove, by simply deleting the environment and recreating
+it.</p>
+<p>Advanced<br />
+What if a package doesn't exist through conda install ?</p>
+<p>If the package you want is not available for conda, another option is to
+search http://binstar.org (make sure the package you find is built for
+the platform you are on), and then add that person's binstar channel
+with conda config --add channels binstar_username.</p>
+<p>You should try to use "conda install" whenever possible. However, as a
+last resort, you can solve this problem by installing pip into your
+environment and pull in packages you need. You could also create your
+own conda packages, but that's beyond the scope of this article.</p>
+<p>e.g. installing pip</p>
+<p>\$ conda install -n oracle pip</p>
+<p>Package plan for installation in environment
+/home/dbehnke/miniconda3/envs/oracle:</p>
+<p>The following packages will be downloaded:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pip-1.5.4</td>
+<td>py27_0 1.5 MB</td>
+</tr>
+<tr>
+<td>setuptools-2.2</td>
+<td>py27_0 458 KB</td>
+</tr>
+<tr>
+<td>------------------------------------------------------------</td>
+<td></td>
+</tr>
+<tr>
+<td>Total: 2.0 MB</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The following packages will be linked:</p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pip-1.5.4</td>
+<td>py27_0 hard-link</td>
+</tr>
+<tr>
+<td>setuptools-2.2</td>
+<td>py27_0 hard-link</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed ([y]/n)?<br />
+Then just install as normal using pip install xxxx.</p>
+<p>Uninstalling<br />
+To remove Anaconda/Miniconda, just remove all the prepended path
+variables in your .bashrc or your System Environment, and then remove
+the installation directory.</p>
+<p>Windows Users, I believe you just use the uninstaller in Add/Remove
+programs.</p>
+<p>Conclusions<br />
+Anaconda gives you a nice alternative to the default Python installer
+on Windows.</p>
+<p>Default packages installed in anaconda package include most of the
+common packages most python developers use.</p>
+<p>Consistent installs across Windows, Linux, OSX - you can use the same
+conda commands.</p>
+<p>It should work on older Linux distributions as well since it appears to
+be compiled on a Red Hat 5 system.</p>
+<p>Further Reading:</p>
+<p>http://conda.pydata.org/docs/</p>
+<p>http://docs.continuum.io/anaconda/</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Michael Martinez
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
