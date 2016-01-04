@@ -1,7 +1,8 @@
 Title: Exciting times, choosing a platform!
 Date: 2011-10-03 21:01
 Author: Michael
-Category: ActionScript 3, Android, Blog, code, Design, Flash, iOS, Java, Language, Programming, UI, Uncategorized, UX
+Category: Misc 
+Tags: JavaScript, Android, Flash, UI, UX
 Slug: exciting-times-choosing-a-platform
 Status: published
 

@@ -1,7 +1,8 @@
 Title: Adobe Changes Course
 Date: 2011-11-11 21:55
 Author: Michael
-Category: ActionScript 3, Blog, code, Flash, HTML5, Javascript, Language, Programming, Uncategorized
+Category: 
+Tags: ActionScript 3, Flash, HTML5, Javascript, Language 
 Slug: adobe-changes-course
 Status: published
 

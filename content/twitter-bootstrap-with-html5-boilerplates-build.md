@@ -1,7 +1,8 @@
 Title: Twitter Bootstrap with Html5 Boilerplate's Build
 Date: 2012-02-20 17:12
 Author: Michael
-Category: ant, Blog, code, CSS, HTML5, Javascript, Less, Mobile, Portfolio, Programming, Twitter Bootstrap
+Category: JavaScript 
+Tags: ant, CSS, HTML5, Less, Mobile, Twitter Bootstrap
 Slug: twitter-bootstrap-with-html5-boilerplates-build
 Status: published
 
@@ -36,61 +37,61 @@ the documentation (RTFM, right?)
 I then modified the project. properties file to include the changes you
 see here:
 
-``` {lang="shell"}
-# project.properties file defines overrides for default.properties
+    :::bash
+    # project.properties file defines overrides for default.properties
 
-# Explanation: This file should be created by each user as and when he or she needs to override particular values.
-# Consequently, it should not be placed under version control.
+    # Explanation: This file should be created by each user as and when he or she needs to override particular values.
+    # Consequently, it should not be placed under version control.
 
-# Stylesheets
-#
-# Note: Stylesheets will be concatenated in the order they are listed in the file.stylesheets property (i.e. the last
-# file listed will be at the end of the concatenated file), so it probably makes sense to have the main style.css file
-# as the first entry
-# Example:
-# file.stylesheets  = style.css, lightbox.css, plugin.css
-#
-file.stylesheets  = bootstrap.css, style.css
+    # Stylesheets
+    #
+    # Note: Stylesheets will be concatenated in the order they are listed in the file.stylesheets property (i.e. the last
+    # file listed will be at the end of the concatenated file), so it probably makes sense to have the main style.css file
+    # as the first entry
+    # Example:
+    # file.stylesheets  = style.css, lightbox.css, plugin.css
+    #
+    file.stylesheets  = bootstrap.css, style.css
 
-# Web Pages
-#
-# These are the pages (files) that will be served to users (.html, .php, .asp, etc). Files in this property will
-# be minified / optimised and have any stylesheet or javascript references updated to the minified examples
-#
-# The paths need to be relative
-#
-# Files can be added in a comma separated form
-file.pages        = toolbox.html, vacapp.html 
+    # Web Pages
+    #
+    # These are the pages (files) that will be served to users (.html, .php, .asp, etc). Files in this property will
+    # be minified / optimised and have any stylesheet or javascript references updated to the minified examples
+    #
+    # The paths need to be relative
+    #
+    # Files can be added in a comma separated form
+    file.pages        = toolbox.html, vacapp.html 
 
-# Excluded files and dirs
-#
-# Add any files or directories you add to the project and do not want to be copied to the publish directory as a
-# comma separated list
-# These files are ignored in addition to the default ones specified in default.properties.
-# Example: file.exclude = badfolder/**
-file.exclude      = js/tests/**, style/less/**, 
+    # Excluded files and dirs
+    #
+    # Add any files or directories you add to the project and do not want to be copied to the publish directory as a
+    # comma separated list
+    # These files are ignored in addition to the default ones specified in default.properties.
+    # Example: file.exclude = badfolder/**
+    file.exclude      = js/tests/**, style/less/**, 
 
-# Bypassed JavaScript files and dirs
-#
-# Add any files or folders within the mylibs directory that you want to be copied to the publish directory as a
-# comma separated list
-# These files will not be concatenated or minimized and will simply be copied over as is.
-# Note: you cannot declare an empty file.bypass property, it would exclude the entire mylibs folder
-# Example:
-# file.js.bypass = widgets.js, gadgets.js, gidgets.js
-file.js.bypass = cafflab.js
+    # Bypassed JavaScript files and dirs
+    #
+    # Add any files or folders within the mylibs directory that you want to be copied to the publish directory as a
+    # comma separated list
+    # These files will not be concatenated or minimized and will simply be copied over as is.
+    # Note: you cannot declare an empty file.bypass property, it would exclude the entire mylibs folder
+    # Example:
+    # file.js.bypass = widgets.js, gadgets.js, gidgets.js
+    file.js.bypass = cafflab.js
 
-# Directory Structure
-#
-# Override any directory paths specific to this project
-#
-# dir.publish
-# dir.js
-#dir.js.libs = js/bootstrap
-#dir.js.mylibs = js/bootstrap
-dir.css = style/css
-# dir.img
-```
+    # Directory Structure
+    #
+    # Override any directory paths specific to this project
+    #
+    # dir.publish
+    # dir.js
+    #dir.js.libs = js/bootstrap
+    #dir.js.mylibs = js/bootstrap
+    dir.css = style/css
+    # dir.img
+   
 
 Note: I've only included the actual changes to my file. The actual
 project.properties is a bit denser.

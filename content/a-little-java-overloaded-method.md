@@ -1,7 +1,8 @@
 Title: A little JAVA; Overloaded Method
 Date: 2010-09-21 13:32
 Author: Michael
-Category: Blog, code, Computer, Java, Language, Programming
+Category: Programming
+Tags: Code, Java
 Slug: a-little-java-overloaded-method
 Status: published
 
@@ -16,7 +17,7 @@ Ambiguous compile time error.
 
 The first method passes in three parameters:
 
-``` {lang="JAVA"}
+```java
 public void computeNetPay(double hrs, double rtePay, double taxRate)
 {
 //var to hold tax amount

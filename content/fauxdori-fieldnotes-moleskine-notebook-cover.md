@@ -1,7 +1,8 @@
 Title: Fauxdori Fieldnotes/Moleskine notebook cover
 Date: 2015-11-24 14:48
 Author: Michael
-Category: CAD, Design, Laser, Leather
+Category: Design
+Tags: CAD, Laser, Leather
 Slug: fauxdori-fieldnotes-moleskine-notebook-cover
 Status: published
 
@@ -31,50 +32,23 @@ because I haven't had time to post). I also make different products out
 of leather, wood, felt, acrylic, and other materials... soon to be
 posted. Also considering Etsy...
 
-\[line\]
 
-\[block\_grid type="two-up"\] \[block\_grid\_item\] \[image
-class="notebook"
 src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat\_1.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat\_1.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
+
 src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat\_3.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat\_3.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
 src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
+
 src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_open.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/midori\_open.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[/block\_grid\]
-
-\[lightbox selector=".notebook" deeplink="true" opacity="0.875"
-prev\_scale="0.75" prev\_opacity="0.75" next\_scale="0.75"
-next\_opacity="0.75" orientation="horizontal" thumbnails="true"\]
-
-\[accordion id="my-accordion"\] \[accordion\_item
-parent\_id="my-accordion" title="Design" open="true"\]
 
 Fieldnotes / Cahier cover - Will fit any 3.5" x 5.5" notebook
 
 Designed to fit in pocket  
 Will accommodate Passport
 
-\[/accordion\_item\]\[accordion\_item parent\_id="my-accordion"
-title="Features"\]
 
 Space for 3 notebooks  
 Space for other inserts  
-\[/accordion\_item\] \[accordion\_item parent\_id="my-accordion"
-title="Materials"\]
 
 Shell: Vegetable Tanned Leather  
 Liner: No liner  
-\[/accordion\_item\] \[/accordion\]
+

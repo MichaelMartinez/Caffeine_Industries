@@ -1,7 +1,8 @@
-Title: *Development
+Title: Development
 Date: 2011-02-13 23:07
 Author: Michael
-Category: Android, Blog, code, Java, Programming
+Category: Android
+Tags: Notes,Programming
 Slug: development
 Status: published
 

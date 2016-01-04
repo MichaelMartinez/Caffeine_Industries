@@ -1,7 +1,8 @@
 Title: PostgreSQL and the app for Mac OSX
 Date: 2013-06-01 21:14
 Author: Michael
-Category: Uncategorized
+Category: Database
+Tags: OSX, PostgreSQL
 Slug: postgresql-and-the-app-for-mac-osx
 Status: published
 
@@ -31,11 +32,11 @@ Download it, drag it to applications, DONE.
 If you have ever used postgreSQL from the commandline you have
 undoubtedly felt this pain:
 
-``` {.lang:sh .decode:true}
+:::bash
 pg_ctl -D /usr/local/var/postgres start
 pg_ctl -D /usr/local/var/postgres status
 pg_ctl -D /usr/local/var/postgres stop -s -m fast
-```
+
 
 This is just to start and/or check on the darn thing. Then you can enter
 the \`psql\` command to access the \`\$USER\` database.  
@@ -51,23 +52,22 @@ PostgreSQL like any other mac app, click on the app.
 But before you do that; Add one line to your \`.bashrc\` or in my case,
 \`.zshrc\`.
 
-``` {.lang:sh .decode:true}
+:::bash
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-```
 
 Once the app initializes, you get the cool little elephant in your
 toolbar. That's it, PostgreSQL is running and ready to  
 relation. With this done you can now create a database:
 
-``` {.lang:sh .decode:true}
-$ psql
-psql (9.2.2)
-Type "help" for help.
+    :::bash
+    $ psql
+    psql (9.2.2)
+    Type "help" for help.
 
-$ michaelmartinez=# CREATE DATABASE my_database;
-# If you want to delete the database you just created
-$ michaelmartinez=# DROP DATABASE my_database;
-```
+    $ michaelmartinez=# CREATE DATABASE my_database;
+    # If you want to delete the database you just created
+    $ michaelmartinez=# DROP DATABASE my_database;
+    
 
 note: don't forget the semi-colon!
 
@@ -79,34 +79,34 @@ To use this with Django you need to install the psycopg2 package, then
 its just a matter of adding the correct parameters  
 to your \`DATABASE\` settings:
 
-``` {.lang:python .decode:true}
-DATABASES = {
-"default": {
-"ENGINE": "django.db.backends.postgresql_psycopg2",
-"NAME": "my_database",
-"USER": "",
-"PASSWORD": "",
-"HOST": "localhost",
-"PORT": "",
-}
-}
-```
+    :::python
+    DATABASES = {
+    "default": {
+    "ENGINE": "django.db.backends.postgresql_psycopg2",
+    "NAME": "my_database",
+    "USER": "",
+    "PASSWORD": "",
+    "HOST": "localhost",
+    "PORT": "",
+    }
+    }
+    
 
 To use this with your Flask app, you can use the Flask-SQLAlchemy
 extension or SQLAlchemy on its own:
 
-``` {.lang:python .decode:true}
-from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+    :::python
+    from flask import Flask
+    from flask.ext.sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/my_database'
-db = SQLAlchemy(app)
-```
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/my_database'
+    db = SQLAlchemy(app)
+    
 
 Vanilla SQLAlchemy
 
-``` {.lang:python .decode:true}
-from sqlalchemy import create_engine
-engine = create_engine('postgresql://localhost/my_database')
-```
+    :::python
+    from sqlalchemy import create_engine
+    engine = create_engine('postgresql://localhost/my_database')
+

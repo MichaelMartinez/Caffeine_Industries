@@ -1,7 +1,8 @@
 Title: JavaScript and teh new year...
 Date: 2011-12-30 00:07
 Author: Michael
-Category: Blog, code, Javascript, Programming, Uncategorized
+Category: JavaScript 
+Tags: 
 Slug: javascript-and-teh-new-year
 Status: published
 

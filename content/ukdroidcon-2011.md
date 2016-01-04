@@ -1,7 +1,8 @@
 Title: UKDroidCon 2011
 Date: 2011-08-31 12:37
 Author: Michael
-Category: Android, Blog, code, Google, Java, Programming, Uncategorized
+Category: Android
+Tags: Google, Java, Programming
 Slug: ukdroidcon-2011
 Status: published
 

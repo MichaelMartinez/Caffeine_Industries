@@ -1,7 +1,8 @@
 Title: Firefighter Gear
 Date: 2013-07-19 21:45
 Author: Michael
-Category: Firefighter, Gear, Nomex, Sewing
+Category: Design
+Tags: Firefighter, Gear, Nomex, Sewing
 Slug: firefighter-gear
 Status: published
 
@@ -15,18 +16,12 @@ a lot of room for efficiency on a variety of levels.
 
 ### Glove Keeper
 
-\[block\_grid type="three-up"\] \[block\_grid\_item\] \[image
-class="mitt\_keep"
+
 src="http://mmartinez.us/wp-content/uploads/2014/01/mitt\_keep1.jpg"
 alt="mitt keep" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/mitt\_keep1.jpg"
-title="Mitt Keeper"\] \[/block\_grid\_item\] \[block\_grid\_item\]
-\[image class="mitt\_keep"
+
 src="http://mmartinez.us/wp-content/uploads/2014/01/mitt\_keep.jpg"
-alt="mitt keep" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/mitt\_keep.jpg"
-title="Mitt Keeper"\] \[/block\_grid\_item\]\[block\_grid\_item\]
-\[image class="mitt\_keep"
+
 src="http://mmartinez.us/wp-content/uploads/2014/01/3201\_2\_LRG.jpg"
 alt="mitt keep" type="rounded" link="true"
 href="http://mmartinez.us/wp-content/uploads/2014/01/3201\_2\_LRG.jpg"

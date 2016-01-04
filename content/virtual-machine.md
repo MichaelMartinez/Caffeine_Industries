@@ -1,7 +1,8 @@
 Title: Virtual Machines
 Date: 2013-01-04 22:21
 Author: Michael
-Category: Computer
+Category: VM 
+Tags: Virtual Computing
 Slug: virtual-machine
 Status: published
 

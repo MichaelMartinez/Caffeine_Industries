@@ -1,7 +1,8 @@
 Title: App Inventor
 Date: 2010-09-06 13:26
 Author: Michael
-Category: Android, Apps, Blog
+Category: Android
+Tags: Apps
 Slug: app-inventor
 Status: published
 

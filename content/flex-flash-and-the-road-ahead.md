@@ -1,7 +1,8 @@
 Title: Flex, Flash, Spoon and the road ahead....
 Date: 2011-11-17 21:10
 Author: Michael
-Category: ActionScript 3, Blog, code, Computer, Economics, Flash, Language, Uncategorized
+Category: AS3 
+Tags: ActionScript 3, Flash
 Slug: flex-flash-and-the-road-ahead
 Status: published
 

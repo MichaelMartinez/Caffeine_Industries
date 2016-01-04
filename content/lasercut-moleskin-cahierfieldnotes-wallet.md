@@ -1,7 +1,8 @@
 Title: Lasercut Moleskin Cahier/Fieldnotes Wallet
 Date: 2015-10-16 12:06
 Author: Michael
-Category: CAD, Design, Laser, Leather
+Category: Design 
+Tags: CAD, Laser, Leather
 Slug: lasercut-moleskin-cahierfieldnotes-wallet
 Status: published
 

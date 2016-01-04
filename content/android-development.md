@@ -1,7 +1,8 @@
 Title: Android Development
 Date: 2010-10-25 23:18
 Author: Michael
-Category: Android, Apps, Blog, code, Computer, Portfolio, Programming
+Category: Android
+Tags: Apps
 Slug: android-development
 Status: published
 

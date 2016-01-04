@@ -1,7 +1,8 @@
 Title: Lab - Twitter Bootstrap V2
 Date: 2012-02-09 16:00
 Author: Michael
-Category: Blog, code, CSS, Design, HTML5, Javascript, Language, Less, Programming, Uncategorized
+Category: JavaScript 
+Tags: HTML5, JavaScript
 Slug: lab-twitter-bootstrap-v2
 Status: published
 
@@ -23,11 +24,4 @@ Caffeine lab is built with [Twitter
 bootstrap](http://twitter.github.com/bootstrap/) and is definitely a
 work in progress.
 
-Check it out [  
-](http://lab.caffeineindustries.com)
-
-<h2>
-HERE
-
-</h3>
-</a>
+Check it out: sadly this had to be removed :(

@@ -1,7 +1,8 @@
 Title: Thick Client Architecture
 Date: 2012-03-04 20:53
 Author: Michael
-Category: code, HTML5, Javascript, Mobile, Programming, Uncategorized
+Category: JavaScript 
+Tags:HTML5, Javascript, Mobile
 Slug: thick-client-architecture
 Status: published
 

@@ -1,7 +1,8 @@
 Title: Microsoft moving from Silverlight!
 Date: 2010-10-29 19:26
 Author: Michael
-Category: Blog, code, Computer, Language, Programming, Uncategorized
+Category: Dev-Notes 
+Tags: Language 
 Slug: microsoft-moving-from-silverlight
 Status: published
 

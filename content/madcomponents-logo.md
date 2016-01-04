@@ -1,7 +1,8 @@
 Title: MadComponents Logo
 Date: 2011-09-14 00:13
 Author: Michael
-Category: Blog, Design, MadComponents, Uncategorized
+Category: JavaScript 
+Tags: MadComponents
 Slug: madcomponents-logo
 Status: published
 

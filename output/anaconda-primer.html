@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Michael" />
+        <meta name="copyright" content="Michael" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Development, Python, " />
+
+<meta property="og:title" content="Anaconda Primer "/>
+<meta property="og:url" content="/anaconda-primer.html" />
+<meta property="og:description" content="This was taken from http://davebehnke.com/using-python-anaconda-distribution.html which is no longer active. I used the way back machine to find it and reproduce it. Introduction As a followup to my article about pyenv, I decided it was worth also taking a look at Anaconda/Miniconda an alternate install ..." />
+<meta property="og:site_name" content="Caffeine Industries" />
+<meta property="og:article:author" content="Michael" />
+<meta property="og:article:published_time" content="2015-11-25T15:56:00-07:00" />
+<meta name="twitter:title" content="Anaconda Primer ">
+<meta name="twitter:description" content="This was taken from http://davebehnke.com/using-python-anaconda-distribution.html which is no longer active. I used the way back machine to find it and reproduce it. Introduction As a followup to my article about pyenv, I decided it was worth also taking a look at Anaconda/Miniconda an alternate install ...">
+
+        <title>Anaconda Primer  · Caffeine Industries
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>Caffeine Industries</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/anaconda-primer.html"> Anaconda Primer  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>This was taken from
+http://davebehnke.com/using-python-anaconda-distribution.html which is
+no longer active. I used the way back machine to find it and reproduce
+it.</p>
+<h3>Introduction</h3>
+<p>As a followup to my article about pyenv, I decided it was worth also
+taking a look at Anaconda/Miniconda an alternate install for Python 2/3.
+It is available for Windows, OSX, and Linux. I will walk you through
+obtaining and installing using miniconda3 (a minimal install). I will
+also introduce you to the conda tool for creating and using environments
+and installing packages.</p>
+<p>From the Continuum website it is described as, "Completely free
+enterprise-ready Python distribution for large-scale data processing,
+predictive analytics, and scientific computing"</p>
+<p>While it's roots are designing a tool for science, math, engineering,
+and data analysis, thanks to the miniconda installer you can customize
+your install starting with a minimal root environment.</p>
+<p>The key selling point, for myself anyways, is that you can install
+Python in your home directory (or users directory on OSX and Windows)
+and not touch your system installed Python which may be needed by your
+OS for various things. You can also install on older production systems
+that may be using Enterprise Linux and a very ancient version of Python.</p>
+<p>Before you continue, please take a look at
+https://store.continuum.io/cshop/anaconda/ for a more formal look at
+Anaconda. We're going to get down to the nuts and bolts next!</p>
+<p>Which one to use ?<br />
+We have two ways to install.</p>
+<p>Anaconda: http://continuum.io/downloads</p>
+<p>Miniconda: http://conda.pydata.org/miniconda.html</p>
+<p>This is mostly a matter of choice, if you like having a complete Python
+environment, and don't mind a larger download, things you might not use,
+or new to Python, pick the Anaconda installer. It includes 181+ common
+packages preinstalled.</p>
+<p>If you want a bootstrap or minimal install, choose miniconda. Miniconda
+basically just installs the standard library and interpreter.</p>
+<p>Next you will need to determine if you want to use Python 2 or 3 by
+default. I personally choose Python 3 because I'm trying to discipline
+myself to use Python 3 whenever possible. This article will demonstrate
+an install with Python 3. Don't worry though you can have both 2 and 3
+installed at the same time as we will show later on with creating
+environments. For now, pick your starting point, download ONE of the
+installers (Anaconda based on 2 or 3, or Miniconda based on 2 or 3)</p>
+<h3>Installing</h3>
+<p>The installation instructions are here:
+http://docs.continuum.io/anaconda/install.html</p>
+<p>Windows and OSX Installs are easy using the GUI based installers, so I
+will focus on the Linux install in my example.</p>
+<p>Locate your download copy of the installer, open up a terminal and run
+the install script.
+    :::bash
+    bash /Downloads/Miniconda3-3.0.5-Linux-x86_64.sh</p>
+<p>You should be greeted with the welcome message, asked to read and
+approve the license agreement, asked where to install, and prepend your
+path in your .bashrc</p>
+<div class="highlight"><pre>Welcome to Miniconda3 3.0.5 <span class="o">(</span>by Continuum Analytics, Inc.<span class="o">)</span>
+
+Do you approve the license terms? <span class="se">\[</span>yes<span class="p">|</span>no<span class="se">\]</span>  
+<span class="se">\[</span>no<span class="se">\]</span> &gt;&gt;&gt; yes
+
+Miniconda3 will now be installed into this location:  
+/home/dbehnke/miniconda3
+
+- Press ENTER to confirm the location  
+- Press CTRL-C to abort the installation  
+- Or specify an different location below
+
+<span class="se">\[</span>/home/dbehnke/miniconda3<span class="se">\]</span> &gt;&gt;&gt;
+
+Python 3.3.4 :: Continuum Analytics, Inc.  
+creating default environment...  
+installation finished.  
+Do you wish the installer to prepend the Miniconda3 install location  
+to PATH in your /home/dbehnke/.bashrc ? <span class="se">\[</span>yes<span class="p">|</span>no<span class="se">\]</span>  
+<span class="se">\[</span>no<span class="se">\]</span> &gt;&gt;&gt; yes  
+Restart your Terminal
+</pre></div>
+
+
+<h3>Updating conda</h3>
+<p>Now that you have installed miniconda, you should open up a terminal
+(OSX, Linux) or Command prompt (Windows). The remainder of this article
+will show a bash prompt, but the commands are the same in Windows.</p>
+<p>conda is a tool for managing environments and packages. If you are
+familiar with virtualenv, environments are similar. With Anaconda we
+usually don't use virtualenv or pip (they can be installed if you really
+want to) for installing packages and creating enviornments. Instead
+conda takes care of most of the work. We will start by updating conda
+since it's the center of importance for using Anaconda.</p>
+<p>The following command will determine if conda is installed and available
+in your PATH:</p>
+<div class="highlight"><pre><span class="nv">$ </span>conda -V  
+conda 3.0.5
+</pre></div>
+
+
+<p>Now lets update conda</p>
+<div class="highlight"><pre><span class="se">\$</span> conda update conda
+
+Package plan <span class="k">for</span> installation in environment /home/dbehnke/miniconda3:
+
+The following packages will be downloaded:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+conda-3.0.6 <span class="p">|</span> py33<span class="se">\_</span><span class="m">0</span> <span class="m">106</span> KB
+
+The following packages will be UN-linked:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+conda-3.0.5 <span class="p">|</span> py33<span class="se">\_</span>0
+
+The following packages will be linked:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+conda-3.0.6 <span class="p">|</span> py33<span class="se">\_</span><span class="m">0</span> hard-link
+
+Proceed <span class="o">(</span><span class="se">\[</span>y<span class="se">\]</span>/n<span class="o">)</span>? y
+</pre></div>
+
+
+<h3>Environments</h3>
+<p>By default you install in the root environment. Environments allow you
+to sandbox or seperate your installed packages. You can even have
+different python versions in each environment. They live in the envs
+directory in your installation directory. Conda will also try to create
+hard-links whenever possible to save disk space.</p>
+<p>List installed environments (e.g. here I have 2 environments created
+already from a previous install. The * indicates my current environment
+is root)</p>
+<div class="highlight"><pre><span class="se">\$</span> conda info -e  
+<span class="se">\#</span> conda environments:  
+<span class="se">\#</span>  
+oracle /home/dbehnke/miniconda3/envs/oracle  
+root <span class="se">\*</span> /home/dbehnke/miniconda3
+</pre></div>
+
+
+<h3>Creating</h3>
+<p>Here is the breakdown of creating a new environment.</p>
+<p>For the full documentation, access the help.</p>
+<div class="highlight"><pre>conda create -h
+</pre></div>
+
+
+<p>We will look at a subset of the available options (taken from the -h
+command)</p>
+<div class="highlight"><pre>Description
+
+Create a new conda environment from a list of specified packages. To use
+the created environment, use <span class="s1">&#39;source activate envname&#39;</span> look in that
+directory first. This <span class="nb">command </span>requires either the -n NAME or -p PREFIX
+option.
+
+conda create -n NAME <span class="se">\[</span>package<span class="se">\_</span>spec <span class="se">\[</span>package<span class="se">\_</span>spec<span class="se">\]</span> <span class="se">\]</span>
+
+positional arguments::
+
+package<span class="se">\_</span>spec package versions to install into conda environment
+
+optional arguments:
+
+-n NAME, --name NAME name of environment  
+-p PATH, --prefix PATH full path to environment prefix
+</pre></div>
+
+
+<p>I personally like to only use the -n so that it lives with my
+installation in my home directory. However, if you installed as root or
+somewhere your user account doesn't have access to you may want to use
+-p \$HOME/somedirectory instead of -n. This article will only use -n for
+examples.</p>
+<p>e.g. Create an environment with Default python (in this case Python 3).
+Here I create an environment named "oracle" in the env directory of my
+installation with just the minimal python.</p>
+<div class="highlight"><pre><span class="se">\$</span> conda create -n oracle python
+
+Package plan <span class="k">for</span> installation in environment
+/home/dbehnke/miniconda3/envs/oracle:
+
+The following packages will be linked:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+openssl-1.0.1c <span class="p">|</span> <span class="m">0</span> hard-link  
+python-3.3.4 <span class="p">|</span> <span class="m">0</span> hard-link  
+readline-6.2 <span class="p">|</span> <span class="m">2</span> hard-link  
+sqlite-3.7.13 <span class="p">|</span> <span class="m">0</span> hard-link  
+system-5.8 <span class="p">|</span> <span class="m">1</span> hard-link  
+tk-8.5.13 <span class="p">|</span> <span class="m">0</span> hard-link  
+zlib-1.2.7 <span class="p">|</span> <span class="m">0</span> hard-link
+
+Proceed <span class="o">(</span><span class="se">\[</span>y<span class="se">\]</span>/n<span class="o">)</span>? y
+
+Linking packages ...  
+<span class="se">\[</span> COMPLETE <span class="se">\]</span>
+<span class="p">|</span><span class="se">\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#</span><span class="p">|</span>
+100%  
+<span class="se">\#</span>  
+<span class="se">\#</span> To activate this environment, use:  
+<span class="se">\#</span> <span class="se">\$</span> <span class="nb">source </span>activate oracle  
+<span class="se">\#</span>  
+<span class="se">\#</span> To deactivate this environment, use:  
+<span class="se">\#</span> <span class="se">\$</span> <span class="nb">source </span>deactivate  
+<span class="se">\#</span>
+</pre></div>
+
+
+<h3>Activating</h3>
+<div class="highlight"><pre><span class="se">\$</span> <span class="nb">source </span>activate oracle  
+prepending /home/dbehnke/miniconda3/envs/oracle/bin to PATH  
+Verifying environment is active
+</pre></div>
+
+
+<p>Notice the (oracle) in front of the bash prompt. This is an indicator
+that the "oracle" environment is activated.</p>
+<div class="highlight"><pre><span class="o">(</span>oracle<span class="o">)</span> <span class="se">\$</span> conda info -e
+
+<span class="se">\#</span> conda environments:  
+<span class="se">\#</span>  
+oracle <span class="se">\*</span> /home/dbehnke/miniconda3/envs/oracle  
+root /home/dbehnke/miniconda3
+
+<span class="o">(</span>oracle<span class="o">)</span> <span class="se">\$</span> which python
+
+/home/dbehnke/miniconda3/envs/oracle/bin/python
+
+<span class="o">(</span>oracle<span class="o">)</span> <span class="se">\$</span> python
+
+Python 3.3.4 <span class="p">|</span>Continuum Analytics, Inc.<span class="p">|</span> <span class="o">(</span>default, Feb <span class="m">10</span> 2014,
+17:53:28<span class="o">)</span>  
+<span class="se">\[</span>GCC 4.1.2 <span class="m">20080704</span> <span class="o">(</span>Red Hat 4.1.2-54<span class="o">)</span><span class="se">\]</span> on linux  
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.  
+&gt;&gt;&gt;
+</pre></div>
+
+
+<h3>Deactivating</h3>
+<div class="highlight"><pre><span class="o">(</span>oracle<span class="o">)</span> <span class="se">\$</span> <span class="nb">source </span>deactivate
+
+discarding /home/dbehnke/miniconda3/envs/oracle/bin from PATH
+</pre></div>
+
+
+<p>You'll notice the (oracle) will be removed as well from the prompt.</p>
+<h3>Deleting</h3>
+<p>You can use the conda remove -n nameofenvironment --all or delete the
+directory the environment is in.</p>
+<p><code>conda remove -n oracle --all</code> 
+or, simply</p>
+<p><code>rm -r -f /home/dbehnke/miniconda3/envs/oracle</code> 
+Using a Different Version of Python<br />
+To list available versions of Python to install you can use "conda
+search". Here is an example.</p>
+<div class="highlight"><pre>conda search <span class="s2">&quot;\^python\$&quot;</span>
+
+python 2.6.8 <span class="m">1</span> defaults  
+2.6.8 <span class="m">2</span> defaults  
+2.6.9 <span class="m">1</span> defaults  
+2.7.3 <span class="m">7</span> defaults  
+2.7.4 <span class="m">1</span> defaults  
+2.7.5 <span class="m">3</span> defaults  
+2.7.6 <span class="m">0</span> defaults  
+. 2.7.6 <span class="m">1</span> defaults  
+3.3.0 <span class="m">4</span> defaults  
+3.3.1 <span class="m">0</span> defaults  
+3.3.2 <span class="m">0</span> defaults  
+. 3.3.3 <span class="m">1</span> defaults  
+<span class="se">\*</span> 3.3.4 <span class="m">0</span> defaults
+</pre></div>
+
+
+<p>The installed root version deterimines the default version of python
+(indicated by the * in the conda search example above) used when
+creating environments. To specify a different version of python, use the
+environment variable PYTHON=x. (where x is version found in conda
+search)</p>
+<p>e.g. installing Python 2 in an environment called oracle. Here I simply
+use 2 instead of specifying the complete version number which will take
+the latest version of python 2.</p>
+<div class="highlight"><pre><span class="se">\$</span> conda create -n oracle <span class="nv">python</span><span class="o">=</span>2
+
+Package plan <span class="k">for</span> installation in environment
+/home/dbehnke/miniconda3/envs/oracle:
+
+The following packages will be downloaded:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+python-2.7.6 <span class="p">|</span> <span class="m">1</span> 11.2 MB
+
+The following packages will be linked:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+openssl-1.0.1c <span class="p">|</span> <span class="m">0</span> hard-link  
+python-2.7.6 <span class="p">|</span> <span class="m">1</span> hard-link  
+readline-6.2 <span class="p">|</span> <span class="m">2</span> hard-link  
+sqlite-3.7.13 <span class="p">|</span> <span class="m">0</span> hard-link  
+system-5.8 <span class="p">|</span> <span class="m">1</span> hard-link  
+tk-8.5.13 <span class="p">|</span> <span class="m">0</span> hard-link  
+zlib-1.2.7 <span class="p">|</span> <span class="m">0</span> hard-link
+
+Proceed <span class="o">(</span><span class="se">\[</span>y<span class="se">\]</span>/n<span class="o">)</span>?
+</pre></div>
+
+
+<h3>Cloning an Environment</h3>
+<p>If you want to make a snapshot of an already existing environment, you
+can use the --clone keyword</p>
+<div class="highlight"><pre>conda create -n nameofnew --clone nameofsource  
+Installing Packages  
+conda install -n nameofenvironment <span class="se">\[</span>package<span class="se">\]</span> <span class="se">\[</span>package<span class="se">\[</span><span class="o">=</span>x.x.x<span class="se">\]\]</span>
+<span class="se">\[</span>package<span class="se">\]</span>
+</pre></div>
+
+
+<p>The -n is names your environment, if you omit the -n then the install
+will be installed in the root environment. It can't be stressed enough,
+it is very important to use the -n flag when installing packages in a
+environment other than the root. Get yourself in the habit of using the
+-n parameter even if you are using root. From experience, failing to do
+so you may install the module in root when you meant to install it in
+another environment.</p>
+<p>[package] is either simply the package name, for example flask, or
+sqlalchemy. This will install the latest version of the package and any
+dependencies it may need.</p>
+<p>[package=x]</p>
+<p>This will the version matching x. You can also use x.y, x.y.x, etc. To
+match the version of the package. For example, as we saw above when we
+installed Python 2, if we wanted to install the latest version of python
+2, we would use python=2. For python 2.6.9, we would use python=2.6.9.
+The same goes for other packages, flask 0.10, you would use flask=0.10</p>
+<p>It's important to note, omitting the python=x will default to the
+miniconda version, i.e. miniconda3 installs python 3 and miniconda2
+installs python 2 by default.</p>
+<p>Example #1. Installing an Anaconda environment similar to the full
+installer</p>
+<div class="highlight"><pre><span class="se">\$</span> conda install -n oracle anaconda
+
+Package plan <span class="k">for</span> installation in environment
+/home/dbehnke/miniconda3/envs/oracle:
+
+The following packages will be downloaded:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+anaconda-1.9.1 <span class="p">|</span> np18py33<span class="se">\_</span><span class="m">0</span> <span class="m">3</span> KB  
+argcomplete-0.6.7 <span class="p">|</span> py33<span class="se">\_</span><span class="m">0</span> <span class="m">26</span> KB  
+astropy-0.3.0 <span class="p">|</span> np18py33<span class="se">\_</span><span class="m">0</span> 5.9 MB  
+beautiful-soup-4.3.1 <span class="p">|</span> py33<span class="se">\_</span><span class="m">0</span> <span class="m">114</span> KB  
+bitarray-0.8.1 <span class="p">|</span> py33<span class="se">\_</span><span class="m">0</span> <span class="m">89</span> KB
+
+...
+</pre></div>
+
+
+<p>Example #2. Installing a couple of packages</p>
+<p>e.g. installing flask and sqlalchemy</p>
+<div class="highlight"><pre><span class="se">\$</span> conda install -n oracle flask sqlalchemy
+
+Package plan <span class="k">for</span> installation in environment
+/home/dbehnke/miniconda3/envs/oracle:
+
+The following packages will be downloaded:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+flask-0.10.1 <span class="p">|</span> py27<span class="se">\_</span><span class="m">1</span> <span class="m">129</span> KB  
+itsdangerous-0.23 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> <span class="m">16</span> KB  
+jinja2-2.7.2 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> <span class="m">308</span> KB  
+markupsafe-0.18 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> <span class="m">26</span> KB  
+sqlalchemy-0.9.3 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> 1.1 MB  
+werkzeug-0.9.4 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> <span class="m">385</span> KB  
+------------------------------------------------------------  
+Total: 2.0 MB
+
+The following packages will be linked:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+flask-0.10.1 <span class="p">|</span> py27<span class="se">\_</span><span class="m">1</span> hard-link  
+itsdangerous-0.23 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link  
+jinja2-2.7.2 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link  
+markupsafe-0.18 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link  
+sqlalchemy-0.9.3 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link  
+werkzeug-0.9.4 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link
+
+Proceed <span class="o">(</span><span class="se">\[</span>y<span class="se">\]</span>/n<span class="o">)</span>?
+</pre></div>
+
+
+<h3>Removing Packages</h3>
+<p>This is accomplished by using the "conda remove" command and is similar
+to the "conda install" command. You can also save time if you have many
+packages to remove, by simply deleting the environment and recreating
+it.</p>
+<h3>Advanced</h3>
+<p>What if a package doesn't exist through conda install ?</p>
+<p>If the package you want is not available for conda, another option is to
+search http://binstar.org (make sure the package you find is built for
+the platform you are on), and then add that person's binstar channel
+with conda config --add channels binstar_username.</p>
+<p>You should try to use "conda install" whenever possible. However, as a
+last resort, you can solve this problem by installing pip into your
+environment and pull in packages you need. You could also create your
+own conda packages, but that's beyond the scope of this article.</p>
+<p>e.g. installing pip</p>
+<div class="highlight"><pre><span class="se">\$</span> conda install -n oracle pip
+
+Package plan <span class="k">for</span> installation in environment
+/home/dbehnke/miniconda3/envs/oracle:
+
+The following packages will be downloaded:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+pip-1.5.4 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> 1.5 MB  
+setuptools-2.2 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> <span class="m">458</span> KB  
+------------------------------------------------------------  
+Total: 2.0 MB
+
+The following packages will be linked:
+
+package <span class="p">|</span> build  
+---------------------------<span class="p">|</span>-----------------  
+pip-1.5.4 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link  
+setuptools-2.2 <span class="p">|</span> py27<span class="se">\_</span><span class="m">0</span> hard-link
+
+Proceed <span class="o">(</span><span class="se">\[</span>y<span class="se">\]</span>/n<span class="o">)</span>?
+</pre></div>
+
+
+<p>Then just install as normal using pip install xxxx.</p>
+<h3>Uninstalling</h3>
+<p>To remove Anaconda/Miniconda, just remove all the prepended path
+variables in your .bashrc or your System Environment, and then remove
+the installation directory.</p>
+<p>Windows Users, I believe you just use the uninstaller in Add/Remove
+programs.</p>
+<h3>Conclusions</h3>
+<p>Anaconda gives you a nice alternative to the default Python installer
+on Windows.</p>
+<p>Default packages installed in anaconda package include most of the
+common packages most python developers use.</p>
+<p>Consistent installs across Windows, Linux, OSX - you can use the same
+conda commands.</p>
+<p>It should work on older Linux distributions as well since it appears to
+be compiled on a Red Hat 5 system.</p>
+<p>Further Reading:</p>
+<p>http://conda.pydata.org/docs/</p>
+<p>http://docs.continuum.io/anaconda/</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2015-11-25T15:56:00-07:00">Nov 25, 2015</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#python-ref">Python</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#development-ref">Development
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

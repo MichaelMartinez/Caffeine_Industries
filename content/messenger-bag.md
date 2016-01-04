@@ -1,7 +1,8 @@
 Title: Messenger Bag
 Date: 2013-07-09 21:21
 Author: Michael
-Category: Cordura, Sewing
+Category: Design 
+Tags: Cordura, Sewing
 Slug: messenger-bag
 Status: published
 

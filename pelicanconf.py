@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Michael Martinez'
-SITENAME = 'Caffeine Industries -'
-SITEURL = 'http://caffeineindustries.com'
+SITENAME = 'Caffeine Industries'
+#SITEURL = 'http://caffeineindustries.com'
 
 PATH = 'content'
 
@@ -12,7 +12,9 @@ TIMEZONE = 'US/Arizona'
 
 DEFAULT_LANG = 'en'
 
-THEME = "/Users/michaelmartinez/Dropbox/pelican/pelican-themes/pelican-bootstrap3"
+THEME = "/Users/michaelmartinez/Dropbox/pelican/pelican-themes/elegant"
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

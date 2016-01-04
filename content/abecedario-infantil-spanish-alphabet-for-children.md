@@ -1,10 +1,11 @@
 Title: Abecedario Infantil
 Date: 2011-05-19 12:16
 Author: Michael
+Category: Android
 Slug: abecedario-infantil-spanish-alphabet-for-children
 Status: published
 
-\[image
+![image
 src="http://mmartinez.us/wp-content/uploads/2011/05/featureAlfabeto.jpg"
 alt="Feature" type="rounded"\]
 

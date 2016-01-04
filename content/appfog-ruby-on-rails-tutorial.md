@@ -1,7 +1,8 @@
 Title: AppFog - Ruby on Rails 3.2 Tutorial
 Date: 2012-06-27 23:08
 Author: Michael
-Category: AppFog, Blog, code, PaaS, Portfolio, Ruby on Rails, Tutorial, Uncategorized
+Category: Ruby 
+Tags: tutorial, demo
 Slug: appfog-ruby-on-rails-tutorial
 Status: published
 

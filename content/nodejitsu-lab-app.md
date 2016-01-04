@@ -1,7 +1,8 @@
 Title: Nodejitsu Lab App
 Date: 2012-07-10 23:57
 Author: Michael
-Category: Blog, code, HTML5, Javascript, nodejitsu, nodejs, Portfolio, Programming, Twitter Bootstrap
+Category: JavaScript
+Tags: nodejitsu, nodejs
 Slug: nodejitsu-lab-app
 Status: published
 

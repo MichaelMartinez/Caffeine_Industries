@@ -1,254 +1,74 @@
 <!DOCTYPE html>
-<html lang="en"
->
-<head>
-    <title>Playing with Tweepy - Caffeine Industries -</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<link rel="canonical" href="/playing-with-tweepy.html">
-
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Michael" />
-        <meta name="description" content="Tweepy in iPython Notebook. I&#39;ve wanted to have a play with the Twitter API for a few months. There is a lot of complexity in this API, so I looked for a library that abstracted as much as possible. Tweepy was the first to grab my attention. Another library ..." />
+        <meta name="copyright" content="Michael" />
 
-        <meta property="og:site_name" content="Caffeine Industries -" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Playing with Tweepy"/>
-        <meta property="og:url" content="/playing-with-tweepy.html"/>
-        <meta property="og:description" content="Tweepy in iPython Notebook. I&#39;ve wanted to have a play with the Twitter API for a few months. There is a lot of complexity in this API, so I looked for a library that abstracted as much as possible. Tweepy was the first to grab my attention. Another library ..."/>
-        <meta property="article:published_time" content="2013-04-23" />
-            <meta property="article:section" content="Uncategorized" />
-            <meta property="article:author" content="Michael" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
+<meta name="keywords" content="tweepy, Twitter, iPython, Python, " />
 
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+<meta property="og:title" content="Playing with Tweepy "/>
+<meta property="og:url" content="/playing-with-tweepy.html" />
+<meta property="og:description" content="Tweepy in iPython Notebook. I&#39;ve wanted to have a play with the Twitter API for a few months. There is a lot of complexity in this API, so I looked for a library that abstracted as much as possible. Tweepy was the first to grab my attention. Another library ..." />
+<meta property="og:site_name" content="Caffeine Industries" />
+<meta property="og:article:author" content="Michael" />
+<meta property="og:article:published_time" content="2013-04-23T11:32:00-07:00" />
+<meta name="twitter:title" content="Playing with Tweepy ">
+<meta name="twitter:description" content="Tweepy in iPython Notebook. I&#39;ve wanted to have a play with the Twitter API for a few months. There is a lot of complexity in this API, so I looked for a library that abstracted as much as possible. Tweepy was the first to grab my attention. Another library ...">
 
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
-
-
-</head>
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">
-Caffeine Industries -            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                        <li >
-                            <a href="/category/actionscript-3-android-blog-code-design-flash-ios-java-language-programming-ui-uncategorized-ux.html">Actionscript 3, android, blog, code, design, flash, ios, java, language, programming, ui, uncategorized, ux</a>
-                        </li>
-                        <li >
-                            <a href="/category/actionscript-3-android-blog-code-flash-language-madcomponents-portfolio-tutorial-ui-uncategorized.html">Actionscript 3, android, blog, code, flash, language, madcomponents, portfolio, tutorial, ui, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/actionscript-3-blog-code-computer-economics-flash-language-uncategorized.html">Actionscript 3, blog, code, computer, economics, flash, language, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/actionscript-3-blog-code-flash-html5-javascript-language-programming-uncategorized.html">Actionscript 3, blog, code, flash, html5, javascript, language, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/actionscript-3-blog-code-flash-language-madcomponents-portfolio-programming-tutorial-uncategorized.html">Actionscript 3, blog, code, flash, language, madcomponents, portfolio, programming, tutorial, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/actionscript-3-blog-flash-madcomponents-portfolio-programming-tutorial-ui-uncategorized.html">Actionscript 3, blog, flash, madcomponents, portfolio, programming, tutorial, ui, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-apps-blog.html">Android, apps, blog</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-apps-blog-code-computer-portfolio-programming.html">Android, apps, blog, code, computer, portfolio, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-computer-html5-java-javascript-programming-uncategorized.html">Android, blog, code, computer, html5, java, javascript, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-computer-java-language-programming-uncategorized.html">Android, blog, code, computer, java, language, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-computer-portfolio-programming-ui-ux.html">Android, blog, code, computer, portfolio, programming, ui, ux</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-google-google-io-java-programming.html">Android, blog, code, google, google i/o, java, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-google-java-programming-uncategorized.html">Android, blog, code, google, java, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-java-language-programming.html">Android, blog, code, java, language, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-java-programming.html">Android, blog, code, java, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-code-language-programming.html">Android, blog, code, language, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-economics.html">Android, blog, economics</a>
-                        </li>
-                        <li >
-                            <a href="/category/android-blog-google-portfolio-ui-ux.html">Android, blog, google, portfolio, ui, ux</a>
-                        </li>
-                        <li >
-                            <a href="/category/ansible-docker.html">Ansible, docker</a>
-                        </li>
-                        <li >
-                            <a href="/category/ant-blog-code-css-html5-javascript-less-mobile-portfolio-programming-twitter-bootstrap.html">Ant, blog, code, css, html5, javascript, less, mobile, portfolio, programming, twitter bootstrap</a>
-                        </li>
-                        <li >
-                            <a href="/category/appfog-blog-code-paas-portfolio-ruby-on-rails-tutorial-uncategorized.html">Appfog, blog, code, paas, portfolio, ruby on rails, tutorial, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/bci-blog-code-computer-language-programming.html">Bci, blog, code, computer, language, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/beautifulsoup-javascript-python-requests-scraping-selenium.html">Beautifulsoup, javascript, python, requests, scraping, selenium</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-computer-java-language-programming.html">Blog, code, computer, java, language, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-computer-language-programming-uncategorized.html">Blog, code, computer, language, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-computer-uncategorized.html">Blog, code, computer, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-css-design-html5-javascript-language-less-programming-uncategorized.html">Blog, code, css, design, html5, javascript, language, less, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-google-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, google, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout.html">Blog, code, html5, javascript, jquery mobile, knockout</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-html5-javascript-jquery-mobile-knockout-localstorage-programming-uncategorized.html">Blog, code, html5, javascript, jquery mobile, knockout, localstorage, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-html5-javascript-language.html">Blog, code, html5, javascript, language</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-html5-javascript-nodejitsu-nodejs-portfolio-programming-twitter-bootstrap.html">Blog, code, html5, javascript, nodejitsu, nodejs, portfolio, programming, twitter bootstrap</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-html5-jquery-mobile-knockout-mobile.html">Blog, code, html5, jquery mobile, knockout, mobile</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-code-javascript-programming-uncategorized.html">Blog, code, javascript, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-computer-economics-language-programming.html">Blog, computer, economics, language, programming</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-design-madcomponents-uncategorized.html">Blog, design, madcomponents, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-design-uncategorized.html">Blog, design, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-ui-uncategorized-ux.html">Blog, ui, uncategorized, ux</a>
-                        </li>
-                        <li >
-                            <a href="/category/blog-uncategorized.html">Blog, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/cad-design-laser-leather.html">Cad, design, laser, leather</a>
-                        </li>
-                        <li >
-                            <a href="/category/cad-design-laser-wood.html">Cad, design, laser, wood</a>
-                        </li>
-                        <li >
-                            <a href="/category/code-html5-javascript-mobile-programming-uncategorized.html">Code, html5, javascript, mobile, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/code-javascript-language-programming-uncategorized.html">Code, javascript, language, programming, uncategorized</a>
-                        </li>
-                        <li >
-                            <a href="/category/computer.html">Computer</a>
-                        </li>
-                        <li >
-                            <a href="/category/cordura.html">Cordura</a>
-                        </li>
-                        <li >
-                            <a href="/category/cordura-sewing.html">Cordura, sewing</a>
-                        </li>
-                        <li >
-                            <a href="/category/firefighter-gear-nomex-sewing.html">Firefighter, gear, nomex, sewing</a>
-                        </li>
-                        <li >
-                            <a href="/category/hand-stitched-leather-sewing.html">Hand stitched, leather, sewing</a>
-                        </li>
-                        <li >
-                            <a href="/category/leather.html">Leather</a>
-                        </li>
-                        <li >
-                            <a href="/category/misc.html">Misc</a>
-                        </li>
-                        <li >
-                            <a href="/category/programming-python.html">Programming, python</a>
-                        </li>
-                        <li >
-                            <a href="/category/python.html">Python</a>
-                        </li>
-                        <li class="active">
-                            <a href="/category/uncategorized.html">Uncategorized</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="/playing-with-tweepy.html"
-                       rel="bookmark"
-                       title="Permalink to Playing with Tweepy">
-                        Playing with Tweepy
+        <title>Playing with Tweepy  · Caffeine Industries
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-04-23T11:32:00-07:00"> Tue 23 April 2013</time>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
+                    <a class="brand" href="/"><span class=site-name>Caffeine Industries</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
                 </div>
-                <p>Tweepy in iPython Notebook. I've wanted to have a play with the Twitter
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/playing-with-tweepy.html"> Playing with Tweepy  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Tweepy in iPython Notebook. I've wanted to have a play with the Twitter
 API<br />
 for a few months. There is a lot of complexity in this API, so I looked
 for<br />
@@ -267,9 +87,9 @@ because it worked well for these basic examples.</p>
 <li>google group is
 <a href="https://groups.google.com/forum/?fromgroups=#!forum/tweepy">here</a>  </li>
 <li>docs <a href="http://packages.python.org/tweepy/html/index.html">here</a>  </li>
-<li>github repo <a href="https://github.com/tweepy/tweepy">here</a></li>
-</ul>
-<p>``` {.lang:python .decode:true}
+<li>
+<p>github repo <a href="https://github.com/tweepy/tweepy">here</a></p>
+<p>:::python
  import tweepy</p>
 <div class="highlight"><pre># The consumer keys can be found on your application&#39;s Details
 # page located at https://dev.twitter.com/apps (under &quot;OAuth settings&quot;)
@@ -295,332 +115,293 @@ Michael Martinez
 </pre></div>
 
 
-<div class="highlight"><pre>If the request was successful, you will see your name print out in the
-response
+</li>
+</ul>
+<p>If the request was successful, you will see your name print out in the
+response</p>
+<div class="highlight"><pre><span class="n">myapi</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="s">&#39;Rocking #iPythonNotebook and tweepy&#39;</span><span class="p">)</span>
 
-``` {.lang:python .decode:true}
-myapi.update_status(&#39;Rocking #iPythonNotebook and tweepy&#39;)
+ <span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
 
- Out[2]:
-
-     &lt;tweepy.models.Status at 0x107ca3550&gt;
+     <span class="o">&lt;</span><span class="n">tweepy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Status</span> <span class="n">at</span> <span class="mh">0x107ca3550</span><span class="o">&gt;</span>
 </pre></div>
 
 
 <p>[line]</p>
 <h3>The user object</h3>
 <p>Showing a method to access some variables returned by twitter</p>
-<p>``` {.lang:python .decode:true}
- print myapi.me().screen_name</p>
-<div class="highlight"><pre> MonkMartinez
-</pre></div>
+<div class="highlight"><pre><span class="k">print</span> <span class="n">myapi</span><span class="o">.</span><span class="n">me</span><span class="p">()</span><span class="o">.</span><span class="n">screen_name</span>
+
+     <span class="n">MonkMartinez</span>
 
 
-<div class="highlight"><pre>``` {.lang:python .decode:true}
-print myapi.me().description
+<span class="k">print</span> <span class="n">myapi</span><span class="o">.</span><span class="n">me</span><span class="p">()</span><span class="o">.</span><span class="n">description</span>
 
-     Father. Firefighter. Mobile Crafter. Web Crafter. Garage-Business-Dude.
-</pre></div>
+     <span class="n">Father</span><span class="o">.</span> <span class="n">Firefighter</span><span class="o">.</span> <span class="n">Mobile</span> <span class="n">Crafter</span><span class="o">.</span> <span class="n">Web</span> <span class="n">Crafter</span><span class="o">.</span> <span class="n">Garage</span><span class="o">-</span><span class="n">Business</span><span class="o">-</span><span class="n">Dude</span><span class="o">.</span>
 
 
-<p>``` {.lang:python .decode:true}
-    me = myapi.me()</p>
-<div class="highlight"><pre>``` {.lang:python .decode:true}
-print me.followers_count
+<span class="n">me</span> <span class="o">=</span> <span class="n">myapi</span><span class="o">.</span><span class="n">me</span><span class="p">()</span>
 
-     116
-</pre></div>
+<span class="k">print</span> <span class="n">me</span><span class="o">.</span><span class="n">followers_count</span>
 
+     <span class="mi">116</span>
 
-<p>``` {.lang:python .decode:true}
-    me.status.text</p>
-<div class="highlight"><pre> u&#39;Rocking #iPythonNotebook and tweepy&#39;
-</pre></div>
+<span class="n">me</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">text</span>
 
+     <span class="s">u&#39;Rocking #iPythonNotebook and tweepy&#39;</span>
 
-<div class="highlight"><pre>``` {.lang:python .decode:true}
-    me.statuses_count
+<span class="n">me</span><span class="o">.</span><span class="n">statuses_count</span>
 
-     1570
+     <span class="mi">1570</span>
 </pre></div>
 
 
 <p>[line]</p>
 <h3>Rate limits</h3>
 <p>For items that return a dict, you can simply iterate through the list</p>
-<p>``` {.lang:python .decode:true}
-type(myapi.rate_limit_status())</p>
-<div class="highlight"><pre>#lets work through a returned dict
+<div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="n">myapi</span><span class="o">.</span><span class="n">rate_limit_status</span><span class="p">())</span>
 
-rl = myapi.rate_limit_status()
+    <span class="c">#lets work through a returned dict</span>
 
-for k, v in rl.iteritems():
-    print &#39;%s : %s&#39; %(k, v)
+    <span class="n">rl</span> <span class="o">=</span> <span class="n">myapi</span><span class="o">.</span><span class="n">rate_limit_status</span><span class="p">()</span>
 
- photos : {u&#39;daily_limit&#39;: 100, u&#39;reset_time&#39;: u&#39;Sun Apr 21 17:21:43 +0000
- 2013&#39;, u&#39;remaining_hits&#39;: 100, u&#39;reset_time_in_seconds&#39;: 1366564903}
- remaining_hits : 346
- reset_time_in_seconds : 1366482078
- hourly_limit : 350
- reset_time : Sat Apr 20 18:21:18 +0000 2013
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rl</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> : </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+     <span class="n">photos</span> <span class="p">:</span> <span class="p">{</span><span class="s">u&#39;daily_limit&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s">u&#39;reset_time&#39;</span><span class="p">:</span> <span class="s">u&#39;Sun Apr 21 17:21:43 +0000</span>
+     <span class="mi">2013</span><span class="s">&#39;, u&#39;</span><span class="n">remaining_hits</span><span class="s">&#39;: 100, u&#39;</span><span class="n">reset_time_in_seconds</span><span class="s">&#39;: 1366564903}</span>
+     <span class="n">remaining_hits</span> <span class="p">:</span> <span class="mi">346</span>
+     <span class="n">reset_time_in_seconds</span> <span class="p">:</span> <span class="mi">1366482078</span>
+     <span class="n">hourly_limit</span> <span class="p">:</span> <span class="mi">350</span>
+     <span class="n">reset_time</span> <span class="p">:</span> <span class="n">Sat</span> <span class="n">Apr</span> <span class="mi">20</span> <span class="mi">18</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">18</span> <span class="o">+</span><span class="mo">0000</span> <span class="mi">2013</span>
 </pre></div>
 
 
-<div class="highlight"><pre>Another way to access variables within the api...
+<p>Another way to access variables within the api...</p>
+<div class="highlight"><pre><span class="n">myapi</span><span class="o">.</span><span class="n">rate_limit_status</span><span class="p">()[</span><span class="s">&#39;remaining_hits&#39;</span><span class="p">]</span>
 
-``` {.lang:python .decode:true}
-    myapi.rate_limit_status()[&#39;remaining_hits&#39;]
-
-     350
-</pre></div>
+ <span class="mi">350</span>
 
 
-<p>``` {.lang:python .decode:true}
-import datetime
-    # get the reset time from twitter call
-    twitime = myapi.rate_limit_status()['reset_time_in_seconds']</p>
-<div class="highlight"><pre>#convert the time
-timere = datetime.datetime.fromtimestamp(int(twitime)).strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)
-print(&#39;Twitter will reset at:&#39;, timere)
+<span class="kn">import</span> <span class="nn">datetime</span>
+    <span class="c"># get the reset time from twitter call</span>
+    <span class="n">twitime</span> <span class="o">=</span> <span class="n">myapi</span><span class="o">.</span><span class="n">rate_limit_status</span><span class="p">()[</span><span class="s">&#39;reset_time_in_seconds&#39;</span><span class="p">]</span>
 
- (&#39;Twitter will reset at:&#39;, &#39;2013-04-20 11:21:18&#39;)
-</pre></div>
+    <span class="c">#convert the time</span>
+    <span class="n">timere</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">twitime</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Twitter will reset at:&#39;</span><span class="p">,</span> <span class="n">timere</span><span class="p">)</span>
 
-
-<div class="highlight"><pre><span class="err">```</span> <span class="p">{.</span><span class="nn">lang</span><span class="p">:</span><span class="s-Atom">python</span> <span class="p">.</span><span class="nn">decode</span><span class="p">:</span><span class="s-Atom">true</span><span class="p">}</span>
-<span class="s-Atom">for</span> <span class="s-Atom">i</span> <span class="s-Atom">in</span> <span class="s-Atom">myapi</span><span class="p">.</span><span class="nf">user_timeline</span><span class="p">()</span><span class="s-Atom">:</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s-Atom">i</span><span class="p">.</span><span class="s-Atom">text</span><span class="p">)</span>
-
-     <span class="nv">Rocking</span> <span class="s-Atom">#iPythonNotebook</span> <span class="s-Atom">and</span> <span class="s-Atom">tweepy</span>
-     <span class="nv">Have</span> <span class="s-Atom">you</span> <span class="s-Atom">heard</span> <span class="s-Atom">‘</span><span class="nv">Sisi</span> <span class="o">-</span> <span class="nv">Stay</span> <span class="o">-</span> <span class="nv">Funk</span> <span class="nv">Ferret</span> <span class="nv">Edit</span><span class="s-Atom">’</span> <span class="s-Atom">by</span> <span class="nv">FunkFerret</span> <span class="s-Atom">on</span>
-     <span class="s-Atom">#</span><span class="nv">SoundCloud</span><span class="s-Atom">?</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="s-Atom">t</span><span class="p">.</span><span class="s-Atom">co</span><span class="o">/</span><span class="s-Atom">lrdhjdOmDa</span>
-     <span class="nv">Have</span> <span class="s-Atom">you</span> <span class="s-Atom">heard</span> <span class="s-Atom">‘</span><span class="nv">Rufus</span> <span class="nv">Thomas</span> <span class="o">-</span> <span class="nv">Itch</span> <span class="s-Atom">&amp;amp</span><span class="p">;</span> <span class="nv">Scratch</span> <span class="o">-</span> <span class="nv">Funk</span> <span class="nv">Ferret</span> <span class="nv">Edit</span><span class="s-Atom">’</span> <span class="s-Atom">by</span>
-     <span class="nv">FunkFerret</span> <span class="s-Atom">on</span> <span class="s-Atom">#</span><span class="nv">SoundCloud</span><span class="s-Atom">?</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="s-Atom">t</span><span class="p">.</span><span class="s-Atom">co</span><span class="o">/</span><span class="nv">JW2sKvlvvV</span>
-     <span class="nv">Can</span> <span class="s-Atom">you</span> <span class="s-Atom">get</span> <span class="s-Atom">paid</span> <span class="s-Atom">to</span> <span class="s-Atom">evaluate</span> <span class="nv">OSS</span> <span class="s-Atom">python</span> <span class="s-Atom">packages?</span>
-     <span class="nv">Rocking</span> <span class="s-Atom">#iPythonNotebook</span> <span class="s-Atom">and</span> <span class="s-Atom">tweepy</span>
-     <span class="s-Atom">@</span><span class="nv">UnlearningEcon</span> <span class="nv">Outcomes</span> <span class="s-Atom">are</span> <span class="nv">NEVER</span> <span class="s-Atom">certain</span><span class="p">.</span> <span class="nv">More</span> <span class="s-Atom">thinking</span> <span class="s-Atom">and</span> <span class="s-Atom">less</span> <span class="s-Atom">emotion</span>
-     <span class="s-Atom">would</span> <span class="s-Atom">make</span> <span class="s-Atom">the</span> <span class="s-Atom">world</span> <span class="s-Atom">a</span> <span class="s-Atom">better</span> <span class="s-Atom">place</span><span class="p">.</span>
-     <span class="s-Atom">@kennethlove</span> <span class="nv">Right</span> <span class="s-Atom">on</span><span class="p">,</span> <span class="s-Atom">can&#39;t wait!!!</span>
-<span class="s-Atom">     @kennethlove Really AWESOME #GSWD tut(s)... Muchas Gracias! More coming soon</span>
-<span class="s-Atom">     I hope?</span>
-<span class="s-Atom">     I am working on data analysis with #pandas and #iPython for a GIS project</span>
-<span class="s-Atom">     that may help #firefighters be more efficient.</span>
-<span class="s-Atom">     Back on the horse after a one month non-programming hiatus. Feels good...</span>
-<span class="s-Atom">     and my fingers still remember #emacs. #python #iPython</span>
-<span class="s-Atom">     The damage has already been done. The #bankrun will proceed as if the tax</span>
-<span class="s-Atom">     levy had passed. #Cyprus</span>
-<span class="s-Atom">     @charlesfrith short on math eh???</span>
-<span class="s-Atom">     Enough politics, back to programming and awesomeness in general.</span>
-<span class="s-Atom">     #hispanics are not dumb people that simply recognize latino names and think,</span>
-<span class="s-Atom">     &quot;bueno, yo vota para el.&quot;</span>
-<span class="s-Atom">     Not only that, the #republican party thinks that trotting people with</span>
-<span class="s-Atom">     hispanic last names will to help &quot;win&quot; the hispanic vote. #notworking</span>
-<span class="s-Atom">     The #republican party is so out of touch with my generation I really don&#39;t</span>
-     <span class="s-Atom">know</span> <span class="s-Atom">where</span> <span class="s-Atom">to</span> <span class="s-Atom">begin</span><span class="p">.</span>
-     <span class="s-Atom">@cjno</span> <span class="s-Atom">pic</span> <span class="s-Atom">or</span> <span class="s-Atom">it</span> <span class="s-Atom">didn</span><span class="err">&#39;</span><span class="s-Atom">t</span> <span class="nf">happen</span> <span class="o">:-</span><span class="p">)</span>
-</pre></div>
+     <span class="p">(</span><span class="s">&#39;Twitter will reset at:&#39;</span><span class="p">,</span> <span class="s">&#39;2013-04-20 11:21:18&#39;</span><span class="p">)</span>
 
 
-<p>``` {.lang:python .decode:true}
-for i in myapi.search("#watertown"):
-        print'name:', i.from_user,'\n', ':: twit:', i.text, '\n', 'geo:', i.geo</p>
-<div class="highlight"><pre> name: Sirajulrox98
- :: twit: RT @Jessewelle: ish is getting real in Boston. Be safe people. Stay
- in your house #Watertown.
- geo: None
- name: ConradddJay
- :: twit: RT @YourAnonNews: Bomber&#39;s uncle: It&#39;s about being losers. Not
- Chechnya. Not Islam. They deserve to die. http://t.co/SH1yhnBUFQ #Watertown
- #BostonBombing
- geo: None
- name: Jesicakhua
- :: twit: This goes to show that law enforcement in the US is better that
- most other countries&#39; military. #watertown #boston
- geo: None
- name: SaraGCeli
- :: twit: RT @mackissler: Little boy goes up to police officers and says
- &quot;thank you!&quot; Near the #Watertown home where the suspect was caught.
- http://t.co/xoGlNqx2Lt
- geo: None
- name: Gina_Gillespie
- :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
- http://t.co/hLSqKYKZUz #Watertown
- geo: None
- name: bumpinuglies55
- :: twit: RT @MentalityMag: #Watertown Police Chief claims Tamerlan Tsarnaev
- was cuffed and alive on the ground when Dzhokhar ran him over with stolen SUV,
- killing him.
- geo: None
- name: watertowntab
- :: twit: RT @ThatGuyBoston We are #watertown. We are boston. We are the
- United States of America. Proud to be a family of Boston Firefighters
- geo: None
- name: DMillsTheGod
- :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
- http://t.co/hLSqKYKZUz #Watertown
- geo: None
- name: watertowntab
- :: twit: RT @GarrettQuinn resident Taryn Sullivan, 28, says she was nervous
- but &quot;put my faith in the #Watertown, State Police&quot; http://t.co/39Lf9HB32t
- geo: None
- name: infolibri
- :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
- http://t.co/hLSqKYKZUz #Watertown
- geo: None
- name: fabian70813
- :: twit: RT @YourAnonNews: Cop to NBC reporter:&quot;if you knew what was going
- on, you wouldn&#39;t be standing here right now.&quot;#watertown #manhunt #Boston via
-@CiaPressOffice
- geo: None
- name: PatrakaarPopat
- :: twit: RT @AJELive: Dead #Boston bombings suspect was interviewed by FBI
- http://t.co/hLSqKYKZUz #Watertown
- geo: None
- name: HaaziqUvais
- :: twit: RT @lisawilliams: Police searched my house while I was away. Attic
- door open items on floor. No complaints: doing their job. #watertown
- http://t.co/A4lw0ZBxoJ
- geo: None
- name: Slainte2505
- :: twit: RT @OpocAnOn: #Dzhokhar #Tsarnaev in this wider picture running
- from second bombing in #bostonbombing #manhunt #Watertown http://t.co/LXWlVR9RkQ
- geo: None
-</pre></div>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myapi</span><span class="o">.</span><span class="n">user_timeline</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+     <span class="n">Rocking</span> <span class="c">#iPythonNotebook and tweepy</span>
+     <span class="n">Have</span> <span class="n">you</span> <span class="n">heard</span> <span class="err">‘</span><span class="n">Sisi</span> <span class="o">-</span> <span class="n">Stay</span> <span class="o">-</span> <span class="n">Funk</span> <span class="n">Ferret</span> <span class="n">Edit</span><span class="err">’</span> <span class="n">by</span> <span class="n">FunkFerret</span> <span class="n">on</span>
+     <span class="c">#SoundCloud? https://t.co/lrdhjdOmDa</span>
+     <span class="n">Have</span> <span class="n">you</span> <span class="n">heard</span> <span class="err">‘</span><span class="n">Rufus</span> <span class="n">Thomas</span> <span class="o">-</span> <span class="n">Itch</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">Scratch</span> <span class="o">-</span> <span class="n">Funk</span> <span class="n">Ferret</span> <span class="n">Edit</span><span class="err">’</span> <span class="n">by</span>
+     <span class="n">FunkFerret</span> <span class="n">on</span> <span class="c">#SoundCloud? https://t.co/JW2sKvlvvV</span>
+     <span class="n">Can</span> <span class="n">you</span> <span class="n">get</span> <span class="n">paid</span> <span class="n">to</span> <span class="n">evaluate</span> <span class="n">OSS</span> <span class="n">python</span> <span class="n">packages</span><span class="err">?</span>
+     <span class="n">Rocking</span> <span class="c">#iPythonNotebook and tweepy</span>
+     <span class="nd">@UnlearningEcon</span> <span class="n">Outcomes</span> <span class="n">are</span> <span class="n">NEVER</span> <span class="n">certain</span><span class="o">.</span> <span class="n">More</span> <span class="n">thinking</span> <span class="ow">and</span> <span class="n">less</span> <span class="n">emotion</span>
+     <span class="n">would</span> <span class="n">make</span> <span class="n">the</span> <span class="n">world</span> <span class="n">a</span> <span class="n">better</span> <span class="n">place</span><span class="o">.</span>
+     <span class="nd">@kennethlove</span> <span class="n">Right</span> <span class="n">on</span><span class="p">,</span> <span class="n">can</span><span class="s">&#39;t wait!!!</span>
+     <span class="nd">@kennethlove</span> <span class="n">Really</span> <span class="n">AWESOME</span> <span class="c">#GSWD tut(s)... Muchas Gracias! More coming soon</span>
+     <span class="n">I</span> <span class="n">hope</span><span class="err">?</span>
+     <span class="n">I</span> <span class="n">am</span> <span class="n">working</span> <span class="n">on</span> <span class="n">data</span> <span class="n">analysis</span> <span class="k">with</span> <span class="c">#pandas and #iPython for a GIS project</span>
+     <span class="n">that</span> <span class="n">may</span> <span class="n">help</span> <span class="c">#firefighters be more efficient.</span>
+     <span class="n">Back</span> <span class="n">on</span> <span class="n">the</span> <span class="n">horse</span> <span class="n">after</span> <span class="n">a</span> <span class="n">one</span> <span class="n">month</span> <span class="n">non</span><span class="o">-</span><span class="n">programming</span> <span class="n">hiatus</span><span class="o">.</span> <span class="n">Feels</span> <span class="n">good</span><span class="o">...</span>
+     <span class="ow">and</span> <span class="n">my</span> <span class="n">fingers</span> <span class="n">still</span> <span class="n">remember</span> <span class="c">#emacs. #python #iPython</span>
+     <span class="n">The</span> <span class="n">damage</span> <span class="n">has</span> <span class="n">already</span> <span class="n">been</span> <span class="n">done</span><span class="o">.</span> <span class="n">The</span> <span class="c">#bankrun will proceed as if the tax</span>
+     <span class="n">levy</span> <span class="n">had</span> <span class="n">passed</span><span class="o">.</span> <span class="c">#Cyprus</span>
+     <span class="nd">@charlesfrith</span> <span class="n">short</span> <span class="n">on</span> <span class="n">math</span> <span class="n">eh</span><span class="err">???</span>
+     <span class="n">Enough</span> <span class="n">politics</span><span class="p">,</span> <span class="n">back</span> <span class="n">to</span> <span class="n">programming</span> <span class="ow">and</span> <span class="n">awesomeness</span> <span class="ow">in</span> <span class="n">general</span><span class="o">.</span>
+     <span class="c">#hispanics are not dumb people that simply recognize latino names and think,</span>
+     <span class="s">&quot;bueno, yo vota para el.&quot;</span>
+     <span class="n">Not</span> <span class="n">only</span> <span class="n">that</span><span class="p">,</span> <span class="n">the</span> <span class="c">#republican party thinks that trotting people with</span>
+     <span class="n">hispanic</span> <span class="n">last</span> <span class="n">names</span> <span class="n">will</span> <span class="n">to</span> <span class="n">help</span> <span class="s">&quot;win&quot;</span> <span class="n">the</span> <span class="n">hispanic</span> <span class="n">vote</span><span class="o">.</span> <span class="c">#notworking</span>
+     <span class="n">The</span> <span class="c">#republican party is so out of touch with my generation I really don&#39;t</span>
+     <span class="n">know</span> <span class="n">where</span> <span class="n">to</span> <span class="n">begin</span><span class="o">.</span>
+     <span class="nd">@cjno</span> <span class="n">pic</span> <span class="ow">or</span> <span class="n">it</span> <span class="n">didn</span><span class="s">&#39;t happen :-)</span>
 
 
-<div class="highlight"><pre>``` {.lang:python .decode:true}
- for i in myapi.lists_subscriptions():
-        print i.name
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myapi</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;#watertown&quot;</span><span class="p">):</span>
+        <span class="k">print</span><span class="s">&#39;name:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">from_user</span><span class="p">,</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;:: twit:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;geo:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">geo</span>
 
-     pythonistas
-     python
-     Rails
-     rails guys
-     Rails
-     tech pundits
-     peoplewhomakestuff
-     Microsoft
-     MSExpSLTeam
-     Rad Designers
-     The Pixel Horde
-     Designer
-     Cool Infographics People
-     visual-effects-peeps
-     Design/Animation
-     design
-     design
-     Design, UI, Arts &amp; co
-     Graphics Software
-     UX - IxD
+     <span class="n">name</span><span class="p">:</span> <span class="n">Sirajulrox98</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@Jessewelle</span><span class="p">:</span> <span class="n">ish</span> <span class="ow">is</span> <span class="n">getting</span> <span class="n">real</span> <span class="ow">in</span> <span class="n">Boston</span><span class="o">.</span> <span class="n">Be</span> <span class="n">safe</span> <span class="n">people</span><span class="o">.</span> <span class="n">Stay</span>
+     <span class="ow">in</span> <span class="n">your</span> <span class="n">house</span> <span class="c">#Watertown.</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">ConradddJay</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@YourAnonNews</span><span class="p">:</span> <span class="n">Bomber</span><span class="s">&#39;s uncle: It&#39;</span><span class="n">s</span> <span class="n">about</span> <span class="n">being</span> <span class="n">losers</span><span class="o">.</span> <span class="n">Not</span>
+     <span class="n">Chechnya</span><span class="o">.</span> <span class="n">Not</span> <span class="n">Islam</span><span class="o">.</span> <span class="n">They</span> <span class="n">deserve</span> <span class="n">to</span> <span class="n">die</span><span class="o">.</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">SH1yhnBUFQ</span> <span class="c">#Watertown</span>
+     <span class="c">#BostonBombing</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">Jesicakhua</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">This</span> <span class="n">goes</span> <span class="n">to</span> <span class="n">show</span> <span class="n">that</span> <span class="n">law</span> <span class="n">enforcement</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">US</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">that</span>
+     <span class="n">most</span> <span class="n">other</span> <span class="n">countries</span><span class="s">&#39; military. #watertown #boston</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">SaraGCeli</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@mackissler</span><span class="p">:</span> <span class="n">Little</span> <span class="n">boy</span> <span class="n">goes</span> <span class="n">up</span> <span class="n">to</span> <span class="n">police</span> <span class="n">officers</span> <span class="ow">and</span> <span class="n">says</span>
+     <span class="s">&quot;thank you!&quot;</span> <span class="n">Near</span> <span class="n">the</span> <span class="c">#Watertown home where the suspect was caught.</span>
+     <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">xoGlNqx2Lt</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">Gina_Gillespie</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@AJELive</span><span class="p">:</span> <span class="n">Dead</span> <span class="c">#Boston bombings suspect was interviewed by FBI</span>
+     <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">hLSqKYKZUz</span> <span class="c">#Watertown</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">bumpinuglies55</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@MentalityMag</span><span class="p">:</span> <span class="c">#Watertown Police Chief claims Tamerlan Tsarnaev</span>
+     <span class="n">was</span> <span class="n">cuffed</span> <span class="ow">and</span> <span class="n">alive</span> <span class="n">on</span> <span class="n">the</span> <span class="n">ground</span> <span class="n">when</span> <span class="n">Dzhokhar</span> <span class="n">ran</span> <span class="n">him</span> <span class="n">over</span> <span class="k">with</span> <span class="n">stolen</span> <span class="n">SUV</span><span class="p">,</span>
+     <span class="n">killing</span> <span class="n">him</span><span class="o">.</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">watertowntab</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@ThatGuyBoston</span> <span class="n">We</span> <span class="n">are</span> <span class="c">#watertown. We are boston. We are the</span>
+     <span class="n">United</span> <span class="n">States</span> <span class="n">of</span> <span class="n">America</span><span class="o">.</span> <span class="n">Proud</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">family</span> <span class="n">of</span> <span class="n">Boston</span> <span class="n">Firefighters</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">DMillsTheGod</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@AJELive</span><span class="p">:</span> <span class="n">Dead</span> <span class="c">#Boston bombings suspect was interviewed by FBI</span>
+     <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">hLSqKYKZUz</span> <span class="c">#Watertown</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">watertowntab</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@GarrettQuinn</span> <span class="n">resident</span> <span class="n">Taryn</span> <span class="n">Sullivan</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="n">says</span> <span class="n">she</span> <span class="n">was</span> <span class="n">nervous</span>
+     <span class="n">but</span> <span class="s">&quot;put my faith in the #Watertown, State Police&quot;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="il">39L</span><span class="n">f9HB32t</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">infolibri</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@AJELive</span><span class="p">:</span> <span class="n">Dead</span> <span class="c">#Boston bombings suspect was interviewed by FBI</span>
+     <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">hLSqKYKZUz</span> <span class="c">#Watertown</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">fabian70813</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@YourAnonNews</span><span class="p">:</span> <span class="n">Cop</span> <span class="n">to</span> <span class="n">NBC</span> <span class="n">reporter</span><span class="p">:</span><span class="s">&quot;if you knew what was going</span>
+     <span class="n">on</span><span class="p">,</span> <span class="n">you</span> <span class="n">wouldn</span><span class="s">&#39;t be standing here right now.&quot;#watertown #manhunt #Boston via</span>
+    <span class="nd">@CiaPressOffice</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">PatrakaarPopat</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@AJELive</span><span class="p">:</span> <span class="n">Dead</span> <span class="c">#Boston bombings suspect was interviewed by FBI</span>
+     <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">hLSqKYKZUz</span> <span class="c">#Watertown</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">HaaziqUvais</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@lisawilliams</span><span class="p">:</span> <span class="n">Police</span> <span class="n">searched</span> <span class="n">my</span> <span class="n">house</span> <span class="k">while</span> <span class="n">I</span> <span class="n">was</span> <span class="n">away</span><span class="o">.</span> <span class="n">Attic</span>
+     <span class="n">door</span> <span class="nb">open</span> <span class="n">items</span> <span class="n">on</span> <span class="n">floor</span><span class="o">.</span> <span class="n">No</span> <span class="n">complaints</span><span class="p">:</span> <span class="n">doing</span> <span class="n">their</span> <span class="n">job</span><span class="o">.</span> <span class="c">#watertown</span>
+     <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">t</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">A4lw0ZBxoJ</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+     <span class="n">name</span><span class="p">:</span> <span class="n">Slainte2505</span>
+     <span class="p">::</span> <span class="n">twit</span><span class="p">:</span> <span class="n">RT</span> <span class="nd">@OpocAnOn</span><span class="p">:</span> <span class="c">#Dzhokhar #Tsarnaev in this wider picture running</span>
+     <span class="kn">from</span> <span class="nn">second</span> <span class="nn">bombing</span> <span class="nn">in</span> <span class="c">#bostonbombing #manhunt #Watertown http://t.co/LXWlVR9RkQ</span>
+     <span class="n">geo</span><span class="p">:</span> <span class="bp">None</span>
+
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myapi</span><span class="o">.</span><span class="n">lists_subscriptions</span><span class="p">():</span>
+        <span class="k">print</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span>
+
+     <span class="n">pythonistas</span>
+     <span class="n">python</span>
+     <span class="n">Rails</span>
+     <span class="n">rails</span> <span class="n">guys</span>
+     <span class="n">Rails</span>
+     <span class="n">tech</span> <span class="n">pundits</span>
+     <span class="n">peoplewhomakestuff</span>
+     <span class="n">Microsoft</span>
+     <span class="n">MSExpSLTeam</span>
+     <span class="n">Rad</span> <span class="n">Designers</span>
+     <span class="n">The</span> <span class="n">Pixel</span> <span class="n">Horde</span>
+     <span class="n">Designer</span>
+     <span class="n">Cool</span> <span class="n">Infographics</span> <span class="n">People</span>
+     <span class="n">visual</span><span class="o">-</span><span class="n">effects</span><span class="o">-</span><span class="n">peeps</span>
+     <span class="n">Design</span><span class="o">/</span><span class="n">Animation</span>
+     <span class="n">design</span>
+     <span class="n">design</span>
+     <span class="n">Design</span><span class="p">,</span> <span class="n">UI</span><span class="p">,</span> <span class="n">Arts</span> <span class="o">&amp;</span> <span class="n">co</span>
+     <span class="n">Graphics</span> <span class="n">Software</span>
+     <span class="n">UX</span> <span class="o">-</span> <span class="n">IxD</span>
 </pre></div>
 
 
 <p>[line]</p>
 <h3>A little maths?</h3>
-<p>``` {.lang:python .decode:true}
-import numpy as np
-    import matplotlib.pyplot as plt</p>
-<div class="highlight"><pre>tweet_length = []
-for status in tweepy.Cursor(myapi.user_timeline).items(50):
-     tweet_length.append(len(status.text))
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-# Convert tweet_length to numpy array
-b = np.array(tweet_length)
+    <span class="n">tweet_length</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">myapi</span><span class="o">.</span><span class="n">user_timeline</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+         <span class="n">tweet_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
 
-#now calc mean
-vf = np.mean(b)
+    <span class="c"># Convert tweet_length to numpy array</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tweet_length</span><span class="p">)</span>
 
-#now plot it
-figure(1)
-plt.plot(b, &#39;gd&#39;)
+    <span class="c">#now calc mean</span>
+    <span class="n">vf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-#Horizontal line
-axhline(y=92, linewidth=1, color=&#39;r&#39;)
+    <span class="c">#now plot it</span>
+    <span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s">&#39;gd&#39;</span><span class="p">)</span>
 
-xlabel(&#39;Number of Tweets&#39;)
-ylabel(&#39;Number of Characters&#39;)
-title(&#39;Mean length of last 50 tweets: %f characters&#39; %vf)
+    <span class="c">#Horizontal line</span>
+    <span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">92</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
 
-grid(True)
+    <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Number of Tweets&#39;</span><span class="p">)</span>
+    <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Number of Characters&#39;</span><span class="p">)</span>
+    <span class="n">title</span><span class="p">(</span><span class="s">&#39;Mean length of last 50 tweets: </span><span class="si">%f</span><span class="s"> characters&#39;</span> <span class="o">%</span><span class="n">vf</span><span class="p">)</span>
+
+    <span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
-<p>```</p>
 <p>![plot](/static/images/tweepy-ipynb.png)</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
+            
+            
+            <hr/>
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
-                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
-              </ul>
-            </li>
-
-
-
-            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
-                </ul>
-            </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2013-04-23T11:32:00-07:00">Apr 23, 2013</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#python-ref">Python</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#ipython-ref">iPython
+                    <span>3</span>
+</a></li>
+                <li><a href="/tags.html#tweepy-ref">tweepy
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#twitter-ref">Twitter
+                    <span>2</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
         </div>
-    </div>
+        </section>
 </div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
 <footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2015 Michael Martinez
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="/theme/js/jquery.min.js"></script>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
-
-
-</body>
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
 </html>

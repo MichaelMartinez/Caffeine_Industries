@@ -1,7 +1,8 @@
 Title: Google I/O 2011 - Initial Thoughts
 Date: 2011-05-12 22:51
 Author: Michael
-Category: Android, Blog, code, Google, Google I/O, Java, Programming
+Category: Android
+Tags: Google, Google I/O, Java
 Slug: google-io-2011-initial-thoughts
 Status: published
 

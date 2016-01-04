@@ -1,7 +1,7 @@
 Title: Markov Chain Twitter Bot
 Date: 2015-12-08 12:19
 Author: Michael
-Category: Programming, Python
+Category: Python
 Tags: AI, Markov Chains
 Slug: markov-chain-twitter-bot
 Status: published

@@ -1,7 +1,8 @@
 Title: New(ish) Directions
 Date: 2011-06-11 21:26
 Author: Michael
-Category: Android, Blog, code, Language, Programming
+Category: Dev-Notes 
+Tags: Android, Blog, code, Language, Programming
 Slug: newish-directions
 Status: published
 

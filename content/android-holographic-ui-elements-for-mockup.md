@@ -1,7 +1,8 @@
 Title: Android Holographic UI Elements for Mockup
 Date: 2011-05-18 10:06
 Author: Michael
-Category: Android, Blog, Google, Portfolio, UI, UX
+Category: Android
+Tags: UI, UX
 Slug: android-holographic-ui-elements-for-mockup
 Status: published
 

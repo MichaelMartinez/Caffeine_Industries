@@ -1,7 +1,8 @@
 Title: Working with Github Api v3
 Date: 2012-02-08 13:56
 Author: Michael
-Category: Blog, code, HTML5, Javascript, Language
+Category: JSON 
+Tags: API
 Slug: working-with-github-api-v3
 Status: published
 
@@ -15,7 +16,7 @@ aside - The result below is a real-time demo using the
 [jinX](http://www.jqueryin.com/projects/jinx-javascript-includer-wordpress-plugin/)
 wp plugin to inject javascript into posts
 
-``` {lang="Javascript"}
+:::javascript
 $( document ).ready( function () {
 
   var html = "";
@@ -38,7 +39,3 @@ $( document ).ready( function () {
     }
   } );
 } );
-```
-
-Result:
--------

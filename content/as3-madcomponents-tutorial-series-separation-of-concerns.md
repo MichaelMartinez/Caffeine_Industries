@@ -1,7 +1,8 @@
 Title: AS3 MadComponents Tutorial Series - Separation of Concerns
 Date: 2011-09-04 16:42
 Author: Michael
-Category: ActionScript 3, Blog, code, Flash, Language, MadComponents, Portfolio, Programming, Tutorial, Uncategorized
+Category: AS3
+Tag: Flash, MadComponents, UI
 Slug: as3-madcomponents-tutorial-series-separation-of-concerns
 Status: published
 
@@ -26,28 +27,28 @@ based component is chosen by the user. This item navigates to a
 
 First the XML layout:
 
-``` {lang="actionscript3"}
-public class SeparateClassExample extends Sprite{
-        
-        protected static const DATA:XML = 
+    :::actionscript3
+    public class SeparateClassExample extends Sprite{
             
+            protected static const DATA:XML = 
+                
+                
+                ;
             
-            ;
-        
-        protected static const LIST:XML = 
+            protected static const LIST:XML = 
+                
+        {DATA};
             
-    {DATA};
-        
-        //Important
-        protected static const NAVIGATION:XML = 
+            //Important
+            protected static const NAVIGATION:XML = 
+                
+                {LIST}
+                {Page0.LAYOUT}
+                {Page1.LAYOUT}
+                ;
             
-            {LIST}
-            {Page0.LAYOUT}
-            {Page1.LAYOUT}
-            ;
-        
-        protected var _uiNavigation:UINavigation;
-```
+            protected var _uiNavigation:UINavigation;
+    ```
 
 The DATA constant simply defines the items that will populate the list.
 The LIST constant accepts the DATA constant and applies some basic
@@ -68,41 +69,41 @@ we'll define in subsequent steps.
 
 **Lets move on to the constructor:**
 
-``` {lang="actionscript3"}
-public function SeparateClassExample(screen:Sprite = null) {
-            
-            if (screen){
-                screen.addChild(this);
+    :::actionscript3"}
+    public function SeparateClassExample(screen:Sprite = null) {
+                
+                if (screen){
+                    screen.addChild(this);
+                }
+                // support autoOrients
+                stage.align = StageAlign.TOP_LEFT;
+                stage.scaleMode = StageScaleMode.NO_SCALE;
+                
+                // Create the main UI or "Landing Page"
+                UI.create(this, NAVIGATION);
+                
+                // Initialize "views"
+                Page0.initialize();
+                Page1.initialize();
+                
+                // Navigation layout and behaviour 
+                _uiNavigation = UINavigation(UI.findViewById("nav"));
+                _uiNavigation.autoForward = false;
+                
+                // Must set to false otherwise the app scrolls through all the pages in the "stack"
+                _uiNavigation.autoBack = false;
+                
+                // Go to the "page" requested
+                _uiNavigation.addEventListener(UIList.CLICKED, navigationChange);
+                
+                // Go Back using the Nav bar back button
+                _uiNavigation.navigationBar.backButton.addEventListener(MouseEvent.MOUSE_UP, goBack);
+                
+                // Go back using the hardware back button
+                _uiNavigation.addEventListener(KeyboardEvent.KEY_UP, goBackButton);
+                _uiNavigation.navigationBar.backButton.colour = 999999;
             }
-            // support autoOrients
-            stage.align = StageAlign.TOP_LEFT;
-            stage.scaleMode = StageScaleMode.NO_SCALE;
-            
-            // Create the main UI or "Landing Page"
-            UI.create(this, NAVIGATION);
-            
-            // Initialize "views"
-            Page0.initialize();
-            Page1.initialize();
-            
-            // Navigation layout and behaviour 
-            _uiNavigation = UINavigation(UI.findViewById("nav"));
-            _uiNavigation.autoForward = false;
-            
-            // Must set to false otherwise the app scrolls through all the pages in the "stack"
-            _uiNavigation.autoBack = false;
-            
-            // Go to the "page" requested
-            _uiNavigation.addEventListener(UIList.CLICKED, navigationChange);
-            
-            // Go Back using the Nav bar back button
-            _uiNavigation.navigationBar.backButton.addEventListener(MouseEvent.MOUSE_UP, goBack);
-            
-            // Go back using the hardware back button
-            _uiNavigation.addEventListener(KeyboardEvent.KEY_UP, goBackButton);
-            _uiNavigation.navigationBar.backButton.colour = 999999;
-        }
-```
+    ```
 
 The UI.create method instantiates the UI or "landing page" and all of
 the code relating to the use of MadComponents must be implemented after
@@ -140,44 +141,44 @@ based on the comments added into the code.
 
 **Now lets handle the events we declared in the constructor:**
 
-``` {lang="actionscript3"}
-public function navigationChange(event:Event):void {
-            
-            var navIndex:int = _uiNavigation.index;
-            // Check to see if current page is @ 0 to set correct title
-            if(_uiNavigation.pages[0]){
-                _uiNavigation.title = "Home";
+    :::actionscript3
+    public function navigationChange(event:Event):void {
+                
+                var navIndex:int = _uiNavigation.index;
+                // Check to see if current page is @ 0 to set correct title
+                if(_uiNavigation.pages[0]){
+                    _uiNavigation.title = "Home";
+                }
+                
+                // navigation Stuff
+                if(navIndex == 0){
+                    _uiNavigation.goToPage(1, UIPages.SLIDE_LEFT);
+                    _uiNavigation.title = "Page 0";
+                } else if (navIndex == 1){
+                    _uiNavigation.goToPage(2, UIPages.SLIDE_LEFT);
+                    _uiNavigation.title = "Page 1";
+                }
             }
             
-            // navigation Stuff
-            if(navIndex == 0){
-                _uiNavigation.goToPage(1, UIPages.SLIDE_LEFT);
-                _uiNavigation.title = "Page 0";
-            } else if (navIndex == 1){
-                _uiNavigation.goToPage(2, UIPages.SLIDE_LEFT);
-                _uiNavigation.title = "Page 1";
-            }
-        }
-        
-        // For the back button in the Navigation bar
-        protected function goBack(event:Event):void {
-            
-            _uiNavigation.goToPage(0, UIPages.SLIDE_RIGHT);
-            _uiNavigation.title = "Home";
-        }
-        
-        // With autoBack set to false, you lose the device back button for some reason
-        // You can use the Native App library to check for a device back button event
-        protected function goBackButton(event:KeyboardEvent):void{
-
-            if(event.keyCode == Keyboard.BACK){
+            // For the back button in the Navigation bar
+            protected function goBack(event:Event):void {
+                
                 _uiNavigation.goToPage(0, UIPages.SLIDE_RIGHT);
                 _uiNavigation.title = "Home";
             }
-        }       
+            
+            // With autoBack set to false, you lose the device back button for some reason
+            // You can use the Native App library to check for a device back button event
+            protected function goBackButton(event:KeyboardEvent):void{
+
+                if(event.keyCode == Keyboard.BACK){
+                    _uiNavigation.goToPage(0, UIPages.SLIDE_RIGHT);
+                    _uiNavigation.title = "Home";
+                }
+            }       
+        }
     }
-}
-```
+    ```
 
 In this example, I want the navigationChange event to take the user to
 the page associated with the index they select. We let the gotoPage
@@ -196,40 +197,40 @@ bit of polish.
 
 **Now lets add the separate class "views" or Page0 and Page1:**
 
-``` {lang="actionscript3"}
-package
-{
-    import com.danielfreeman.madcomponents.*;
-    
-    import flash.display.Sprite;
-    import flash.display.StageAlign;
-    import flash.display.StageScaleMode;
-    import flash.events.Event;
-    import flash.system.Capabilities;
-    import flash.text.TextField;
-    
-    public class Page0 extends Sprite
+    :::actionscript3
+    package
     {
+        import com.danielfreeman.madcomponents.*;
         
-        public static const LAYOUT:XML = 
-                            
-                ;
+        import flash.display.Sprite;
+        import flash.display.StageAlign;
+        import flash.display.StageScaleMode;
+        import flash.events.Event;
+        import flash.system.Capabilities;
+        import flash.text.TextField;
         
-        protected static var _message:UILabel;
-        
-        public function Patient()
+        public class Page0 extends Sprite
         {
-            super();
             
-        }
-        
-        public static function initialize():void{
-            _message = UILabel(UI.findViewById("message0"));
-            _message.htmlText = "App Considerations:Is it AWESOME?Are you going to BroGram? Sup?More Stuff";
+            public static const LAYOUT:XML = 
+                                
+                    ;
+            
+            protected static var _message:UILabel;
+            
+            public function Patient()
+            {
+                super();
+                
+            }
+            
+            public static function initialize():void{
+                _message = UILabel(UI.findViewById("message0"));
+                _message.htmlText = "App Considerations:Is it AWESOME?Are you going to BroGram? Sup?More Stuff";
+            }
         }
     }
-}
-```
+    ```
 
 This is a basic page layout using HTML text. LAYOUT is the constant we
 call from within the NAVIGATION constant in the Main class as you've
@@ -244,111 +245,111 @@ need to worry as the text will render as you've defined.
 
 This is the "MAIN" class in all its glory.
 
-``` {lang="actionscript3"}
-package
-{
-    import com.danielfreeman.madcomponents.*;
-    
-    import flash.desktop.NativeApplication;
-    import flash.display.Sprite;
-    import flash.display.StageAlign;
-    import flash.display.StageScaleMode;
-    import flash.events.Event;
-    import flash.events.KeyboardEvent;
-    import flash.events.MouseEvent;
-    import flash.ui.Keyboard;
-    
-    public class SeparateClassExample extends Sprite{
+    :::actionscript3
+    package
+    {
+        import com.danielfreeman.madcomponents.*;
         
-        protected static const DATA:XML = 
-            
-            
-            ;
+        import flash.desktop.NativeApplication;
+        import flash.display.Sprite;
+        import flash.display.StageAlign;
+        import flash.display.StageScaleMode;
+        import flash.events.Event;
+        import flash.events.KeyboardEvent;
+        import flash.events.MouseEvent;
+        import flash.ui.Keyboard;
         
-        protected static const LIST:XML = 
+        public class SeparateClassExample extends Sprite{
             
-    {DATA};
-        
-        // Each additional "Page" needs to have different id's 
-        //for the components, even when they are separated into separate classes
-        protected static const NAVIGATION:XML = 
+            protected static const DATA:XML = 
+                
+                
+                ;
             
-            {LIST}
-            {Page0.LAYOUT}
-            {Page1.LAYOUT}
-            ;
-        
-        protected var _uiNavigation:UINavigation;
-        
-        public function SeparateClassExample(screen:Sprite = null) {
+            protected static const LIST:XML = 
+                
+        {DATA};
             
-            if (screen){
-                screen.addChild(this);
-            }
-            // support autoOrients
-            stage.align = StageAlign.TOP_LEFT;
-            stage.scaleMode = StageScaleMode.NO_SCALE;
+            // Each additional "Page" needs to have different id's 
+            //for the components, even when they are separated into separate classes
+            protected static const NAVIGATION:XML = 
+                
+                {LIST}
+                {Page0.LAYOUT}
+                {Page1.LAYOUT}
+                ;
             
-            // Create the main UI or "Landing Page"
-            UI.create(this, NAVIGATION);
+            protected var _uiNavigation:UINavigation;
             
-            // Initialize "views"
-            Page0.initialize();
-            Page1.initialize();
-            
-            // Navigation layout and behaviour 
-            _uiNavigation = UINavigation(UI.findViewById("nav"));
-            _uiNavigation.autoForward = false;
-            
-            // Must set to false otherwise the app scrolls through all the pages in the "stack"
-            _uiNavigation.autoBack = false;
-            
-            // Go to the "page" requested
-            _uiNavigation.addEventListener(UIList.CLICKED, navigationChange);
-            
-            // Go Back using the Nav bar back button
-            _uiNavigation.navigationBar.backButton.addEventListener(MouseEvent.MOUSE_UP, goBack);
-            
-            // Go back using the hardware back button
-            _uiNavigation.addEventListener(KeyboardEvent.KEY_UP, goBackButton);
-            _uiNavigation.navigationBar.backButton.colour = 999999;
-        }
-        
-        public function navigationChange(event:Event):void {
-            
-            var navIndex:int = _uiNavigation.index;
-            // Check to see if current page is @ 0 to set correct title
-            if(_uiNavigation.pages[0]){
-                _uiNavigation.title = "Home";
+            public function SeparateClassExample(screen:Sprite = null) {
+                
+                if (screen){
+                    screen.addChild(this);
+                }
+                // support autoOrients
+                stage.align = StageAlign.TOP_LEFT;
+                stage.scaleMode = StageScaleMode.NO_SCALE;
+                
+                // Create the main UI or "Landing Page"
+                UI.create(this, NAVIGATION);
+                
+                // Initialize "views"
+                Page0.initialize();
+                Page1.initialize();
+                
+                // Navigation layout and behaviour 
+                _uiNavigation = UINavigation(UI.findViewById("nav"));
+                _uiNavigation.autoForward = false;
+                
+                // Must set to false otherwise the app scrolls through all the pages in the "stack"
+                _uiNavigation.autoBack = false;
+                
+                // Go to the "page" requested
+                _uiNavigation.addEventListener(UIList.CLICKED, navigationChange);
+                
+                // Go Back using the Nav bar back button
+                _uiNavigation.navigationBar.backButton.addEventListener(MouseEvent.MOUSE_UP, goBack);
+                
+                // Go back using the hardware back button
+                _uiNavigation.addEventListener(KeyboardEvent.KEY_UP, goBackButton);
+                _uiNavigation.navigationBar.backButton.colour = 999999;
             }
             
-            // navigation Stuff
-            if(navIndex == 0){
-                _uiNavigation.goToPage(1, UIPages.SLIDE_LEFT);
-                _uiNavigation.title = "Page 0";
-            } else if (navIndex == 1){
-                _uiNavigation.goToPage(2, UIPages.SLIDE_LEFT);
-                _uiNavigation.title = "Page 1";
+            public function navigationChange(event:Event):void {
+                
+                var navIndex:int = _uiNavigation.index;
+                // Check to see if current page is @ 0 to set correct title
+                if(_uiNavigation.pages[0]){
+                    _uiNavigation.title = "Home";
+                }
+                
+                // navigation Stuff
+                if(navIndex == 0){
+                    _uiNavigation.goToPage(1, UIPages.SLIDE_LEFT);
+                    _uiNavigation.title = "Page 0";
+                } else if (navIndex == 1){
+                    _uiNavigation.goToPage(2, UIPages.SLIDE_LEFT);
+                    _uiNavigation.title = "Page 1";
+                }
             }
-        }
-        
-        // For the back button in the Navigation bar
-        protected function goBack(event:Event):void {
             
-            _uiNavigation.goToPage(0, UIPages.SLIDE_RIGHT);
-            _uiNavigation.title = "Home";
-        }
-        
-        // With autoBack set to false, you lose the device back button for some reason
-        // You can use the Native App library to check for a device back button event
-        protected function goBackButton(event:KeyboardEvent):void{
-
-            if(event.keyCode == Keyboard.BACK){
+            // For the back button in the Navigation bar
+            protected function goBack(event:Event):void {
+                
                 _uiNavigation.goToPage(0, UIPages.SLIDE_RIGHT);
                 _uiNavigation.title = "Home";
             }
-        }       
+            
+            // With autoBack set to false, you lose the device back button for some reason
+            // You can use the Native App library to check for a device back button event
+            protected function goBackButton(event:KeyboardEvent):void{
+
+                if(event.keyCode == Keyboard.BACK){
+                    _uiNavigation.goToPage(0, UIPages.SLIDE_RIGHT);
+                    _uiNavigation.title = "Home";
+                }
+            }       
+        }
     }
-}
-}
-```
+    }
+    ```

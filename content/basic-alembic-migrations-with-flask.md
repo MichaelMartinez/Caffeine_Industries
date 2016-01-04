@@ -1,7 +1,8 @@
 Title: Basic Alembic Migrations with Flask
 Date: 2013-05-10 12:06
 Author: Michael
-Category: Uncategorized
+Category: Python
+Tags: alembic, sqlalchemy, flask
 Slug: basic-alembic-migrations-with-flask
 Status: published
 
@@ -44,11 +45,11 @@ you start.
 
 Once you have activated your virutalenv:
 
-``` {.lang:sh .decode:true}
-$ cd yourproject
+    :::bash
+    $ cd yourproject
     $ pip install alembic
     $ alembic init alembic
-```
+
 
 This command creates an Alembic directory and alembic.ini file in your
 project directory. Running \`alembic init alembic\`  
@@ -69,8 +70,8 @@ conditions warrant in a future post.
 This is where I made some modifications to the generated file to get it
 working with Flask.
 
-``` {.lang:python .decode:true}
-from __future__ import with_statement
+    :::python
+    from __future__ import with_statement
     import os, sys
     sys.path.append(os.getcwd())
     from alembic import context
@@ -99,7 +100,7 @@ from __future__ import with_statement
     # from myapp import mymodel
     # target_metadata = mymodel.Base.metadata
     target_metadata = db.metadata
-```
+
 
 \* Import os and sys to modify the path. I am not sure if this is a bug
 in Alembic, but I could not get  
@@ -112,10 +113,8 @@ your applications database config
 \* Use db.metadata to provide automatic migration generation support.
 
 ### Autogenerate Migrations
-
-``` {.lang:sh .decode:true}
-$ alembic revision --autogenerate -m "<insert message here>"
-```
+    :::bash
+    $ alembic revision --autogenerate -m "<insert message here>"
 
 You can inspect and modify the migration created by looking in the
 \`application/alembic/versions/\` directory
@@ -124,10 +123,9 @@ Docs for this are
 [here](https://alembic.readthedocs.org/en/latest/tutorial.html#auto-generating-migrations)
 
 ### Run Migrations
+    :::bash
+    $ alembic upgrade head
 
-``` {.lang:sh .decode:true}
-$ alembic upgrade head
-```
 
 Docs for this are
 [here](https://alembic.readthedocs.org/en/latest/tutorial.html#running-our-first-migration).

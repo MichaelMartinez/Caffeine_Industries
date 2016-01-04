@@ -1,7 +1,8 @@
 Title: Part I: Choosing a programming language... 
 Date: 2010-09-20 15:09
 Author: Michael
-Category: Blog, Computer, Economics, Language, Programming
+Category: Dev-Notes 
+Tags: Economics, Language, Programming
 Slug: part-i-choosing-a-programming-language
 Status: published
 

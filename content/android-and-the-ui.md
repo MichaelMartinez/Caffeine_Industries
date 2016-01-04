@@ -1,7 +1,8 @@
 Title: Android and the UI
 Date: 2010-11-03 11:15
 Author: Michael
-Category: Android, Blog, code, Computer, Java, Language, Programming, Uncategorized
+Category: Android
+Tags: Java, UI
 Slug: android-and-the-ui
 Status: published
 

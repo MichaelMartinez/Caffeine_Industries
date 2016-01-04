@@ -2,6 +2,7 @@ Title: IPython Notebook - Mountain Lion
 Date: 2013-01-20 23:00
 Author: Michael
 Category: Python
+Tags: iPython Notebook, OSX
 Slug: ipython-notebook-mountain-lion
 Status: published
 
@@ -70,9 +71,9 @@ it known when they refuse to install the packages you've requested.
 Here is what  
 you do:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-sudo ln -s /usr/bin/llvm-gcc-4.2 /usr/bin/gcc-4.2
-```
+    :::bash
+    sudo ln -s /usr/bin/llvm-gcc-4.2 /usr/bin/gcc-4.2
+
 
 Yep, not much... but boy was that frustrating to figure out. The other
 story here  
@@ -80,9 +81,8 @@ is to download X11 via [Quartz
 2.7.2+](http://xquartz.macosforge.org/trac/wiki),  
 then install and symlink it in:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-ln -s /opt/X11 /usr/X11
-```
+    :::bash
+    ln -s /opt/X11 /usr/X11
 
 ------------------------------------------------------------------------
 
@@ -108,28 +108,26 @@ virtualenv += wrapper and has performed flawlessly thus far. Seriously
 pick one  
 move on.
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-mkvirtualenv ipy
-```
+    :::bash
+    mkvirtualenv ipy
+    
 
 Now that we have a new virtualenv, lets get installing:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-workon ipy
-$ pip install ipython
-```
+    :::bash
+    workon ipy
+    $ pip install ipython
 
 Once ipython has finished installing we need to install readline
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install readline
-```
+    :::bash
+    pip install readline
+    
 
 Then we install tornado for iPython Notebook
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install tornado
-```
+    :::bash
+    pip install tornado
 
 The next item is the installation of the ZeroMQ library. Ultimately we
 want to install  
@@ -137,34 +135,29 @@ pyzmq. However, its a bit dicey using pip for reasons explained on
 their repo page  
 [here](https://github.com/zeromq/pyzmq#mac-osx).
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-brew install zeromq --universal
-```
+    :::bash
+    brew install zeromq --universal
 
 Once that is completed we can now install pyzmq with pip:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install pyzmq
-```
+    :::bash
+    pip install pyzmq
 
 Next is the install of pygments for syntax highlights:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install pygments
-```
+    :::bash
+    pip install pygments
+
 
 After pygments installs we need to install freetype and libpng via  
 Homebrew. The reason we want ipython is for the super awesome
 graphics,  
 right? Well, you need these badboys to get super awesome graphics.
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-brew install freetype
-```
+    :::bash
+    brew install freetype
+    brew install libpng
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-brew install libpng
-```
 
 Now time to install pyqt. I believe there is some misconception about
 pyqt and  
@@ -178,9 +171,9 @@ install all the
 dependencies to make it work. I am telling you, Homebrew will make you
 happy!!!
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-brew install pyqt
-```
+    :::bash
+    brew install pyqt
+
 
 YOU HAVE DONE IT!!! You now have a fully functional iPython qtconsole
 and notebook.  
@@ -193,16 +186,16 @@ Science Modules
 
 Now lets install numpy
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install numpy
-```
+    :::bash
+    pip install numpy
+
 
 We need some fortran to compile scipy, so before we can install scipy we
 need:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-brew install gfortran
-```
+    :::bash
+    brew install gfortran
+
 
 Note: I found that homebrew would hang on the mpfr dependency. I filed a
 bug and  
@@ -213,17 +206,16 @@ else to say)
 
 Now we can go get scipy:
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install scipy
-```
+    :::bash
+    pip install scipy
 
 Some folks recommend installing matplotlib from git on ML. I took one
 for the team  
 and just let it rip with pip and it worked great.
 
-``` {.theme:twilight .font:droid-sans-mono .lang:sh .decode:true}
-pip install matplotlib
-```
+    :::bash
+    pip install matplotlib
+
 
 These are probably the bare essentials to get started with some science.
 You may  

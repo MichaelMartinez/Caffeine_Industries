@@ -1,7 +1,8 @@
 Title: Some design stuff I've been working on...
 Date: 2011-08-17 21:12
 Author: Michael
-Category: Blog, UI, Uncategorized, UX
+Category: Design 
+Tags: UI, UX
 Slug: some-design-stuff-ive-been-working-on
 Status: published
 

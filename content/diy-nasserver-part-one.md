@@ -1,7 +1,8 @@
 Title: DIY NAS/Server - Part one
 Date: 2015-04-19 14:45
 Author: Michael
-Category: Uncategorized
+Category: Hardware 
+Tags: Linux, NAS
 Slug: diy-nasserver-part-one
 Status: published
 

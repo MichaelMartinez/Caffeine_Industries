@@ -1,7 +1,8 @@
 Title: Running OpenMediaVault on one Hard Drive
 Date: 2015-04-19 14:59
 Author: Michael
-Category: Uncategorized
+Category: Hardware
+Tags: Linux, NAS, OMV
 Slug: running-openmediavault-on-one-hard-drive
 Status: published
 

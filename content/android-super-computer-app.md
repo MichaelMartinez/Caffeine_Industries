@@ -1,7 +1,8 @@
 Title: Android Super Computer App
 Date: 2010-09-08 18:33
 Author: Michael
-Category: Android, Blog, Economics
+Category: Android
+Tags: Economics
 Slug: android-super-computer-app
 Status: published
 

@@ -1,8 +1,9 @@
 Title: Scraping JavaScript pages with Python: Selenium, Requests, and Beautiful Soup
 Date: 2015-12-03 23:08
 Author: Michael
-Category: BeautifulSoup, Javascript, Python, Requests, Scraping, Selenium
-Slug: scraping-javascript-pages-with-python-selenium-requests-and-beautiful-soup
+Category: Python 
+Tags: BeautifulSoup, Javascript, Requests, Scraping, Selenium
+Slug: scraping-javascript-pages-with-python-selenium
 Status: published
 
 **Note: Imgur has an API. Please use the API if you intend to gather
@@ -27,33 +28,33 @@ install requests and beautiful soup with conda. Selenium can be created
 as a package then uploaded to Anaconda Cloud with Binstar and... well,
 you can simply install Selenium with pip.
 
-``` {.lang:python .decode:true}
-import os
-from selenium import webdriver
-from bs4 import BeautifulSoup
-from requests import get
-```
+    :::python
+    import os
+    from selenium import webdriver
+    from bs4 import BeautifulSoup
+    from requests import get
+    
 
 \[line\]  
 Next, define where you want to store the images. This will store the
 image in the present working directory or the directory where the script
 lives.
 
-``` {.lang:python .decode:true}
-# Make a directory in the pwd, if one already exists. Cool.
-os.makedirs('imgur', exist_ok=True) # Make directory to store the images
-```
+    :::python
+    # Make a directory in the pwd, if one already exists. Cool.
+    os.makedirs('imgur', exist_ok=True) # Make directory to store the images
+    
 
 \[line\]  
 Now we can instantiate the Selenium webdriver, and pass a url to fetch.
 I used firefox because it seems like it is very well supported. I didn't
 even try with Chrome which is my browser of choice.
 
-``` {.lang:python .decode:true}
-# Imgur is not possible to scrape without Selenium. Because Javascript.
-browser = webdriver.Firefox() # Instantiate a webdriver object
-browser.get('http://imgur.com') # Go to Imgur
-```
+    :::python
+    # Imgur is not possible to scrape without Selenium. Because Javascript.
+    browser = webdriver.Firefox() # Instantiate a webdriver object
+    browser.get('http://imgur.com') # Go to Imgur
+    
 
 \[line\]  
 This is where your investigation begins. First, define an empty list to
@@ -66,15 +67,15 @@ coding.  To investigate with a OSX, tune your browser (chrome) to the
 url you wish to scrape and press: option | command | j  Then start
 inspecting elements.
 
-``` {.lang:python .decode:true}
-# Makes list of links to get full image
-links = []
-# This is the container of images on the main page
-cards = browser.find_elements_by_class_name('image-list-link')
-for img_src in cards:
-    # Now assemble list to pass to requests and beautifulsoup
-    links.append(img_src.get_attribute('href'))
-```
+    :::python
+    # Makes list of links to get full image
+    links = []
+    # This is the container of images on the main page
+    cards = browser.find_elements_by_class_name('image-list-link')
+    for img_src in cards:
+        # Now assemble list to pass to requests and beautifulsoup
+        links.append(img_src.get_attribute('href'))
+    
 
 \[line\]  
 The rest of the story. This bit of code loops through the links list
@@ -89,29 +90,29 @@ the next one. If not, we write the file to directory and using requests
 iter\_chunks method in 100,000 byte increments. Close the image file and
 start the next round or finish the script.
 
-``` {.lang:python .decode:true}
-# loop through the links list (I'm slicing to 5)
-for page in links[:5]:
-    res = requests.get(page)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, 'html.parser')
-    imageLink = soup.select('.post-image img')
-    if imageLink == []:
-        print('Nothing here...')
-    else:
-        try:
-            # assign imageUrl hold the actual file name of the image
-            imageUrl = imageLink[0].get('src')
-            #Download the image
-            print('Downloading image %s...' %(imageUrl))
-            res = requests.get('http:'+imageUrl)
-            res.raise_for_status()
-        except requests.exceptions.MissingSchema:
-            continue
-        imageFile = open(os.path.join('imgur', os.path.basename(imageUrl)), 'wb')
-        for chunk in res.iter_content(100000):
-            imageFile.write(chunk)
-        imageFile.close()
-```
+    :::python
+    # loop through the links list (I'm slicing to 5)
+    for page in links[:5]:
+        res = requests.get(page)
+        res.raise_for_status()
+        soup = BeautifulSoup(res.text, 'html.parser')
+        imageLink = soup.select('.post-image img')
+        if imageLink == []:
+            print('Nothing here...')
+        else:
+            try:
+                # assign imageUrl hold the actual file name of the image
+                imageUrl = imageLink[0].get('src')
+                #Download the image
+                print('Downloading image %s...' %(imageUrl))
+                res = requests.get('http:'+imageUrl)
+                res.raise_for_status()
+            except requests.exceptions.MissingSchema:
+                continue
+            imageFile = open(os.path.join('imgur', os.path.basename(imageUrl)), 'wb')
+            for chunk in res.iter_content(100000):
+                imageFile.write(chunk)
+            imageFile.close()
+   
 
  

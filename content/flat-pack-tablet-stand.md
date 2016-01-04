@@ -1,7 +1,8 @@
 Title: Flat-Pack Tablet Stand
 Date: 2015-11-25 14:42
 Author: Michael
-Category: CAD, Design, Laser, Wood
+Category: Design 
+Tags: CAD, Laser, Wood
 Slug: flat-pack-tablet-stand
 Status: published
 

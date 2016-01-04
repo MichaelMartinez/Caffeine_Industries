@@ -1,7 +1,8 @@
 Title: AS3 MadComponents Tutorial Series - Starting Out
 Date: 2011-09-02 18:45
 Author: Michael
-Category: ActionScript 3, Blog, Flash, MadComponents, Portfolio, Programming, Tutorial, UI, Uncategorized
+Category: AS3
+Tags Flash, MadComponents, UI
 Slug: as3-madcomponents-tutorial-series-starting-out
 Status: published
 

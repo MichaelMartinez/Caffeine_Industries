@@ -1,7 +1,8 @@
 Title: Another MadComponent Logo... 
 Date: 2011-09-16 13:53
 Author: Michael
-Category: Blog, Design, MadComponents, Uncategorized
+Category: Design
+Tags: Madcomponent
 Slug: another-madcomponent-logo
 Status: published
 

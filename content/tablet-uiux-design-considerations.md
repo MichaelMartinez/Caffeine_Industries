@@ -1,7 +1,8 @@
 Title: Tablet UI/UX Design Considerations
 Date: 2011-05-13 23:22
 Author: Michael
-Category: Android, Blog, code, Computer, Portfolio, Programming, UI, UX
+Category: Design 
+Tags: Android, UI, UX
 Slug: tablet-uiux-design-considerations
 Status: published
 

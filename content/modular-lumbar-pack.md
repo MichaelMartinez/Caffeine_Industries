@@ -1,7 +1,8 @@
 Title: Modular Lumbar Pack
 Date: 2013-10-18 23:02
 Author: Michael
-Category: Cordura
+Category: Design 
+Tags: Cordura
 Slug: modular-lumbar-pack
 Status: published
 

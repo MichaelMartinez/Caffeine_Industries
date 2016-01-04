@@ -1,7 +1,8 @@
 Title: Vacation Hour Tracker App 
 Date: 2012-01-23 21:13
 Author: Michael
-Category: Blog, code, Google, Javascript, jQuery Mobile, knockout, localStorage, Programming, Uncategorized
+Category: JavaScript 
+Tags: Google,jQuery Mobile, knockout, localStorage
 Slug: vacation-hour-tracker-app
 Status: published
 
@@ -62,10 +63,4 @@ fault right now using non-standard icons and Adobe Fireworks. I can post
 that as a tutorial if there is interest.
 
 Here is the fully functional app (tested with Safari 5+, Firefox 9,
-Chrome 16 on Mac):
-
-\[advanced\_iframe
-securitykey="da39a3ee5e6b4b0d3255bfef95601890afd80709"
-src="http://lab.caffeineindustries.com/VacationBalance2/assets/www/indexTestKO.html"
-width="450" height="800" scrolling="yes" marginwidth="2"
-marginheight="2" frameborder="2"\]
+Chrome 16 on Mac): Sadly had to remove :(

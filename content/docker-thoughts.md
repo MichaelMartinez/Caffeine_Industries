@@ -1,7 +1,8 @@
 Title: Docker Thoughts...
 Date: 2015-08-14 11:39
 Author: Michael
-Category: Ansible, Docker
+Category: Sysadmin 
+Tags: Ansible, Docker
 Slug: docker-thoughts
 Status: published
 

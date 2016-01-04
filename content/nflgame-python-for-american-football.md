@@ -2,6 +2,7 @@ Title: NFLGame - Python for American Football
 Date: 2013-03-14 23:37
 Author: Michael
 Category: Python
+Tags: iPython, NFL, Analysis
 Slug: nflgame-python-for-american-football
 Status: published
 
@@ -17,10 +18,9 @@ The Github repo is located
 [here](https://github.com/BurntSushi/nflgame).
 
 [ Download this Notebook](/static/ipynb/NFL.ipynb)
-
-``` {.lang:python .decode:true}
+    
+    :::python
     import nflgame
-```
 
 ### Lets have a look at some basic stats for the last 3 games of the NFL Regular season
 
@@ -28,12 +28,12 @@ First we'll have a look at the top 25 rushers for weeks 15, 16, 17.
 Awesome that we get  
 summary stats right out of the box, right?
 
-``` {.lang:python .decode:true}
+    :::python
     games = nflgame.games(2012, week=[15, 16, 17])
     players = nflgame.combine(games)
     for p in players.rushing().sort("rushing_yds").limit(25):
         print p, p.rushing_yds
-```
+
 
 A.Peterson 497  
 A.Morris 378  
@@ -65,10 +65,9 @@ Next, we'll look at the top 25 running backs and the total amount of
 touchdowns  
 for weeks 15, 16, 17 using the players variable we created above.
 
-``` {.lang:python .decode:true}
- for p in players.touchdowns().sort("rushing_tds").limit(25):
-        print p, p.rushing_tds
-```
+    :::python
+    for p in players.touchdowns().sort("rushing_tds").limit(25):
+            print p, p.rushing_tds
 
 A.Morris 6  
 M.Tolbert 5  
@@ -100,10 +99,10 @@ Fumbles are bad in fantasy football, umkay. Lets see the top 25 fumblers
 for the  
 same weeks...
 
-``` {.lang:python .decode:true}
+    :::python
     for p in players.fumbles().sort("fumbles_tot").limit(25):
         print p, p.fumbles_tot
-```
+
 
 P.Rivers 4  
 C.Kaepernick 4  
@@ -147,23 +146,23 @@ F. Gore, player ID: 00-0023500
 
 The player can be looked up by name or player ID. Iterate through the
 list of  
-player in \`for\` loop and \`print p.playerid\` or \`print p.name\` ...
+player in for loop and print p.playerid or print p.name ...
 or just look  
 in
 [players.json](https://github.com/BurntSushi/nflgame/blob/master/nflgame/players.json)  
-and use \`control-f\` , then start typing a players name to find  
+and use control-f , then start typing a players name to find  
 all the available fields for each player.
 
-``` {.lang:python .decode:true}
- week1 = nflgame.games(2012, week=1)
-    players = nflgame.combine(week1)
-    for p in players.rushing().sort("rushing_yds").limit(25):
-        if p.playerid == "00-0025399" or p.playerid == "00-0023500":
-            print "--------"
-            print p.player, p.formatted_stats()
+     :::python
+     week1 = nflgame.games(2012, week=1)
+        players = nflgame.combine(week1)
+        for p in players.rushing().sort("rushing_yds").limit(25):
+            if p.playerid == "00-0025399" or p.playerid == "00-0023500":
+                print "--------"
+                print p.player, p.formatted_stats()
 
-    print "-------"
-```
+        print "-------"
+    
 
 --------  
 Frank Gore (RB, SF) rushing\_lngtd: 23, rushing\_tds: 1,
@@ -187,22 +186,22 @@ fumbles\_tot: 1, fumbles\_rcv: 0, fumbles\_yds: 0, fumbles\_lost: 0
 
 ### Lets have a look at three, first game, match-ups between the 49'ers and the Seahawks.
 
-``` {.lang:python .decode:true}
- game12 = nflgame.one(2012, 7, "SF", "SEA")
-    print game12.nice_score()
-    print '*****'
-    print "2012 Away team: %s" % (game12.away)
-    # convert the named tuple to dict and iterate with items
-    for i, v in game12.stats_away._asdict().items():
-        print i, v
-    print '-------'
-    print "2012 Home team: %s" %game11.home
-    # convert the named tuple to dict and iterate with items
-    for i, v in game11.stats_home._asdict().items():
-        print i, v
+     :::python
+     game12 = nflgame.one(2012, 7, "SF", "SEA")
+        print game12.nice_score()
+        print '*****'
+        print "2012 Away team: %s" % (game12.away)
+        # convert the named tuple to dict and iterate with items
+        for i, v in game12.stats_away._asdict().items():
+            print i, v
+        print '-------'
+        print "2012 Home team: %s" %game11.home
+        # convert the named tuple to dict and iterate with items
+        for i, v in game11.stats_home._asdict().items():
+            print i, v
 
-    print '-------'
-```
+        print '-------'
+    
 
 SF (13) vs. SEA (6)  
 \*\*\*\*\*  
@@ -233,30 +232,30 @@ punt\_avg 54
 pos\_time 31:07  
 -------
 
-``` {.lang:python .decode:true}
-game11 = nflgame.one(2011, 1, "SF", "SEA")
-    print game11.nice_score()
-    print '*****'
-    print "2011 Away team: %s" % (game11.away)
-    # convert the named tuple to dict and iterate with items
-    for i, v in game11.stats_away._asdict().items():
-        print i, v
-    print '-------'
-    print "2011 Home team: %s" %game11.home
-    # convert the named tuple to dict and iterate with items
-    for i, v in game11.stats_home._asdict().items():
-        print i, v
+    :::python
+    game11 = nflgame.one(2011, 1, "SF", "SEA")
+        print game11.nice_score()
+        print '*****'
+        print "2011 Away team: %s" % (game11.away)
+        # convert the named tuple to dict and iterate with items
+        for i, v in game11.stats_away._asdict().items():
+            print i, v
+        print '-------'
+        print "2011 Home team: %s" %game11.home
+        # convert the named tuple to dict and iterate with items
+        for i, v in game11.stats_home._asdict().items():
+            print i, v
 
-    print '-------'
-    week_11 = nflgame.games(2011, week=1)
-    players = nflgame.combine(week_11)
-    for p in players.rushing().sort("rushing_yds").limit(25):
-        if p.playerid == "00-0025399" or p.playerid == "00-0023500":
-            print "--------"
-            print p.player, p.formatted_stats()
+        print '-------'
+        week_11 = nflgame.games(2011, week=1)
+        players = nflgame.combine(week_11)
+        for p in players.rushing().sort("rushing_yds").limit(25):
+            if p.playerid == "00-0025399" or p.playerid == "00-0023500":
+                print "--------"
+                print p.player, p.formatted_stats()
 
-    print "-------"
-```
+        print "-------"
+    
 
 SF (33) vs. SEA (17)  
 \*\*\*\*\*  
@@ -296,30 +295,30 @@ receiving\_twopta: 0,
 receiving\_yds: 19, receiving\_lngtd: 0, receiving\_twoptm: 0  
 -------
 
-``` {.lang:python .decode:true}
- game10 = nflgame.one(2010, 1, "SEA", "SF")
-    print game10.nice_score()
-    print '*****'
-    print "2010 Away team: %s" % (game10.away)
-    # convert the named tuple to dict and iterate with items
-    for i, v in game10.stats_away._asdict().items():
-        print i, v
-    print '-------'
-    print "2010 Home team: %s" %game10.home
-    # convert the named tuple to dict and iterate with items
-    for i, v in game10.stats_home._asdict().items():
-        print i, v
+     :::python
+     game10 = nflgame.one(2010, 1, "SEA", "SF")
+        print game10.nice_score()
+        print '*****'
+        print "2010 Away team: %s" % (game10.away)
+        # convert the named tuple to dict and iterate with items
+        for i, v in game10.stats_away._asdict().items():
+            print i, v
+        print '-------'
+        print "2010 Home team: %s" %game10.home
+        # convert the named tuple to dict and iterate with items
+        for i, v in game10.stats_home._asdict().items():
+            print i, v
 
-    print '-------'
-    week_10 = nflgame.games(2010, week=1)
-    players = nflgame.combine(week_10)
-    for p in players.rushing().sort("rushing_yds").limit(25):
-        if p.playerid == "00-0025399" or p.playerid == "00-0023500":
-            print "--------"
-            print p.player, p.formatted_stats()
+        print '-------'
+        week_10 = nflgame.games(2010, week=1)
+        players = nflgame.combine(week_10)
+        for p in players.rushing().sort("rushing_yds").limit(25):
+            if p.playerid == "00-0025399" or p.playerid == "00-0023500":
+                print "--------"
+                print p.player, p.formatted_stats()
 
-    print "-------"
-```
+        print "-------"
+    
 
 SEA (31) vs. SF (6)  
 \*\*\*\*\*  

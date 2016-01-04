@@ -1,7 +1,7 @@
 Title: Coffeescript, Jasmine and Katas
 Date: 2012-03-10 14:07
 Author: Michael
-Category: code, Javascript, Language, Programming, Uncategorized
+Category: Javascript
 Slug: coffeescript-jasmine-and-katas
 Status: published
 

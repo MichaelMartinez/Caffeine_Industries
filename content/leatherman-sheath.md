@@ -1,7 +1,8 @@
 Title: Leatherman Sheath
 Date: 2013-09-29 20:55
 Author: Michael
-Category: Hand Stitched, Leather, Sewing
+Category: Design 
+Tags: Hand Stitched, Leather, Sewing
 Slug: leatherman-sheath
 Status: published
 

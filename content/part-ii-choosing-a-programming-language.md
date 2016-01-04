@@ -1,7 +1,8 @@
 Title: Part II: Choosing a programming language
 Date: 2010-10-09 23:03
 Author: Michael
-Category: Blog, code, Computer, Language, Programming, Uncategorized
+Category: Dev-Notes 
+Tags: Computer, Language, Programming
 Slug: part-ii-choosing-a-programming-language
 Status: published
 

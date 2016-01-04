@@ -1,7 +1,8 @@
 Title: Rhodia Notebook Cover
 Date: 2013-10-29 21:12
 Author: Michael
-Category: Leather
+Category: Design 
+Tags: Leather, Notebook, Rhodia
 Slug: rhodia-notebook-cover
 Status: published
 

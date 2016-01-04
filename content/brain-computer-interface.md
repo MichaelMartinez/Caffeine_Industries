@@ -1,7 +1,8 @@
 Title: Brain-Computer Interface
 Date: 2010-09-23 18:28
 Author: Michael
-Category: BCI, Blog, code, Computer, Language, Programming
+Category: Misc
+Tags: BCI
 Slug: brain-computer-interface
 Status: published
 

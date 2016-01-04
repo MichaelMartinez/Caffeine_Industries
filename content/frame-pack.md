@@ -1,7 +1,8 @@
 Title: Frame Pack
 Date: 2013-09-05 22:48
 Author: Michael
-Category: Cordura, Sewing
+Category: Design
+Tags: Cordura, Sewing
 Slug: frame-pack
 Status: published
 
