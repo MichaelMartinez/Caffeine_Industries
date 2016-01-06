@@ -1,0 +1,73 @@
+<div id="header">
+    <div class="top">
+        <div class="search">
+            <form role="form">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control input-sm" placeholder="Search.."/>
+                    <i class="form-control-feedback fa fa-search"></i>
+                </div>
+            </form>
+        </div>
+        <!--<a class="brand" href="home-full-width.html#">-->
+        <!--<span>VDV</span>-->
+        <a class="nodec" href="{{ SITEURL }}"><img src={{ PROFILE_IMAGE }}></a>
+        </a>
+    </div>
+
+    <nav class="navbar navbar-ada" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="{{ SITEURL }}" aria-haspopup="true" aria-expanded="false">Home</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{{ SITEURL }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+                <!-- This is a dropdown If needed for other areas -->
+                    <ul class="dropdown-menu">
+                        {% for title, link in PROJECTITEMS %}
+                        <li><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% for title, link in MENUITEMS %}
+                <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+                {% if DISPLAY_PAGES_ON_MENU %}
+                {% for item in PAGES %}
+                {% if page is defined and page.url == item.url %}
+                <li class="active">
+                    {% else %}
+                <li>
+                    {% endif %}
+                    <a href="{{ SITEURL }}/{{ item.url }}">{{ item.title }}</a>
+                </li>
+                {% endfor %}
+                <li class="divider"></li>
+                {% endif %}
+                <li class="{% block archive_active %}{% endblock %}">
+                    <a href="{{ SITEURL }}/{{ ARCHIVES_URL|default('archives.html') }}">Archives</a>
+                </li>
+                <li class="divider"></li>
+                {% if FEED_ALL_ATOM %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"
+                       type="application/atom+xml" rel="alternate">
+                    <i class="fa fa-rss fa-fw fa-lg"></i> </a></li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+

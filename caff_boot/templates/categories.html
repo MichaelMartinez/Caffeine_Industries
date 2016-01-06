@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Categories - {{ SITENAME }}{% endblock %}
+{% block content_body %}
+    <div id="single">
+
+        {#<div id="archives-body">#}
+        <div id="posts">
+            <div class="caption">
+                <h1>Categories</h1>
+                <ul class="direct-list">
+                    {% for category, articles in categories %}
+                        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- caption -->
+        </div>
+        <!-- /#archives-body -->
+    </div> <!-- div id single -->
+
+
+{% endblock %}

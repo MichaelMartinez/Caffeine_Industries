@@ -1,0 +1,25 @@
+{% if articles %}
+            {% for article in (articles_page.object_list if articles_page else articles) %}
+                <section class="col-md-12">
+                    <div class="post big">
+                        <div class="row">
+                            <div class="col-md-12 caption">
+                                {#                                {% for tag in article.tags %}#}
+                                {#                                <span class="post-tag">{{ tag.name }}</span>#}
+                                {#                                    {% endfor %}#}
+                                <a href="{{ SITEURL }}/{{ article.url }}" class="post-title" rel="bookmark"
+                                   title="Permalink to {{ article.title|striptags|e }}">
+                                    {{ article.title }}
+                                </a>
+                                <span class="post-date">{{ article.locale_date }}</span>
+                                {{ article.summary }}
+                                <p class="content-emphasis"><a href="{{ SITEURL }}/{{ article.url }}">
+                                    Read more... <i class="fa fa-arrow-circle-right fa-fw fa-lg"></i>
+                                </a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+        {% endif %}
