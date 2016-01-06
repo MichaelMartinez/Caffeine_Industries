@@ -66,6 +66,9 @@ DISPLAY_PAGES_ON_MENU = True
 #BOOTSTRAP_STYLESHEET = ('simplex-bootstrap.css')
 # Extra stylesheets, for bootstrap overrides or additional styling.
 STYLESHEET_FILES = ('pygment.css', 'caf.css',)
+STYLESHEET_URLS = ('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700italic,800,800italic,700,600italic',
+                   'https://fonts.googleapis.com/css?family=Merriweather')
+JAVASCRIPT_FILES = ('smoothScroll.js', 'main.js')
 
 SHOW_ARTICLE_AUTHOR = True
 #SITE_SUBTEXT = 'Caffeine Industries is the home of Micahel Martinez'
@@ -73,12 +76,13 @@ META_DESCRIPTION = '''Caffeine Industries is and LLC owned by Michael Martinez a
 home in Python, but I can use a variety of technology stacks. I make stuff for the web, Android, and lots of other
 tech stacks with love.'''
 
-# LICENSE_URL = ''
-# LICENSE_NAME = ''
 PROJECTITEMS = (
     ('Engineer Toolkit', 'engineer-toolkit.html'),
     ('Abecedario Infantil', 'abecedario-infantil-spanish-alphabet-for-children.html'),
 )
+
+# LICENSE_URL = ''
+# LICENSE_NAME = ''
 
 # MENUITEMS = (
 #     ('Stuff', 'Link'),

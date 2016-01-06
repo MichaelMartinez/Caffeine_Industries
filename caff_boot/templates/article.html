@@ -128,36 +128,9 @@
                     </script>
                 </div>
             {% endif %}
-            {#</article>#}
         </div>
     </div>
 {% endblock content_body %}
-{#<article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">#}
-{#  <header class="article-header">#}
-{#  {% if CUSTOM_ARTICLE_HEADERS %}#}
-{#    {% for file in CUSTOM_ARTICLE_HEADERS %}#}
-{#	  {% include "includes/" + file %}#}
-{#    {% endfor %}#}
-{#  {% else %}#}
-{#	{% include "includes/article_header.html" %}#}
-{#  {% endif %}#}
-{#  </header>#}
-{#  <div class="content-body" itemprop="text articleBody">#}
-{#    {% if article.standfirst %}#}
-{#      <p class="standfirst" itemprop="description">{{ article.standfirst|e }}</p>#}
-{#    {% endif %}#}
-{#    {% if article.image %}#}
-{#      <img class="article-image img-responsive" alt="article header image" itemprop="image"#}
-{#		   src="{{ SITEURL }}/images/{{ article.image }}" />#}
-{#    {% endif %}#}
-{#    {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}#}
-{#	{{ article.content }}#}
-{#  </div>#}
-{#  #}
-{#  {% for file in CUSTOM_ARTICLE_FOOTERS %}#}
-{#    {% include "includes/" + file %}#}
-{#  {% endfor %}#}
-
 {% block    content_footer %}
     {% if CUSTOM_CONTENT_BOTTOM_ARTICLE %}
         {% include "includes/" + CUSTOM_CONTENT_BOTTOM_ARTICLE %}
