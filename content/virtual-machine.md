@@ -6,7 +6,6 @@ Tags: Virtual Computing
 Slug: virtual-machine
 Status: published
 
-![VMWARE](http://www.userlogos.org/files/logos/Karmody/vmware_01.png)
 
 Let me just put this right out there; Virtual Machines are awesome, but
 not  

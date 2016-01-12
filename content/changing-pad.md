@@ -16,7 +16,15 @@ recycled billboard material. Design considerations were that it had to
 be easily opened with one hand because I am not as talented with
 multi-tasking as my beautiful wife.  This was made circa 2008.
 
-src="http://mmartinez.us/wp-content/uploads/2014/01/diaper5.jpg"
-src="http://mmartinez.us/wp-content/uploads/2014/01/diaper4.jpg"
-src="http://mmartinez.us/wp-content/uploads/2014/01/diaper3.jpg"
+----
+
+![Alt Text](/images/diaper5.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/diaper4.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/diaper3.jpg){: class="image-process-large-photo" }
 

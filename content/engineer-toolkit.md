@@ -1,12 +1,11 @@
 Title: Engineer Toolkit
 Date: 2011-04-30 22:33
 Author: Michael
+Category: Android
 Slug: engineer-toolkit
 Status: published
 
-\[image type="rounded" align="center"
-src="http://mmartinez.us/wp-content/uploads/2010/10/eng\_toolkit\_logo.png"
-alt="Text"\]
+![Alt Text](/images/eng_toolkit_logo.png){: class="image-process-large-photo" }
 
 My math teacher always told me to learn how to calculate formulas and
 such manually because I may not have a calculator to rely on. She was
@@ -57,10 +56,14 @@ Roadmap (features still to come)
 -   Conversion of all calculation to metric
 -   Many, many more that will be revealed soon...
 
-Screenshots: Main Screen
+## Screenshots: Main Screen
 
-[![](http://mmartinez.us/wp-content/uploads/2011/04/main1.png "flScreen")](http://mmartinez.us/wp-content/uploads/2011/04/main1.png)
+----
 
-Screenshots: Basic Friction Loss Calculator
+![Alt Text](/images/main1.png){: class="image-process-large-photo" }
 
-[![](http://mmartinez.us/wp-content/uploads/2011/04/flScreen.png "flScreen")](http://mmartinez.us/wp-content/uploads/2011/04/flScreen.png)
+## Screenshots: Basic Friction Loss Calculator
+
+----
+
+![Alt Text](/images/flScreen.png){: class="image-process-large-photo" }

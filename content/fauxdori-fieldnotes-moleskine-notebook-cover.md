@@ -32,13 +32,21 @@ because I haven't had time to post). I also make different products out
 of leather, wood, felt, acrylic, and other materials... soon to be
 posted. Also considering Etsy...
 
+![Alt Text](/images/midori_flat_1.jpg){: class="image-process-large-photo" }
 
-src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat\_1.jpg"
+----
 
-src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat\_3.jpg"
-src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_flat.jpg"
+![Alt Text](/images/midori_flat_3.jpg){: class="image-process-large-photo" }
 
-src="http://mmartinez.us/wp-content/uploads/2015/11/midori\_open.jpg"
+----
+
+![Alt Text](/images/midori_flat.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/midori_open.jpg){: class="image-process-large-photo" }
+
+----
 
 Fieldnotes / Cahier cover - Will fit any 3.5" x 5.5" notebook
 

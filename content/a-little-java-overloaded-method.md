@@ -17,82 +17,81 @@ Ambiguous compile time error.
 
 The first method passes in three parameters:
 
-```java
-public void computeNetPay(double hrs, double rtePay, double taxRate)
-{
-//var to hold tax amount
-double Withholding;
+    :::java
+    public void computeNetPay(double hrs, double rtePay, double taxRate)
+    {
+    //var to hold tax amount
+    double Withholding;
 
-//assign vars
-Hours = hrs;
-ratePay = rtePay;
-rateTaxes = taxRate;
+    //assign vars
+    Hours = hrs;
+    ratePay = rtePay;
+    rateTaxes = taxRate;
 
- 
 
- //calc gross
-gross = Hours * ratePay;
-//calc amount to withhold from taxes
-Withholding = gross * rateTaxes;
-//Find Net Pay
-net = gross - Withholding;
-System.out.println("This method recieved three parameters and net pay is " + net);
-}
-```
 
-`The second passes in two parameters and the third passes in one parameter as you can see from the rest of the code here:`
+    //calc gross
+    gross = Hours * ratePay;
+    //calc amount to withhold from taxes
+    Withholding = gross * rateTaxes;
+    //Find Net Pay
+    net = gross - Withholding;
+    System.out.println("This method recieved three parameters and net pay is " + net);
+    }
 
-</code>
 
-``` {lang="JAVA"}
-public class Pay
-{
-private double Hours;
-private double ratePay;
-private double rateTaxes;
-private double gross;
-private double net;
+The second passes in two parameters and the third passes in one parameter as you can see from the rest of the code here:
 
-public void computeNetPay(double hrs, double rtePay, double taxRate)
-{
-//var to hold tax amount
-double Withholding;
 
-//assign vars
-Hours = hrs;
-ratePay = rtePay;
-rateTaxes = taxRate;
+    :::java
+    public class Pay
+    {
+    private double Hours;
+    private double ratePay;
+    private double rateTaxes;
+    private double gross;
+    private double net;
 
- 
+    public void computeNetPay(double hrs, double rtePay, double taxRate)
+    {
+    //var to hold tax amount
+    double Withholding;
 
- //calc gross
-gross = Hours * ratePay;
-//calc amount to withhold from taxes
-Withholding = gross * rateTaxes;
-//Find Net Pay
-net = gross - Withholding;
-System.out.println("This method recieved three parameters and net pay is " + net);
-}
-public void computeNetPay(double hrs, double rtePay){
-double Withholding;
-//assign tax rate
-rateTaxes = 0.15;
-Hours = hrs;
-ratePay = rtePay;
-gross = Hours * ratePay;
-Withholding = gross * rateTaxes;
-net = gross - Withholding;
-System.out.println("This method recieved two parameters and net pay is " + net);
-}
-public void computeNetPay(double hrs){
-double Withholding;
-Hours = hrs;
-rateTaxes = 0.15;
-//assign Pay rate
-ratePay = 5.85;
-gross = Hours * ratePay;
-Withholding = gross * rateTaxes;
-net = gross - Withholding;
-System.out.println("This method recieved one parameters and net pay is " + net);
-}
-```
+    //assign vars
+    Hours = hrs;
+    ratePay = rtePay;
+    rateTaxes = taxRate;
+
+     
+
+     //calc gross
+    gross = Hours * ratePay;
+    //calc amount to withhold from taxes
+    Withholding = gross * rateTaxes;
+    //Find Net Pay
+    net = gross - Withholding;
+    System.out.println("This method recieved three parameters and net pay is " + net);
+    }
+    public void computeNetPay(double hrs, double rtePay){
+    double Withholding;
+    //assign tax rate
+    rateTaxes = 0.15;
+    Hours = hrs;
+    ratePay = rtePay;
+    gross = Hours * ratePay;
+    Withholding = gross * rateTaxes;
+    net = gross - Withholding;
+    System.out.println("This method recieved two parameters and net pay is " + net);
+    }
+    public void computeNetPay(double hrs){
+    double Withholding;
+    Hours = hrs;
+    rateTaxes = 0.15;
+    //assign Pay rate
+    ratePay = 5.85;
+    gross = Hours * ratePay;
+    Withholding = gross * rateTaxes;
+    net = gross - Withholding;
+    System.out.println("This method recieved one parameters and net pay is " + net);
+    }
+

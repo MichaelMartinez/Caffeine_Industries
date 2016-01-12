@@ -7,5 +7,5 @@ Slug: another-madcomponent-logo
 Status: published
 
 And here is number 2:
+![Alt Text](/images/MCSecondLegoStyleExPNG.png){: class="image-process-large-photo" }
 
-![MadComponent-Dos](http://mmartinez.us/wp-content/uploads/2011/09/MCSecondLegoStyleExPNG.png)

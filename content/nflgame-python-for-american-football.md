@@ -7,12 +7,9 @@ Slug: nflgame-python-for-american-football
 Status: published
 
 NFLgame is a Python package that allows programmatic access to NFL
-data.  
-It is a super fun way to get stats about your favorite NFL player or
-team.  
-My plan is more sinister as I attempt to leverage this in my quest to
-win a  
-fantasy football league.
+data. It is a super fun way to get stats about your favorite NFL player or
+team. My plan is more sinister as I attempt to leverage this in my quest to
+win a fantasy football league.
 
 The Github repo is located
 [here](https://github.com/BurntSushi/nflgame).
@@ -165,23 +162,23 @@ all the available fields for each player.
     
 
 --------  
-Frank Gore (RB, SF) rushing\_lngtd: 23, rushing\_tds: 1,
-rushing\_twopta: 0,  
-rushing\_lng: 23, rushing\_yds: 112, rushing\_att: 16, rushing\_twoptm:
+Frank Gore (RB, SF) rushing_lngtd: 23, rushing_tds: 1,
+rushing_twopta: 0,  
+rushing_lng: 23, rushing_yds: 112, rushing_att: 16, rushing_twoptm:
 0,  
-receiving\_tds: 0, receiving\_lng: 1, receiving\_rec: 1,
-receiving\_twopta: 0,  
-receiving\_yds: 1, receiving\_lngtd: 0, receiving\_twoptm: 0  
+receiving_tds: 0, receiving_lng: 1, receiving_rec: 1,
+receiving_twopta: 0,  
+receiving_yds: 1, receiving_lngtd: 0, receiving_twoptm: 0  
 --------  
-Marshawn Lynch (RB, SEA) rushing\_lngtd: 0, rushing\_tds: 0,
-rushing\_twopta:  
-0, rushing\_lng: 11, rushing\_yds: 85, rushing\_att: 21,
-rushing\_twoptm: 0,  
-receiving\_tds: 0, receiving\_lng: 7, receiving\_rec: 2,
-receiving\_twopta: 0,  
-receiving\_yds: 12, receiving\_lngtd: 0, receiving\_twoptm: 0,
-fumbles\_trcv: 0,  
-fumbles\_tot: 1, fumbles\_rcv: 0, fumbles\_yds: 0, fumbles\_lost: 0  
+Marshawn Lynch (RB, SEA) rushing_lngtd: 0, rushing_tds: 0,
+rushing_twopta:  
+0, rushing_lng: 11, rushing_yds: 85, rushing_att: 21,
+rushing_twoptm: 0,  
+receiving_tds: 0, receiving_lng: 7, receiving_rec: 2,
+receiving_twopta: 0,  
+receiving_yds: 12, receiving_lngtd: 0, receiving_twoptm: 0,
+fumbles_trcv: 0,  
+fumbles_tot: 1, fumbles_rcv: 0, fumbles_yds: 0, fumbles_lost: 0  
 -------
 
 ### Lets have a look at three, first game, match-ups between the 49'ers and the Seahawks.
@@ -204,32 +201,32 @@ fumbles\_tot: 1, fumbles\_rcv: 0, fumbles\_yds: 0, fumbles\_lost: 0
     
 
 SF (13) vs. SEA (6)  
-\*\*\*\*\*  
+*****  
 2012 Away team: SEA  
-first\_downs 13  
-total\_yds 251  
-passing\_yds 115  
-rushing\_yds 136  
-penalty\_cnt 3  
-penalty\_yds 20  
+first_downs 13  
+total_yds 251  
+passing_yds 115  
+rushing_yds 136  
+penalty_cnt 3  
+penalty_yds 20  
 turnovers 1  
-punt\_cnt 4  
-punt\_yds 194  
-punt\_avg 31  
-pos\_time 27:59  
+punt_cnt 4  
+punt_yds 194  
+punt_avg 31  
+pos_time 27:59  
 -------  
 2012 Home team: SF  
-first\_downs 12  
-total\_yds 209  
-passing\_yds 124  
-rushing\_yds 85  
-penalty\_cnt 9  
-penalty\_yds 102  
+first_downs 12  
+total_yds 209  
+passing_yds 124  
+rushing_yds 85  
+penalty_cnt 9  
+penalty_yds 102  
 turnovers 0  
-punt\_cnt 5  
-punt\_yds 298  
-punt\_avg 54  
-pos\_time 31:07  
+punt_cnt 5  
+punt_yds 298  
+punt_avg 54  
+pos_time 31:07  
 -------
 
     :::python
@@ -258,41 +255,41 @@ pos\_time 31:07
     
 
 SF (33) vs. SEA (17)  
-\*\*\*\*\*  
+*****  
 2011 Away team: SEA  
-first\_downs 18  
-total\_yds 219  
-passing\_yds 155  
-rushing\_yds 64  
-penalty\_cnt 11  
-penalty\_yds 72  
+first_downs 18  
+total_yds 219  
+passing_yds 155  
+rushing_yds 64  
+penalty_cnt 11  
+penalty_yds 72  
 turnovers 3  
-punt\_cnt 7  
-punt\_yds 342  
-punt\_avg 33  
-pos\_time 28:53  
+punt_cnt 7  
+punt_yds 342  
+punt_avg 33  
+pos_time 28:53  
 -------  
 2011 Home team: SF  
-first\_downs 12  
-total\_yds 209  
-passing\_yds 124  
-rushing\_yds 85  
-penalty\_cnt 9  
-penalty\_yds 102  
+first_downs 12  
+total_yds 209  
+passing_yds 124  
+rushing_yds 85  
+penalty_cnt 9  
+penalty_yds 102  
 turnovers 0  
-punt\_cnt 5  
-punt\_yds 298  
-punt\_avg 54  
-pos\_time 31:07  
+punt_cnt 5  
+punt_yds 298  
+punt_avg 54  
+pos_time 31:07  
 -------  
 --------  
-Frank Gore (RB, SF) rushing\_lngtd: 0, rushing\_tds: 0,
-rushing\_twopta: 0,  
-rushing\_lng: 16, rushing\_yds: 59, rushing\_att: 22, rushing\_twoptm:
+Frank Gore (RB, SF) rushing_lngtd: 0, rushing_tds: 0,
+rushing_twopta: 0,  
+rushing_lng: 16, rushing_yds: 59, rushing_att: 22, rushing_twoptm:
 0,  
-receiving\_tds: 0, receiving\_lng: 12, receiving\_rec: 3,
-receiving\_twopta: 0,  
-receiving\_yds: 19, receiving\_lngtd: 0, receiving\_twoptm: 0  
+receiving_tds: 0, receiving_lng: 12, receiving_rec: 3,
+receiving_twopta: 0,  
+receiving_yds: 19, receiving_lngtd: 0, receiving_twoptm: 0  
 -------
 
      :::python
@@ -321,35 +318,35 @@ receiving\_yds: 19, receiving\_lngtd: 0, receiving\_twoptm: 0
     
 
 SEA (31) vs. SF (6)  
-\*\*\*\*\*  
+*****  
 2010 Away team: SF  
-first\_downs 14  
-total\_yds 263  
-passing\_yds 214  
-rushing\_yds 49  
-penalty\_cnt 8  
-penalty\_yds 60  
+first_downs 14  
+total_yds 263  
+passing_yds 214  
+rushing_yds 49  
+penalty_cnt 8  
+penalty_yds 60  
 turnovers 2  
-punt\_cnt 6  
-punt\_yds 249  
-punt\_avg 35  
-pos\_time 32:45  
+punt_cnt 6  
+punt_yds 249  
+punt_avg 35  
+pos_time 32:45  
 -------  
 2010 Home team: SEA  
-first\_downs 14  
-total\_yds 242  
-passing\_yds 165  
-rushing\_yds 77  
-penalty\_cnt 5  
-penalty\_yds 35  
+first_downs 14  
+total_yds 242  
+passing_yds 165  
+rushing_yds 77  
+penalty_cnt 5  
+penalty_yds 35  
 turnovers 1  
-punt\_cnt 5  
-punt\_yds 207  
-punt\_avg 36  
-pos\_time 27:15  
+punt_cnt 5  
+punt_yds 207  
+punt_avg 36  
+pos_time 27:15  
 -------  
 -------  
-\*\*\*\*\*\*\*
+*******
 
 ### Conclusion
 
@@ -381,14 +378,14 @@ to learn statistics
 Here is a neat little tidbit about Named tuples that I learned during
 this.  
 The team stats are created in game.py and are delivered as a
-\`namedtuple()\`.  
-The \`.\_asdict()\` method on Named Tuples will return an ordered  
+`namedtuple()`.  
+The `._asdict()` method on Named Tuples will return an ordered  
 dict as described
 [here](http://docs.python.org/release/2.7.4/library/collection%20s.html#collections.somenamedtuple._asdict).
 Once you have a dict, simply use  
-(chain on) the \`.items()\` method to iterate over the key and value.
+(chain on) the `.items()` method to iterate over the key and value.
 If you want  
-the keys or values by themselves, use the \`.keys()\` or \`.values()\`
+the keys or values by themselves, use the `.keys()` or `.values()`
 methods  
 respectively.
 

@@ -18,19 +18,16 @@ DELETE_OUTPUT_DIRECTORY = True
 # The static paths you want to have accessible on the output path "static"
 STATIC_PATHS = [
     'images',
-    'extra/CNAME',
     'extra/favicon.ico',
     'extra/favicon-16x16.png',
     'extra/favicon-32x32.png',
     'extra/favicon-96x96.png',
     'extra/favicon-160x160.png',
     'extra/favicon-196x196.png',
-    'extra/robots.txt',
 ]
 
 # Extra metadata dictionaries keyed by relative path
 EXTRA_PATH_METADATA = {
-    'extra/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/favicon-16x16.png': {'path': 'favicon-16x16.png'},
     'extra/favicon-32x32.png': {'path': 'favicon-32x32.png'},
@@ -51,18 +48,45 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-DISPLAY_CATEGORIES_ON_MENU = False
+# Plugins & Settings ----------------------------------------------------------
+PLUGIN_PATHS = ["plugins", "/Users/michaelmartinez/Dropbox/pelican/pelican-plugins"]
+# Only use _image_process when publishing...
+#PLUGINS = ["image_process",]
+
+# Image process settings use ![Picture][/pic.jpg]{: class=image-process-large-photo }
+IMAGE_PROCESS = {
+    'crisp': {'type': 'responsive-image',
+              'srcset': [('1x', ["scale_in 800 600 True"]),
+                         ('2x', ["scale_in 1600 1200 True"]),
+                         ('4x', ["scale_in 3200 2400 True"]),
+                         ],
+               'default': '1x',
+             },
+    'large-photo': {'type': 'responsive-image',
+                    'sizes': '(min-width: 1200px) 800px, (min-width: 992px) 650px, \
+                              (min-width: 768px) 718px, 100vw',
+                    'srcset': [('600w', ["scale_in 600 450 True"]),
+                               ('800w', ["scale_in 800 600 True"]),
+                               ('1600w', ["scale_in 1600 1200 True"]),
+                               ],
+                    'default': '800w',
+                   },
+    }
 
 # Theme settings --------------------------------------------------------------
-THEME = '/Users/michaelmartinez/Dropbox/caffeine_pelican/caff_boot'
+
+#THEME = '/Users/michaelmartinez/Dropbox/caffeine_pelican/caff_boot'
+THEME = './caff_boot'
 # Define a custom header CAF style. Need to include Navigation stuff.
 SKIP_DEFAULT_NAVIGATION = True
 # add custome site header_nav
 CUSTOM_SITE_HEADERS = ('caf_header_nav.html',)
+CUSTOM_FOOTER = ('footer.html')
 PROFILE_IMAGE = '/images/CI_web.png'
 EXTRA_FAVICON = True
 # Define Pages in Content folder that can be displayed here.
 DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 #BOOTSTRAP_STYLESHEET = ('simplex-bootstrap.css')
 # Extra stylesheets, for bootstrap overrides or additional styling.
 STYLESHEET_FILES = ('pygment.css', 'caf.css',)
@@ -89,10 +113,8 @@ PROJECTITEMS = (
 #     ('Mailing List', 'Link'),
 # )
 
-#GITHUB_ADDRESS = 'https://github.com/micahelmartinez'
+#GITHUB_ADDRESS = 'https://github.com/michaelmartinez'
 #TWITTER_ADDRESS = 'https://twitter.com/monkmartinez'
 
 #DISQUS_SITENAME = 'caffeineindustries'
 #GOOGLE_ANALYTICS_ID = '<insert tracking number here>'
-
-

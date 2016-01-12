@@ -9,7 +9,7 @@ Status: published
 [MadComponents](http://madskool.wordpress.com/ "MadComponents-Blog") is
 an AWESOME ActionScript 3 library for mobile UI design and App
 development. It is really lightweight, fast and doesn't use any of the
-FLEX framework\*. MadComponents provides all the tools to make really
+FLEX framework. MadComponents provides all the tools to make really
 nice functional mobile apps with Flash. One can choose to use pure
 ActionScript or use a combination of AS3 and XML. The XML implementation
 with MadComponents provides a clean method to populate and define the
@@ -44,7 +44,7 @@ for Mobile](http://madskool.wordpress.com/2011/07/25/tutorial-7-madcomponents-a
 [ExtendedMadness. More components and charts for
 mobile developers.](http://madskool.wordpress.com/2011/07/28/extendedmadness-more-components-and-charts-for-mobile-developers/ "ExtendedMadness.  More components and charts for mobile developers.")
 
-\*I'm no zealot, but my experience with Flex on mobile has been a bit
+I'm no zealot, but my experience with Flex on mobile has been a bit
 troubling. Number one, it is an extremely large library and has a lot of
 reported performance issues. I'm sure performance will get better as
 time goes on, as Adobe is working hard to fix this. Number two, MXML

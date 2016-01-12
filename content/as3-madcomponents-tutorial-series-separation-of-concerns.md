@@ -64,7 +64,7 @@ based on a quick glance. We haven't defined Page0, Page1 and you can't
 spot LAYOUT anywhere. These are defined separate class files, although
 not completely necessary, it helps me keep things organized.
 
-We declare the \_uiNavigation instance or class level variable which
+We declare the _uiNavigation instance or class level variable which
 we'll define in subsequent steps.
 
 **Lets move on to the constructor:**
@@ -110,10 +110,10 @@ the code relating to the use of MadComponents must be implemented after
 this method call. We initialize Page0 with a call to a public method
 inside the Page0 class. This method can be named anything you like.
 
-We then instantiate the \_uiNavigation variable to the NAVIGATION
+We then instantiate the uiNavigation variable to the NAVIGATION
 constant defined at the class level through the id we can name
 arbitrarily. We can now programmatically add formatting, assign event
-listeners and so forth to the \_uiNavigation variable.
+listeners and so forth to the uiNavigation variable.
 
 The first event listener UI.CLICKED will direct the navigation to the
 "page" that is assigned to the index of the NAVIGATION constant. In this
@@ -121,7 +121,7 @@ case 0 is the list itself, while 1 and 2 will be Page0 and Page1
 respectively.
 
 The second event listener is assigned to the navigationBar.backButton
-and is a simple MouseEvent.MOUSE\_UP event. As you will see, this event
+and is a simple MouseEvent.MOUSE_UP event. As you will see, this event
 will handle the back button that is added to the navigation bar once we
 have navigated away from the main list.
 
@@ -136,7 +136,7 @@ back button into the app.
 Daniel is working on documentation as we speak, but a good starting
 place to learn about the framework are the PDF(s) included on the
 [download page](http://code.google.com/p/mad-components/downloads/list).
-You can see what I've done to customize the \_uiNavigation variable
+You can see what I've done to customize the uiNavigation variable
 based on the comments added into the code.
 
 **Now lets handle the events we declared in the constructor:**

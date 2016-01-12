@@ -6,8 +6,8 @@ Tags: Development
 Slug: anaconda-primer 
 Status: published
 
-This was taken from
-http://davebehnke.com/using-python-anaconda-distribution.html which is
+This was taken from [Dave Behnke]
+(http://davebehnke.com/using-python-anaconda-distribution.html) which is
 no longer active. I used the way back machine to find it and reproduce
 it.
 
@@ -40,9 +40,9 @@ Anaconda. We're going to get down to the nuts and bolts next!
 Which one to use ?  
 We have two ways to install.
 
-Anaconda: http://continuum.io/downloads
+Anaconda: [here](http://continuum.io/downloads)
 
-Miniconda: http://conda.pydata.org/miniconda.html
+Miniconda: [here](http://conda.pydata.org/miniconda.html)
 
 This is mostly a matter of choice, if you like having a complete Python
 environment, and don't mind a larger download, things you might not use,
@@ -79,8 +79,8 @@ path in your .bashrc
     :::bash
     Welcome to Miniconda3 3.0.5 (by Continuum Analytics, Inc.)
 
-    Do you approve the license terms? \[yes|no\]  
-    \[no\] >>> yes
+    Do you approve the license terms? [yes|no]  
+    [no] >>> yes
 
     Miniconda3 will now be installed into this location:  
     /home/dbehnke/miniconda3
@@ -89,14 +89,14 @@ path in your .bashrc
     - Press CTRL-C to abort the installation  
     - Or specify an different location below
 
-    \[/home/dbehnke/miniconda3\] >>>
+    [/home/dbehnke/miniconda3] >>>
 
     Python 3.3.4 :: Continuum Analytics, Inc.  
     creating default environment...  
     installation finished.  
     Do you wish the installer to prepend the Miniconda3 install location  
-    to PATH in your /home/dbehnke/.bashrc ? \[yes|no\]  
-    \[no\] >>> yes  
+    to PATH in your /home/dbehnke/.bashrc ? [yes|no]  
+    [no] >>> yes  
     Restart your Terminal
 
 ### Updating conda  
@@ -120,7 +120,7 @@ in your PATH:
 Now lets update conda
 
     :::bash
-    \$ conda update conda
+    $ conda update conda
 
     Package plan for installation in environment /home/dbehnke/miniconda3:
 
@@ -128,21 +128,21 @@ Now lets update conda
 
     package | build  
     ---------------------------|-----------------  
-    conda-3.0.6 | py33\_0 106 KB
+    conda-3.0.6 | py33_0 106 KB
 
     The following packages will be UN-linked:
 
     package | build  
     ---------------------------|-----------------  
-    conda-3.0.5 | py33\_0
+    conda-3.0.5 | py33_0
 
     The following packages will be linked:
 
     package | build  
     ---------------------------|-----------------  
-    conda-3.0.6 | py33\_0 hard-link
+    conda-3.0.6 | py33_0 hard-link
 
-    Proceed (\[y\]/n)? y  
+    Proceed ([y]/n)? y  
 
 ### Environments  
 By default you install in the root environment. Environments allow you
@@ -152,15 +152,15 @@ directory in your installation directory. Conda will also try to create
 hard-links whenever possible to save disk space.
 
 List installed environments (e.g. here I have 2 environments created
-already from a previous install. The \* indicates my current environment
+already from a previous install. The * indicates my current environment
 is root)
 
     :::bash
-    \$ conda info -e  
-    \# conda environments:  
-    \#  
+    $ conda info -e  
+    # conda environments:  
+    #  
     oracle /home/dbehnke/miniconda3/envs/oracle  
-    root \* /home/dbehnke/miniconda3 
+    root * /home/dbehnke/miniconda3 
      
 ###Creating  
 Here is the breakdown of creating a new environment.
@@ -181,11 +181,11 @@ command)
     directory first. This command requires either the -n NAME or -p PREFIX
     option.
 
-    conda create -n NAME \[package\_spec \[package\_spec\] \]
+    conda create -n NAME [package_spec [package_spec] ]
 
     positional arguments::
 
-    package\_spec package versions to install into conda environment
+    package_spec package versions to install into conda environment
 
     optional arguments:
 
@@ -194,7 +194,7 @@ command)
 I personally like to only use the -n so that it lives with my
 installation in my home directory. However, if you installed as root or
 somewhere your user account doesn't have access to you may want to use
--p \$HOME/somedirectory instead of -n. This article will only use -n for
+-p $HOME/somedirectory instead of -n. This article will only use -n for
 examples.
 
 
@@ -203,7 +203,7 @@ Here I create an environment named "oracle" in the env directory of my
 installation with just the minimal python.
 
     :::bash
-    \$ conda create -n oracle python
+    $ conda create -n oracle python
 
     Package plan for installation in environment
     /home/dbehnke/miniconda3/envs/oracle:
@@ -220,22 +220,22 @@ installation with just the minimal python.
     tk-8.5.13 | 0 hard-link  
     zlib-1.2.7 | 0 hard-link
 
-    Proceed (\[y\]/n)? y
+    Proceed ([y]/n)? y
 
     Linking packages ...  
-    \[ COMPLETE \]
-    |\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#|
+    [ COMPLETE ]
+    |######################################################################|
     100%  
-    \#  
-    \# To activate this environment, use:  
-    \# \$ source activate oracle  
-    \#  
-    \# To deactivate this environment, use:  
-    \# \$ source deactivate  
-    \#  
+    #  
+    # To activate this environment, use:  
+    # $ source activate oracle  
+    #  
+    # To deactivate this environment, use:  
+    # $ source deactivate  
+    #  
 ### Activating
     :::bash
-    \$ source activate oracle  
+    $ source activate oracle  
     prepending /home/dbehnke/miniconda3/envs/oracle/bin to PATH  
     Verifying environment is active
 
@@ -243,28 +243,28 @@ Notice the (oracle) in front of the bash prompt. This is an indicator
 that the "oracle" environment is activated.
 
     :::bash
-    (oracle) \$ conda info -e
+    (oracle) $ conda info -e
 
-    \# conda environments:  
-    \#  
-    oracle \* /home/dbehnke/miniconda3/envs/oracle  
+    # conda environments:  
+    #  
+    oracle * /home/dbehnke/miniconda3/envs/oracle  
     root /home/dbehnke/miniconda3
 
-    (oracle) \$ which python
+    (oracle) $ which python
 
     /home/dbehnke/miniconda3/envs/oracle/bin/python
 
-    (oracle) \$ python
+    (oracle) $ python
 
     Python 3.3.4 |Continuum Analytics, Inc.| (default, Feb 10 2014,
     17:53:28)  
-    \[GCC 4.1.2 20080704 (Red Hat 4.1.2-54)\] on linux  
+    [GCC 4.1.2 20080704 (Red Hat 4.1.2-54)] on linux  
     Type "help", "copyright", "credits" or "license" for more information.  
     >>>  
 ### Deactivating  
    
     :::bash
-    (oracle) \$ source deactivate
+    (oracle) $ source deactivate
 
     discarding /home/dbehnke/miniconda3/envs/oracle/bin from PATH  
 
@@ -283,7 +283,7 @@ To list available versions of Python to install you can use "conda
 search". Here is an example.
 
     :::bash
-    conda search "\^python\$"
+    conda search "^python$"
 
     python 2.6.8 1 defaults  
     2.6.8 2 defaults  
@@ -297,9 +297,9 @@ search". Here is an example.
     3.3.1 0 defaults  
     3.3.2 0 defaults  
     . 3.3.3 1 defaults  
-    \* 3.3.4 0 defaults  
+    * 3.3.4 0 defaults  
 The installed root version deterimines the default version of python
-(indicated by the \* in the conda search example above) used when
+(indicated by the * in the conda search example above) used when
 creating environments. To specify a different version of python, use the
 environment variable PYTHON=x. (where x is version found in conda
 search)
@@ -309,7 +309,7 @@ use 2 instead of specifying the complete version number which will take
 the latest version of python 2.
 
     :::bash
-    \$ conda create -n oracle python=2
+    $ conda create -n oracle python=2
 
     Package plan for installation in environment
     /home/dbehnke/miniconda3/envs/oracle:
@@ -332,7 +332,7 @@ the latest version of python 2.
     tk-8.5.13 | 0 hard-link  
     zlib-1.2.7 | 0 hard-link
 
-    Proceed (\[y\]/n)?  
+    Proceed ([y]/n)?  
 ###Cloning an Environment  
 If you want to make a snapshot of an already existing environment, you
 can use the --clone keyword
@@ -340,8 +340,8 @@ can use the --clone keyword
     :::bash
     conda create -n nameofnew --clone nameofsource  
     Installing Packages  
-    conda install -n nameofenvironment \[package\] \[package\[=x.x.x\]\]
-    \[package\]  
+    conda install -n nameofenvironment [package] [package[=x.x.x]]
+    [package]  
 The -n is names your environment, if you omit the -n then the install
 will be installed in the root environment. It can't be stressed enough,
 it is very important to use the -n flag when installing packages in a
@@ -350,11 +350,11 @@ environment other than the root. Get yourself in the habit of using the
 so you may install the module in root when you meant to install it in
 another environment.
 
-\[package\] is either simply the package name, for example flask, or
+[package] is either simply the package name, for example flask, or
 sqlalchemy. This will install the latest version of the package and any
 dependencies it may need.
 
-\[package=x\]
+[package=x]
 
 This will the version matching x. You can also use x.y, x.y.x, etc. To
 match the version of the package. For example, as we saw above when we
@@ -366,11 +366,11 @@ It's important to note, omitting the python=x will default to the
 miniconda version, i.e. miniconda3 installs python 3 and miniconda2
 installs python 2 by default.
 
-Example \#1. Installing an Anaconda environment similar to the full
+Example #1. Installing an Anaconda environment similar to the full
 installer
 
     :::bash
-    \$ conda install -n oracle anaconda
+    $ conda install -n oracle anaconda
 
     Package plan for installation in environment
     /home/dbehnke/miniconda3/envs/oracle:
@@ -379,19 +379,19 @@ installer
 
     package | build  
     ---------------------------|-----------------  
-    anaconda-1.9.1 | np18py33\_0 3 KB  
-    argcomplete-0.6.7 | py33\_0 26 KB  
-    astropy-0.3.0 | np18py33\_0 5.9 MB  
-    beautiful-soup-4.3.1 | py33\_0 114 KB  
-    bitarray-0.8.1 | py33\_0 89 KB
+    anaconda-1.9.1 | np18py33_0 3 KB  
+    argcomplete-0.6.7 | py33_0 26 KB  
+    astropy-0.3.0 | np18py33_0 5.9 MB  
+    beautiful-soup-4.3.1 | py33_0 114 KB  
+    bitarray-0.8.1 | py33_0 89 KB
 
     ...  
-Example \#2. Installing a couple of packages
+Example #2. Installing a couple of packages
 
 e.g. installing flask and sqlalchemy
 
     :::bash
-    \$ conda install -n oracle flask sqlalchemy
+    $ conda install -n oracle flask sqlalchemy
 
     Package plan for installation in environment
     /home/dbehnke/miniconda3/envs/oracle:
@@ -400,12 +400,12 @@ e.g. installing flask and sqlalchemy
 
     package | build  
     ---------------------------|-----------------  
-    flask-0.10.1 | py27\_1 129 KB  
-    itsdangerous-0.23 | py27\_0 16 KB  
-    jinja2-2.7.2 | py27\_0 308 KB  
-    markupsafe-0.18 | py27\_0 26 KB  
-    sqlalchemy-0.9.3 | py27\_0 1.1 MB  
-    werkzeug-0.9.4 | py27\_0 385 KB  
+    flask-0.10.1 | py27_1 129 KB  
+    itsdangerous-0.23 | py27_0 16 KB  
+    jinja2-2.7.2 | py27_0 308 KB  
+    markupsafe-0.18 | py27_0 26 KB  
+    sqlalchemy-0.9.3 | py27_0 1.1 MB  
+    werkzeug-0.9.4 | py27_0 385 KB  
     ------------------------------------------------------------  
     Total: 2.0 MB
 
@@ -413,14 +413,14 @@ e.g. installing flask and sqlalchemy
 
     package | build  
     ---------------------------|-----------------  
-    flask-0.10.1 | py27\_1 hard-link  
-    itsdangerous-0.23 | py27\_0 hard-link  
-    jinja2-2.7.2 | py27\_0 hard-link  
-    markupsafe-0.18 | py27\_0 hard-link  
-    sqlalchemy-0.9.3 | py27\_0 hard-link  
-    werkzeug-0.9.4 | py27\_0 hard-link
+    flask-0.10.1 | py27_1 hard-link  
+    itsdangerous-0.23 | py27_0 hard-link  
+    jinja2-2.7.2 | py27_0 hard-link  
+    markupsafe-0.18 | py27_0 hard-link  
+    sqlalchemy-0.9.3 | py27_0 hard-link  
+    werkzeug-0.9.4 | py27_0 hard-link
 
-    Proceed (\[y\]/n)?  
+    Proceed ([y]/n)?  
 ### Removing Packages  
 This is accomplished by using the "conda remove" command and is similar
 to the "conda install" command. You can also save time if you have many
@@ -433,7 +433,7 @@ What if a package doesn't exist through conda install ?
 If the package you want is not available for conda, another option is to
 search http://binstar.org (make sure the package you find is built for
 the platform you are on), and then add that person's binstar channel
-with conda config --add channels binstar\_username.
+with conda config --add channels binstar_username.
 
 You should try to use "conda install" whenever possible. However, as a
 last resort, you can solve this problem by installing pip into your
@@ -443,7 +443,7 @@ own conda packages, but that's beyond the scope of this article.
 e.g. installing pip
 
     :::bash
-    \$ conda install -n oracle pip
+    $ conda install -n oracle pip
 
     Package plan for installation in environment
     /home/dbehnke/miniconda3/envs/oracle:
@@ -452,8 +452,8 @@ e.g. installing pip
 
     package | build  
     ---------------------------|-----------------  
-    pip-1.5.4 | py27\_0 1.5 MB  
-    setuptools-2.2 | py27\_0 458 KB  
+    pip-1.5.4 | py27_0 1.5 MB  
+    setuptools-2.2 | py27_0 458 KB  
     ------------------------------------------------------------  
     Total: 2.0 MB
 
@@ -461,10 +461,10 @@ e.g. installing pip
 
     package | build  
     ---------------------------|-----------------  
-    pip-1.5.4 | py27\_0 hard-link  
-    setuptools-2.2 | py27\_0 hard-link
+    pip-1.5.4 | py27_0 hard-link  
+    setuptools-2.2 | py27_0 hard-link
 
-    Proceed (\[y\]/n)?  
+    Proceed ([y]/n)?  
 Then just install as normal using pip install xxxx.
 
 ### Uninstalling  

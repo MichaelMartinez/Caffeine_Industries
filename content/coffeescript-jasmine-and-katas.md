@@ -43,11 +43,11 @@ Here is my solution:
 
 The Spec's in CoffeeScript
 
-\[gist id=2014544\]
+[gist id=2014544]
 
 The implementation in CoffeeScript:
 
-\[gist id=2014548\]
+[gist id=2014548]
 
 Paste the CoffeeScript [here](http://js2coffee.org/) to see what it
 looks like in JavaScript.

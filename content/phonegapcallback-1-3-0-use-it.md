@@ -7,7 +7,7 @@ Slug: phonegapcallback-1-3-0-use-it
 Status: published
 
 PhoneGap 1.2.0 broke apps when used on devices with Ice Cream Sandwich /
-Android 4.0.\* The <meta> tag was being ignored I.e.
+Android 4.0.* The <meta> tag was being ignored I.e.
 
 Meta is not parsed by the browser in PG 1.2.0, or is parsed and parsed
 incorrectly which made the viewport appear to be very zoomed out.
@@ -26,19 +26,19 @@ or similar IDE
 
 I think using a pure Ant is the easiest and I'll explain it here:
 
-1\. Download latest PhoneGap/Callback from git  
+1. Download latest PhoneGap/Callback from git  
 2. Make a local.properties with SDK directory with this snippet:
 
     :::bash
     sdk.dir=/Developer/Development/android-sdk-mac_x86
 
 
-3\. Then in terminal, navigate (cd /blah/blah) to the "framework"
+3. Then in terminal, navigate (cd /blah/blah) to the "framework"
 directory within the Callback directory  
 4. type "ant jar" (Hopefully you get no build.xml errors)  
 5. Done
 
 The other way is not significantly more difficult but involves more
-steps. If all you need is the PhoneGap Jar and \*.js Use the "pure" ant
+steps. If all you need is the PhoneGap Jar and *.js Use the "pure" ant
 method. If you want to have a play with the source then by all means use
 the IDE to build the file. I will explain it if there is demand.

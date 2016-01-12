@@ -37,32 +37,18 @@ Anyway here are a few pics... the strap cut outs were done on a slight
 angle so that I can wear it comfortably while driving the engine. I see
 tons of imperfections and I will strive to get better.
 
-\[line\]
+![Alt Text](/images/leatherman2.jpg){: class="image-process-large-photo" }
 
-\[block\_grid type="two-up"\] \[block\_grid\_item\] \[image
-class="leatherman"
-src="http://mmartinez.us/wp-content/uploads/2014/01/leatherman2.jpg"
-alt="leatherman" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/leatherman2.jpg"
-title="lumbar"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="leatherman"
-src="http://mmartinez.us/wp-content/uploads/2014/01/leatherman1.jpg"
-alt="leatherman" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/leatherman1.jpg"
-title="lumbar"\] \[/block\_grid\_item\]\[/block\_grid\]
+----
 
-\[lightbox selector=".leatherman" deeplink="true" opacity="0.875"
-prev\_scale="0.75" prev\_opacity="0.75" next\_scale="0.75"
-next\_opacity="0.75" orientation="horizontal" thumbnails="true"\]
+![Alt Text](/images/leatherman1.jpg){: class="image-process-large-photo" }
 
-\[accordion id="my-accordion"\] \[accordion\_item
-parent\_id="my-accordion" title="Design" open="true"\] Leatherman sheath
-that will outlast me on this beautiful planet.
-\[/accordion\_item\]\[accordion\_item parent\_id="my-accordion"
-title="Features"\]
+----
+
+
+Leatherman sheath that will outlast me on this beautiful planet.
 
 -   Vegetable Tanned Leather
 -   Black will never run, bleed or wash off
 -   Hand Stitched
 
-\[/accordion\_item\] \[/accordion\]

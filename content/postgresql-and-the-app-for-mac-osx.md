@@ -18,14 +18,13 @@ people at [Heroku](http://postgres.heroku.com/) is where its at.
 
 ### Install PostgreSQL
 
-1\. Use Homebrew and follow this [guide](https://coderwall.com/p/1mni7w)
+1. Use Homebrew and follow this [guide](https://coderwall.com/p/1mni7w)
 or something similar  
 2. Use the PostgreSQL binaries and follow this
 [guide](http://www.enterprisedb.com/resources-community/pginst-guide)  
 3. Use postgres.app - it is hard to make an argument against this app.
 Download it, drag it to applications, DONE.
 
-\[line\]
 
 ### Use PostgreSQL
 
@@ -39,18 +38,17 @@ pg_ctl -D /usr/local/var/postgres stop -s -m fast
 
 
 This is just to start and/or check on the darn thing. Then you can enter
-the \`psql\` command to access the \`\$USER\` database.  
-Remember that the \`\$USER\` database doesn't have a user/password like
+the `psql` command to access the `$USER` database.  
+Remember that the `$USER` database doesn't have a user/password like
 it would in a production environment.
 
-\[line\]
 
 ### Use Postgres.app
 
 The postgres app simplifies this process by allowing you to start
 PostgreSQL like any other mac app, click on the app.  
-But before you do that; Add one line to your \`.bashrc\` or in my case,
-\`.zshrc\`.
+But before you do that; Add one line to your `.bashrc` or in my case,
+`.zshrc`.
 
 :::bash
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
@@ -71,13 +69,12 @@ relation. With this done you can now create a database:
 
 note: don't forget the semi-colon!
 
-\[line\]
 
 ### Use for Development
 
 To use this with Django you need to install the psycopg2 package, then
 its just a matter of adding the correct parameters  
-to your \`DATABASE\` settings:
+to your `DATABASE` settings:
 
     :::python
     DATABASES = {

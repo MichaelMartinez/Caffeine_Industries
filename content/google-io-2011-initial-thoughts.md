@@ -8,7 +8,7 @@ Status: published
 
 This was my first year attending Google I/O and I hope to attend many
 more. Overall, the experience was simply mind bending. Every session I
-attended was packed \[from an information & body count perspective\] and
+attended was packed [from an information & body count perspective] and
 meticulously presented.  I received a Google I/O review form and laid
 down some initial thoughts... I'll probably add another review in a week
 or so after full digestion.

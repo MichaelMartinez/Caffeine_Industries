@@ -13,40 +13,23 @@ bombproof design for a large notebook. I have several designs in the
 pipeline for the smaller pocketable Rhodia notebooks among other
 manufactures Ie. Moleskine, Fieldnotes. More coming!!!!
 
-\[line\]
+![Alt Text](/images/nb-closed.jpg){: class="image-process-large-photo" }
 
-\[block\_grid type="two-up"\] \[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2014/01/nb-closed.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/nb-closed.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2014/01/nb-open.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/nb-open.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[/block\_grid\]
+----
 
-\[lightbox selector=".notebook" deeplink="true" opacity="0.875"
-prev\_scale="0.75" prev\_opacity="0.75" next\_scale="0.75"
-next\_opacity="0.75" orientation="horizontal" thumbnails="true"\]
+![Alt Text](/images/nb-open.jpg){: class="image-process-large-photo" }
 
-\[accordion id="my-accordion"\] \[accordion\_item
-parent\_id="my-accordion" title="Design" open="true"\] A nice case to
-store my beloved Rhodia Notebook. Bombproof.
-\[/accordion\_item\]\[accordion\_item parent\_id="my-accordion"
-title="Features"\]
+----
+
+A nice case to store my beloved Rhodia Notebook. Bombproof.
 
 -   Paracord Pull Closure
 -   Black will not bleed, wear off or
 -   Hand Stitched
 -   Vinegaroon "Dyed"
 
-\[/accordion\_item\] \[accordion\_item parent\_id="my-accordion"
-title="Materials"\]
 
 -   Shell: Vegetable Tanned Leather
 -   Liner: Brown Pigskin
 -   Strap: Paracord
 
-\[/accordion\_item\] \[/accordion\]

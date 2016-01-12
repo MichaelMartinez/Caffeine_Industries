@@ -67,7 +67,6 @@ response
          <tweepy.models.Status at 0x107ca3550>
     
 
-\[line\]
 
 ###  The user object
 
@@ -98,7 +97,6 @@ Showing a method to access some variables returned by twitter
 
          1570
 
-\[line\]
 
 ### Rate limits
 
@@ -262,7 +260,6 @@ Another way to access variables within the api...
          Graphics Software
          UX - IxD
 
-\[line\]
 
 ### A little maths?
 

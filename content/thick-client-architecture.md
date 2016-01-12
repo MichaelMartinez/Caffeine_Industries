@@ -36,7 +36,7 @@ realistically get a big project off the ground without a massive backend
 effort in parallel.
 
 Don't get me wrong, a masterfully crafted RESTful API is indeed a thing
-of beauty and generally bomb-proof. However, geting a "working" web app
+of beauty and generally bomb-proof. However, getting a "working" web app
 out the door without knowing the nuts and bolts of a massive server-side
 framework is within closer reach than ever before. Exciting!!!!
 

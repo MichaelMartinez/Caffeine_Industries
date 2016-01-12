@@ -9,7 +9,7 @@ Status: published
 As I've [mentioned](http://mmartinez.us/2013/10/rhodia-notebook-cover/)
 in the past, I like to write things down. As I search for my favorite
 notebook and system to keep track of my life, I like to tinker with
-covers and items that enhance the percieved value of the activity
+covers and items that enhance the perceived value of the activity
 itself. This idea was born when I thought it might be cool to have my
 wallet and notebook combined into one pocketable design. Also, thought
 it would be awesome to use my laser cutter to make it.
@@ -27,51 +27,31 @@ because I haven't had time to post). I also make different products out
 of leather, wood, felt, acrylic, and other materials... soon to be
 posted.
 
-\[line\]
+![Alt Text](/images/cahier3.jpg){: class="image-process-large-photo" }
 
-\[block\_grid type="two-up"\] \[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2014/01/cahier3.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/cahier3.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2014/01/cahier1.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/cahier1.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2014/01/cahier2.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/cahier2.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2014/01/cahier4.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2014/01/cahier4.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[/block\_grid\]
+----
 
-\[lightbox selector=".notebook" deeplink="true" opacity="0.875"
-prev\_scale="0.75" prev\_opacity="0.75" next\_scale="0.75"
-next\_opacity="0.75" orientation="horizontal" thumbnails="true"\]
+![Alt Text](/images/cahier1.jpg){: class="image-process-large-photo" }
 
-\[accordion id="my-accordion"\] \[accordion\_item
-parent\_id="my-accordion" title="Design" open="true"\]
+----
+
+![Alt Text](/images/cahier2.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/cahier4.jpg){: class="image-process-large-photo" }
+
+----
 
 Fieldnotes / Cahier Wallet - Will fit any 3.5" x 5.5" notebook  
 Designed to fit in pocket  
-Will accomodate Passport
+Will accommodate Passport
 
-\[/accordion\_item\]\[accordion\_item parent\_id="my-accordion"
-title="Features"\]
 
 Space for two important cards - front and center  
 Space for bills, other cards, and loose notes inside flaps  
 Hand Stitched  
 Fiebing's Oil Dye  
-\[/accordion\_item\] \[accordion\_item parent\_id="my-accordion"
-title="Materials"\]
 
 Shell: Vegetable Tanned Leather  
 Liner: No liner  
-\[/accordion\_item\] \[/accordion\]

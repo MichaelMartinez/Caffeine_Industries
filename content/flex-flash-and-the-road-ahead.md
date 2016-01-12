@@ -8,7 +8,7 @@ Status: published
 
 I just had to brain vomit this....
 
-1\. Flex relies on the Flash Player and/or Air, correct? Without constant
+1. Flex relies on the Flash Player and/or Air, correct? Without constant
 tight integration between Spoon and the Flash Player... I think Flex is
 heading down a troubled road with a stormy horizon around 1, 2 or 3
 years from now.
@@ -25,7 +25,7 @@ will that be accomplished given Adobe needs to focus like they've never
 focused on their new SaaS offerings among other treats outlined in the
 linked document?
 
-2\. Enterprise was the leading innovation context for a long time, this
+2. Enterprise was the leading innovation context for a long time, this
 is changing! Are we not at all concerned that a consumer driven
 revolution in productivity and innovation will change Enterprise?
 
@@ -39,21 +39,21 @@ Economic conditions are changing very rapidly from governments to
 bakeries. Radical divergence from the status quo will be common place in
 tech. I've seen an iPad in a fire truck.
 
-3\. What a lot of people fail to realize is Adobe is in a bit of trouble
+3. What a lot of people fail to realize is Adobe is in a bit of trouble
 financially speaking. They have revised enterprise growth down every
-quarter and "legacy" (\*cough\*) projections look tepid at best. See
+quarter and "legacy" (*cough*) projections look tepid at best. See
 here:
 
-http://www.adobe.com/aboutadobe/invrelations/2011\_analyst\_mtg/pdfs/FA2011\_web\_MarkGarrett.pdf
+http://www.adobe.com/aboutadobe/invrelations/2011_analyst_mtg/pdfs/FA2011_web_MarkGarrett.pdf
 
 Their strategy is to focus on the marketer and boost subscription rates
 to meet top line growth. They are literally betting the farm on
 subscriptions and marketing. That doesn't sound "enterprise-y",
 "flash-y" or "flex-y" to me.
 
-4\. They will try to move the creative seats to a subscription based
+4. They will try to move the creative seats to a subscription based
 model in the next three years. OUCH! I fucking hate subscriptions,
-everyone and their mother wants a \$5 dollar a month (or more) deduction
+everyone and their mother wants a $5 dollar a month (or more) deduction
 from my checking account! Obviously, I don't believe in this model.
 
 I'm sure if I can see the following, many others have as well. The

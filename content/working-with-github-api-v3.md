@@ -16,26 +16,26 @@ aside - The result below is a real-time demo using the
 [jinX](http://www.jqueryin.com/projects/jinx-javascript-includer-wordpress-plugin/)
 wp plugin to inject javascript into posts
 
-:::javascript
-$( document ).ready( function () {
+    :::javascript
+    $( document ).ready( function () {
 
-  var html = "";
-  $.ajax( {
-    url : "https://api.github.com/users/MichaelMartinez/watched",
-    dataType : "jsonp",
-    success : function ( returndata ) {
-      $.each( returndata.data, function ( i, item ) {
-        html += '' +
-          '' + this.name + '' +
-          '' +
-          '' + 'Description: ' + this.description + '' +
-          '' + 'Language: ' + this.language + '' +
-          '' + 'Updated: ' + this.updated_at + '' +
-          '' + 'Owner: ' + this.owner.login + '' +
-          '' +
-          '';
+      var html = "";
+      $.ajax( {
+        url : "https://api.github.com/users/MichaelMartinez/watched",
+        dataType : "jsonp",
+        success : function ( returndata ) {
+          $.each( returndata.data, function ( i, item ) {
+            html += '' +
+              '' + this.name + '' +
+              '' +
+              '' + 'Description: ' + this.description + '' +
+              '' + 'Language: ' + this.language + '' +
+              '' + 'Updated: ' + this.updated_at + '' +
+              '' + 'Owner: ' + this.owner.login + '' +
+              '' +
+              '';
+          } );
+          $( '#result' ).append( html );
+        }
       } );
-      $( '#result' ).append( html );
-    }
-  } );
-} );
+    } );

@@ -52,7 +52,7 @@ Once you have activated your virutalenv:
 
 
 This command creates an Alembic directory and alembic.ini file in your
-project directory. Running \`alembic init alembic\`  
+project directory. Running `alembic init alembic`  
 creates a generic configuration. Run it as described above unless you
 have a multi-database or a pylons project. The docs  
 for this are
@@ -102,22 +102,22 @@ working with Flask.
     target_metadata = db.metadata
 
 
-\* Import os and sys to modify the path. I am not sure if this is a bug
+* Import os and sys to modify the path. I am not sure if this is a bug
 in Alembic, but I could not get  
 Alembic to find my modules without appending the current working
 directory to my path.  
-\* Import your app and db. Note: this is application specific as Flask
+* Import your app and db. Note: this is application specific as Flask
 will let you set these up in a few different places.  
-\* Override the sqlalchemy.url in Alembic.ini file with a pointer to
+* Override the sqlalchemy.url in Alembic.ini file with a pointer to
 your applications database config  
-\* Use db.metadata to provide automatic migration generation support.
+* Use db.metadata to provide automatic migration generation support.
 
 ### Autogenerate Migrations
     :::bash
     $ alembic revision --autogenerate -m "<insert message here>"
 
 You can inspect and modify the migration created by looking in the
-\`application/alembic/versions/\` directory
+`application/alembic/versions/` directory
 
 Docs for this are
 [here](https://alembic.readthedocs.org/en/latest/tutorial.html#auto-generating-migrations)

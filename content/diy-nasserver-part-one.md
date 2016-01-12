@@ -52,5 +52,4 @@ level 1 hypervisor like EXSi or KVM. In addition to that, I would like
 to continue to learn Python programming for both system management and
 the web with Flask/Django.
 
-I will post my trials and tribulations as we go....[  
-](http://mmartinez.us/wp-content/uploads/2015/04/slide01.png)
+I will post my trials and tribulations as we go....

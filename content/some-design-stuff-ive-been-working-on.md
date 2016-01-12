@@ -8,7 +8,10 @@ Status: published
 
 You gotta keep the skills in Photoshop up to date... otherwise they
 whither.
+![Alt Text](/images/3d_map_MarkParis.png){: class="image-process-large-photo" }
 
-[![](http://mmartinez.us/wp-content/uploads/2011/08/3d_map_MarkParis.png "3d_map_MarkParis")](http://mmartinez.us/wp-content/uploads/2011/08/3d_map_MarkParis.png)
+----
 
-[![](http://mmartinez.us/wp-content/uploads/2011/08/caffe1.png "caffe")](http://mmartinez.us/wp-content/uploads/2011/08/caffe1.png)
+![Alt Text](/images/caffe1.png){: class="image-process-large-photo" }
+
+

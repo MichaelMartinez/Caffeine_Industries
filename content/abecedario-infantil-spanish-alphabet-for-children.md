@@ -5,9 +5,7 @@ Category: Android
 Slug: abecedario-infantil-spanish-alphabet-for-children
 Status: published
 
-![image
-src="http://mmartinez.us/wp-content/uploads/2011/05/featureAlfabeto.jpg"
-alt="Feature" type="rounded"\]
+![Alt Text]({filename}/images/featureAlfabeto.jpg)
 
 Abecedario Infantil is an application that will teach you or your child
 the alphabet in Spanish in a fun and interactive way.
@@ -42,26 +40,18 @@ Play](https://market.android.com/details?id=com.caffeine.alfabeto)
 Main Screen
 -----------
 
-<div>
+![Alt Text](/images/main.jpg){: class="image-process-large-photo" }
 
-[![](http://mmartinez.us/wp-content/uploads/2011/05/main.jpg "main")](http://mmartinez.us/wp-content/uploads/2011/05/main.jpg)
-
-</div>
 
 Letras y Sonidos:
 -----------------
 
-<div>
+![Alt Text](/images/letras.jpg){: class="image-process-large-photo" }
 
-[![](http://mmartinez.us/wp-content/uploads/2011/05/letras.jpg "letras")](http://mmartinez.us/wp-content/uploads/2011/05/letras.jpg)
-
-</div>
 
 Signos:
 -------
 
-<div>
+![Alt Text](/images/signos.jpg){: class="image-process-large-photo" }
 
-[![](http://mmartinez.us/wp-content/uploads/2011/05/signos.jpg "signos")](http://mmartinez.us/wp-content/uploads/2011/05/signos.jpg)
 
-</div>

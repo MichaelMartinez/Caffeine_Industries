@@ -20,13 +20,13 @@ Create
 
 A developer has two ways to create a new RoR app.
 
-1\. Use the AppFog console to bootstrap a shell RoR app. \[[source
-code](https://github.com/appfog/af-ruby-rails)\]
+1. Use the AppFog console to bootstrap a shell RoR app. [[source
+code](https://github.com/appfog/af-ruby-rails)]
 
 This will net a basic shell RoR app with Ruby version 1.9.3-p125 and
 Rails version 3.2.5
 
-2\. Use the **af** gem to push your locally developed app to the cloud.
+2. Use the **af** gem to push your locally developed app to the cloud.
 
 Push
 ----
@@ -38,11 +38,11 @@ management system set-up. Rvm and rbenv are out of the scope of this
 tutorial. I use rvm to create project-based gemsets with a directory
 level .rvmrc file. You can read more about rvm [here](https://rvm.io//).
 
-\[gist id=3009318\]
+[gist id=3009318]
 
 When you are ready to push issue this command:
 
-\[gist id=3009377\]
+[gist id=3009377]
 
 If you don’t specify an app name, AppFog will use the directory name. I
 found that my Ruby version wasn't automatically detected without the
@@ -99,7 +99,7 @@ Using MySQL? You ***need*** the ***mysql2 gem*** in your gemfile. Also,
 if you intend to develop your app against MySQL locally, you will want
 your database.yml file to look like or similar to the gist below.
 
-\[gist id=3006959\]
+[gist id=3006959]
 
 I am not sure why the database.yml needs to be set-up like this and
 quite frankly it could be my error (system or set-up). The error
@@ -124,7 +124,7 @@ Package
 
 You need to pre-package the app to the greatest extent possible.
 
-\[gist id=3009404\]
+[gist id=3009404]
 
 Keep in mind that “bundler package” will add size, in some cases
 significant size, to your app. This command caches a local version of
@@ -157,7 +157,7 @@ Speaking of packaging and pre-deployment. If you are using rails 3 and
 the asset pipeline you need to run this command before you push or
 update.
 
-\[gist id=3007160\]
+[gist id=3007160]
 
 ---------------------------------------------------------------------------
 

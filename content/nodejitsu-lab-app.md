@@ -9,7 +9,7 @@ Status: published
 So I've been playing around with [node.js](http://nodejs.org/) a bit. I
 dig it basically because I dig Javascript. Node is one of those
 disruptive technologies that people either love or hate... or ironically
-both. You program to async patterns for E\_V\_E\_R\_Y\_T\_H\_I\_N\_G,
+both. You program to async patterns for E_V_E_R_Y_T_H_I_N_G,
 and I mean everything. Procedural code will break stuff and break it
 badly.
 

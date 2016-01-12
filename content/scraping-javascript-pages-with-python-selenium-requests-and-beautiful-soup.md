@@ -35,7 +35,6 @@ you can simply install Selenium with pip.
     from requests import get
     
 
-\[line\]  
 Next, define where you want to store the images. This will store the
 image in the present working directory or the directory where the script
 lives.
@@ -45,7 +44,6 @@ lives.
     os.makedirs('imgur', exist_ok=True) # Make directory to store the images
     
 
-\[line\]  
 Now we can instantiate the Selenium webdriver, and pass a url to fetch.
 I used firefox because it seems like it is very well supported. I didn't
 even try with Chrome which is my browser of choice.
@@ -56,7 +54,6 @@ even try with Chrome which is my browser of choice.
     browser.get('http://imgur.com') # Go to Imgur
     
 
-\[line\]  
 This is where your investigation begins. First, define an empty list to
 hold the links of the pages. Turns out that imgur renders the home page
 with thumbnails of images. The links to the pages where the main image
@@ -77,7 +74,6 @@ inspecting elements.
         links.append(img_src.get_attribute('href'))
     
 
-\[line\]  
 The rest of the story. This bit of code loops through the links list
 created in the previous snippet. We call requests.get() to url stored in
 links list. Then we pass the html from requests to beautiful soup where
@@ -87,7 +83,7 @@ not empty, we assign the actual src of the imageLink to imageUrl. This
 variable is prefixed with http: and sent back to requests for retrieval.
  If the url is mangled or mistyped we handle the exception and move to
 the next one. If not, we write the file to directory and using requests
-iter\_chunks method in 100,000 byte increments. Close the image file and
+iter_chunks method in 100,000 byte increments. Close the image file and
 start the next round or finish the script.
 
     :::python

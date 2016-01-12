@@ -27,9 +27,9 @@ page](http://lab.caffeineindustries.com) is a total work-in-progress and
 made with Twitter bootstrap. I thought I would show you how I integrated
 h5bp ant-build-script with it.
 
-A screen shot of my folder structure inside webstorm:  
+A screen shot of my folder structure inside webstorm: 
+ ![Alt Text]({filename}/images/Screen-shot-2012-02-20-at-4.31.30-PM-225x300.png)
 
-[![](http://mmartinez.us/wp-content/uploads/2012/02/Screen-shot-2012-02-20-at-4.31.30-PM-225x300.png "Screen shot 2012-02-20 at 4.31.30 PM")](http://mmartinez.us/wp-content/uploads/2012/02/Screen-shot-2012-02-20-at-4.31.30-PM.png)
 
 As you can see, I mimicked the file structure that h5bp recommends in
 the documentation (RTFM, right?)

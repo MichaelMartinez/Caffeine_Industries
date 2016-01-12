@@ -23,53 +23,34 @@ If you are interested in the template or interested in me making you
 one, please let me know. I am in the process of setting up digital
 downloads for multiple projects . I also make different products out
 of leather, wood, felt, acrylic, and other materials. If you have a
-custom project in mind, don't hesitate to
-[contact](http://mmartinez.us/contact/) me
+custom project in mind, don't hesitate to email me.
 
-\[line\]
+----
 
-\[block\_grid type="two-up"\] \[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand4.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand4.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand3.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand3.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand2.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand2.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand1.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand1.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[block\_grid\_item\] \[image
-class="notebook"
-src="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand5.jpg"
-alt="notebook" type="rounded" link="true"
-href="http://mmartinez.us/wp-content/uploads/2015/11/tab\_stand5.jpg"
-title="notebook"\] \[/block\_grid\_item\]\[/block\_grid\]
+![Alt Text](/images/tab_stand4.jpg){: class="image-process-large-photo" }
 
-\[lightbox selector=".notebook" deeplink="true" opacity="0.875"
-prev\_scale="0.75" prev\_opacity="0.75" next\_scale="0.75"
-next\_opacity="0.75" orientation="horizontal" thumbnails="true"\]
+-----
 
-\[accordion id="my-accordion"\] \[accordion\_item
-parent\_id="my-accordion" title="Design" open="true"\]  
+![Alt Text](/images/tab_stand3.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/tab_stand2.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/tab_stand1.jpg){: class="image-process-large-photo" }
+
+----
+
+![Alt Text](/images/tab_stand5.jpg){: class="image-process-large-photo" }
+
+----
+
 Flat pack  
 No-Knock Design  
 Simple and Minimal  
-\[/accordion\_item\]\[accordion\_item parent\_id="my-accordion"
-title="Features"\]  
 Cord Wrap  
 Durable  
-\[/accordion\_item\] \[accordion\_item parent\_id="my-accordion"
-title="Materials"\]  
 Birch Plywood  
 Mineral Oil  
-\[/accordion\_item\] \[/accordion\]

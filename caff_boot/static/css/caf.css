@@ -196,9 +196,6 @@ ul {
   color: #000;
   position: relative;
   display: inline-block;
-  -ms-transform: rotateX(180deg);
-  -webkit-transform: rotateX(180deg);
-  transform: rotateX(180deg);
 }
 
 .brand span:before {

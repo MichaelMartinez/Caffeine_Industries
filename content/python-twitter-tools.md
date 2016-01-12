@@ -11,12 +11,12 @@ Tweepy. In this episode, I will use the
 [twitter library](https://github.com/sixohsix/twitter) from [Mike  
 Verdone](http://mike.verdone.ca/twitter/).
 
-- install the library: \`pip install twitter\`
+- install the library: `pip install twitter`
 
 In the README and other sources of documentation, the config for the
 user/app  
-credentials are accessed via \`os.path\` utilizing a
-\`read\_file\_token\` method.  
+credentials are accessed via `os.path` utilizing a
+`read_file_token` method.  
 This method of credential retrieval has perplexed me in the past
 because I was  
 unable to find a sort of "canonical" way of repeating this in other
@@ -34,19 +34,19 @@ To get started with this config option:
 
 - create a twitter.ini file in the same directory as this file (its a
 simple text file)  
-- type \[twitter\] to delineate a section (read about sections in the
+- type [twitter] to delineate a section (read about sections in the
 ConfigParser tut)  
-- \`parser.get\` in this case looks in the twitter section and
+- `parser.get` in this case looks in the twitter section and
 retrieves the value of the argument as a string.
 
 sample twitter.ini file
 
 :::bash  
-\[twitter\]  
-CONSUMER\_KEY = iowef03434ijsasdfkdmjlfasdasdf2039sdkon  
-CONSUMER\_SECRET = akldsjfsal3fadijfaosdfssasdk34  
-oauth\_token = kasdljnbfglkajdsnfq3asdf4908  
-oauth\_secret = dalkfewoieasdfjaosdkmcadfaslkjdfsdfalasdf
+[twitter]  
+CONSUMER_KEY = iowef03434ijsasdfkdmjlfasdasdf2039sdkon  
+CONSUMER_SECRET = akldsjfsal3fadijfaosdfssasdk34  
+oauth_token = kasdljnbfglkajdsnfq3asdf4908  
+oauth_secret = dalkfewoieasdfjaosdkmcadfaslkjdfsdfalasdf
 
 note: these values are bogus
 
@@ -274,7 +274,7 @@ up.](http://woeid.rosselliot.co.nz/)
           u'woeid': 455867},
          {u'country': u'Argentina',
           u'countryCode': u'AR',
-          u'name': u'C\xf3rdoba',
+          u'name': u'Cxf3rdoba',
           u'parentid': 23424747,
           u'placeType': {u'code': 7, u'name': u'Town'},
           u'url': u'http://where.yahooapis.com/v1/place/466861',
@@ -291,7 +291,7 @@ up.](http://woeid.rosselliot.co.nz/)
 
 Tucson, Arizona USA = 2508428. Note for passing parameters into
 requests, the  
-magic underscore is nessesary as seen in \`\_id="2508428\`
+magic underscore is nessesary as seen in `_id="2508428`
     
     :::python
     trends_tucson = twitter.trends.place(_id="2508428")
@@ -478,7 +478,7 @@ this little demo simply shows you how to access the data.
            u'url': u'https://api.twitter.com/1.1/geo/id/4d35b22f6680264a.json'}]}
     
 
-Cool, Now we'll perform a query for tweets containing \`python job\` and
+Cool, Now we'll perform a query for tweets containing `python job` and
 iterate  
 the results:
 

@@ -9,4 +9,4 @@ Status: published
 Daniel thought it may be a good idea to come up with a logo. I'm always
 keen to have a go at some design work. This is what I came up with:
 
-![MadComponentsLogo](http://mmartinez.us/wp-content/uploads/2011/09/crazyRobotJACKET.png)
+![Alt Text](/images/crazyRobotJACKET.png){: class="image-process-large-photo" }

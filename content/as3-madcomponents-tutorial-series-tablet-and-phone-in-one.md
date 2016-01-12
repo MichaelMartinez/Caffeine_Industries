@@ -311,10 +311,4 @@ button for this block. I will update it once I get it handled.
 I hope this helps you visualize what is possible with tablets and the
 ActionScript3 MadComponent Library. Expect more tutorials to follow!
 
-**This is a screen shot of the tablet running this app:**  
-![Tablet Split
-View](http://mmartinez.us/wp-content/uploads/2011/09/splitviewtablet800.png)
 
-**This is a screen shot of the phone running this app:**  
-![Phone Split
-View](http://mmartinez.us/wp-content/uploads/2011/09/device-2011-09-12-134809.png)

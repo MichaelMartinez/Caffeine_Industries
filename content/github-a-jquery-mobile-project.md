@@ -7,7 +7,7 @@ Slug: github-a-jquery-mobile-project
 Status: published
 
 I was having so much fun with the Github Api and my new found love of
-Git && Github that I to make something mobile!
+Git & Github that I to make something mobile!
 
 It is definitely a work in progress. Don't put in your API token. As of
 now I don't have any features enabled that require it. So without
