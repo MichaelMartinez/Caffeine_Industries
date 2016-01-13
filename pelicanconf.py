@@ -55,7 +55,7 @@ PLUGIN_PATHS = ["plugins", "/home/mm/Dropbox/pelican/pelican-plugins"]
 # PLUGINS = []
 
 # Only use image_process when publishing...
-# PLUGINS = ["image_process"]
+#PLUGINS = ["image_process"]
 
 # Image process settings use ![Picture][/pic.jpg]{: class=image-process-large-photo }
 IMAGE_PROCESS = {
