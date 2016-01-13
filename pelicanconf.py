@@ -52,10 +52,10 @@ RELATIVE_URLS = True
 # Mac Path: PLUGIN_PATHS = ["plugins", "/Users/michaelmartinez/Dropbox/pelican/pelican-plugins"]
 PLUGIN_PATHS = ["plugins", "/home/mm/Dropbox/pelican/pelican-plugins"]
 # Use these plugins for development
-# PLUGINS = []
+PLUGINS = ["post_stats"]
 
 # Only use image_process when publishing...
-#PLUGINS = ["image_process"]
+#PLUGINS = ["image_process", "post_stats"]
 
 # Image process settings use ![Picture][/pic.jpg]{: class=image-process-large-photo }
 IMAGE_PROCESS = {

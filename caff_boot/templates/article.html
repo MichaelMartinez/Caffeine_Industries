@@ -80,35 +80,41 @@
                         </a>
                     </div>
                     {# adding alchemy article header here in UL tag #}
-                        <ul class="list-inline">
-                            <li class="post-dates">
-                                <a class="text-muted" href="/{{ article.url }}"
-                                   title="{{ article.date.isoformat() }}">{{ article.locale_date }}</a>
-                            </li>
+                    <ul class="list-inline">
+                        <li class="post-dates">
+                            <a class="text-muted" href="/{{ article.url }}"
+                               title="{{ article.date.isoformat() }}">{{ article.locale_date }}</a>
+                        </li>
+                        <li class="muted">&middot;</li>
+                        <li class="post-category">
+                            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                        </li>
+                        {% if article.tags %}
                             <li class="muted">&middot;</li>
-                            <li class="post-category">
-                                <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                            <li>
+                                {% for tag in article.tags %}
+                                    <a href="{{ SITEUrL }}/tag/{{ tag }}.html">{{ tag }}</a>{% if not loop.last %},
+                                {% endif %}
+                                {% endfor %}
                             </li>
-                            {% if article.tags %}
-                                <li class="muted">&middot;</li>
-                                <li>
-                                    {% for tag in article.tags %}
-                                        <a href="{{ SITEUrL }}/tag/{{ tag }}.html">{{ tag }}</a>{% if not loop.last %},
-                                    {% endif %}
-                                    {% endfor %}
-                                </li>
-                            {% endif %}
-                            {% if article.author and SHOW_ARTICLE_AUTHOR %}
-                                <li class="muted">&middot;</li>
-                                <li>
-                                    <address class="post-author">
-                                        By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-                                    </address>
-                                </li>
-                            {% endif %}
-                        </ul>
+                        {% endif %}
+                        {% if article.author and SHOW_ARTICLE_AUTHOR %}
+                            <li class="muted">&middot;</li>
+                            <li>
+                                <address class="post-author">
+                                    By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+                                </address>
+                            </li>
+                        {% endif %}
+                    </ul>
                     {{ article.content }}
+                    <p>{{ article.stats['wc'] }} words ~ {{ article.stats['read_mins'] }} min read</p>
+                    <ul>
+                        <li>Flesch-kincaid Index / Reading Ease: {{ article.stats['fi'] }}</li>
+                        <li>Flesch-kincaid Grade Level: {{ article.stats['fk'] }}</li>
+                    </ul>
                 </div>
+
             </div>
 
             {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
