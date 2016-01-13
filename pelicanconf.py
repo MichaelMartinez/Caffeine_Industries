@@ -49,9 +49,13 @@ DEFAULT_PAGINATION = 5
 RELATIVE_URLS = True
 
 # Plugins & Settings ----------------------------------------------------------
-PLUGIN_PATHS = ["plugins", "/Users/michaelmartinez/Dropbox/pelican/pelican-plugins"]
-# Only use _image_process when publishing...
-#PLUGINS = ["image_process",]
+# Mac Path: PLUGIN_PATHS = ["plugins", "/Users/michaelmartinez/Dropbox/pelican/pelican-plugins"]
+PLUGIN_PATHS = ["plugins", "/home/mm/Dropbox/pelican/pelican-plugins"]
+# Use these plugins for development
+# PLUGINS = []
+
+# Only use image_process when publishing...
+# PLUGINS = ["image_process"]
 
 # Image process settings use ![Picture][/pic.jpg]{: class=image-process-large-photo }
 IMAGE_PROCESS = {
@@ -60,8 +64,8 @@ IMAGE_PROCESS = {
                          ('2x', ["scale_in 1600 1200 True"]),
                          ('4x', ["scale_in 3200 2400 True"]),
                          ],
-               'default': '1x',
-             },
+              'default': '1x',
+              },
     'large-photo': {'type': 'responsive-image',
                     'sizes': '(min-width: 1200px) 800px, (min-width: 992px) 650px, \
                               (min-width: 768px) 718px, 100vw',
@@ -70,12 +74,12 @@ IMAGE_PROCESS = {
                                ('1600w', ["scale_in 1600 1200 True"]),
                                ],
                     'default': '800w',
-                   },
-    }
+                    },
+}
 
 # Theme settings --------------------------------------------------------------
 
-#THEME = '/Users/michaelmartinez/Dropbox/caffeine_pelican/caff_boot'
+# Mac Path: THEME = '/Users/michaelmartinez/Dropbox/caffeine_pelican/caff_boot'
 THEME = './caff_boot'
 # Define a custom header CAF style. Need to include Navigation stuff.
 SKIP_DEFAULT_NAVIGATION = True
@@ -87,15 +91,16 @@ EXTRA_FAVICON = True
 # Define Pages in Content folder that can be displayed here.
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
-#BOOTSTRAP_STYLESHEET = ('simplex-bootstrap.css')
+# BOOTSTRAP_STYLESHEET = ('simplex-bootstrap.css')
 # Extra stylesheets, for bootstrap overrides or additional styling.
 STYLESHEET_FILES = ('pygment.css', 'caf.css',)
-STYLESHEET_URLS = ('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700italic,800,800italic,700,600italic',
-                   'https://fonts.googleapis.com/css?family=Merriweather')
+STYLESHEET_URLS = (
+'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700italic,800,800italic,700,600italic',
+'https://fonts.googleapis.com/css?family=Merriweather')
 JAVASCRIPT_FILES = ('smoothScroll.js', 'main.js')
 
 SHOW_ARTICLE_AUTHOR = True
-#SITE_SUBTEXT = 'Caffeine Industries is the home of Micahel Martinez'
+# SITE_SUBTEXT = 'Caffeine Industries is the home of Micahel Martinez'
 META_DESCRIPTION = '''Caffeine Industries is and LLC owned by Michael Martinez and his Wife Nathalia. I feel most at
 home in Python, but I can use a variety of technology stacks. I make stuff for the web, Android, and lots of other
 tech stacks with love.'''
@@ -113,8 +118,8 @@ PROJECTITEMS = (
 #     ('Mailing List', 'Link'),
 # )
 
-#GITHUB_ADDRESS = 'https://github.com/michaelmartinez'
-#TWITTER_ADDRESS = 'https://twitter.com/monkmartinez'
+# GITHUB_ADDRESS = 'https://github.com/michaelmartinez'
+# TWITTER_ADDRESS = 'https://twitter.com/monkmartinez'
 
-#DISQUS_SITENAME = 'caffeineindustries'
-#GOOGLE_ANALYTICS_ID = '<insert tracking number here>'
+# DISQUS_SITENAME = 'caffeineindustries'
+# GOOGLE_ANALYTICS_ID = '<insert tracking number here>'
