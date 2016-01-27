@@ -46,16 +46,16 @@ AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = True
 
 # Plugins & Settings ----------------------------------------------------------
 # Mac Path: PLUGIN_PATHS = ["plugins", "/Users/michaelmartinez/Dropbox/pelican/pelican-plugins"]
-PLUGIN_PATHS = ["plugins", "/home/mm/Dropbox/pelican/pelican-plugins"]
+PLUGIN_PATHS = ["plugins", "/Users/mm/Dropbox/pelican/pelican-plugins"]
 # Use these plugins for development
-PLUGINS = ["post_stats"]
+#PLUGINS = ["post_stats"]
 
 # Only use image_process when publishing...
-#PLUGINS = ["image_process", "post_stats"]
+PLUGINS = ["image_process", "post_stats"]
 
 # Image process settings use ![Picture][/pic.jpg]{: class=image-process-large-photo }
 IMAGE_PROCESS = {
@@ -79,8 +79,8 @@ IMAGE_PROCESS = {
 
 # Theme settings --------------------------------------------------------------
 
-# Mac Path: THEME = '/Users/michaelmartinez/Dropbox/caffeine_pelican/caff_boot'
-THEME = './caff_boot'
+THEME = '/Users/mm/Dropbox/caffeine_pelican/caff_boot'
+#THEME = './caff_boot'
 # Define a custom header CAF style. Need to include Navigation stuff.
 SKIP_DEFAULT_NAVIGATION = True
 # add custome site header_nav
@@ -122,4 +122,4 @@ PROJECTITEMS = (
 # TWITTER_ADDRESS = 'https://twitter.com/monkmartinez'
 
 # DISQUS_SITENAME = 'caffeineindustries'
-# GOOGLE_ANALYTICS_ID = '<insert tracking number here>'
+GOOGLE_ANALYTICS = 'UA-1946861-1'
