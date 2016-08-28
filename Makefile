@@ -12,10 +12,10 @@ FTP_HOST=ftp.caffeineindustries.com
 FTP_USER=pelican@caffeineindustries.com
 FTP_TARGET_DIR=/
 
-SSH_HOST=localhost
-SSH_PORT=22
-SSH_USER=root
-SSH_TARGET_DIR=/var/www
+SSH_HOST=server114.web-hosting.com
+SSH_PORT=21098
+SSH_USER=caffmjvy
+SSH_TARGET_DIR=/home/caffmjvy/public_html/test_ssh
 
 S3_BUCKET=my_s3_bucket
 
