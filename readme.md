@@ -14,6 +14,10 @@ pelican since version 2 and need some help remembering the commands. These instr
 5. `make ssh_upload` -> pass for ssh key in lastpass. Host is configured in ~/.ssh/config, generated keys inside ~/.ssh/cpanel
 6. BACKUP ONLY - `make ftp_upload` -> publish the site: Password is in lastpass if you forget ;P
 
+Todo:
+1. Automation -> one step to publish
+2. Write more!
+
 ## License
 
 &copy; 2015-2016 Michael Martinez
