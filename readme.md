@@ -20,7 +20,7 @@ Todo:
 
 ## License
 
-&copy; 2015-2016 Michael Martinez
+&copy; 2015-2017 Michael Martinez
 
 This repository is licensed under the MIT license. See `LICENSE` for
 details.
