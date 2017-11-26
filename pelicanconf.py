@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Michael Martinez'
 SITENAME = 'Caffeine Industries'
-SITEURL = 'http://caffeineindustries.com'
+SITEURL = 'http://www.caffeineindustries.com'
 
 PATH = 'content'
 
@@ -98,8 +98,8 @@ STYLESHEET_FILES = ('pygment.css', 'caf.css',)
 STYLESHEET_URLS = (
 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700italic,800,800italic,700,600italic',
 'https://fonts.googleapis.com/css?family=Merriweather')
-JAVASCRIPT_FILES = ('smoothScroll.js', 'main.js')
-
+#JAVASCRIPT_FILES = ('smoothScroll.js', 'main.js')
+JAVASCRIPT_FILES = ( 'main.js')
 SHOW_ARTICLE_AUTHOR = True
 # SITE_SUBTEXT = 'Caffeine Industries is the home of Micahel Martinez'
 META_DESCRIPTION = '''Caffeine Industries is and LLC owned by Michael Martinez and his Wife Nathalia. I feel most at

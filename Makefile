@@ -6,7 +6,8 @@ BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
+#PUBLISHCONF=$(BASEDIR)/publishconf.py
+PUBLISHCONF=$(BASEDIR)/pelicanconf.py
 
 FTP_HOST=ftp.caffeineindustries.com
 FTP_USER=pelican@caffeineindustries.com
@@ -17,8 +18,7 @@ SSH_PORT=21098
 SSH_USER=caffmjvy
 SSH_TARGET_DIR=/home/caffmjvy/public_html/test_ssh
 
-S3_BUCKET=my_s3_bucket
-
+S3_BUCKET=www.caffeineindustries.com
 CLOUDFILES_USERNAME=my_rackspace_username
 CLOUDFILES_API_KEY=my_rackspace_api_key
 CLOUDFILES_CONTAINER=my_cloudfiles_container
@@ -112,7 +112,7 @@ ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "set ftp:ssl-allow no; mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type
+	aws s3 sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl public-read --delete
 
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .

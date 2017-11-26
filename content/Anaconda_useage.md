@@ -6,8 +6,7 @@ Tags: Development
 Slug: anaconda-primer 
 Status: published
 
-This was taken from [Dave Behnke]
-(http://davebehnke.com/using-python-anaconda-distribution.html) which is
+This was taken from [Dave Behnke](http://davebehnke.com/using-python-anaconda-distribution.html) which is
 no longer active. I used the way back machine to find it and reproduce
 it.
 
